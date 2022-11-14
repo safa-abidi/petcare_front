@@ -1,0 +1,6 @@
+.border-gradient {
+  max-width: 250px;
+  padding: 0.09rem;
+  position: relative;
+  background: linear-gradient(to right, #172D4E, #738dc2, #193A6A);
+}
