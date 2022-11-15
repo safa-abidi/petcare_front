@@ -1,6 +1,6 @@
 <div class="w-full max-w-xs p-5">
-  <label class="block text-gray-700 text-sm font-bold mb-2">
-    Username
+  <label class="block text-sm font-bold mb-2" style="color: #193A6A">
+    {{placeholder}}
   </label>
 
   <div class="relative flex w-full flex-wrap items-stretch mb-3">
@@ -8,7 +8,7 @@
       <span class="z-10 h-full leading-snug font-normal absolute text-center text-slate-300 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-3 py-3">
         <fa-icon [icon]="icon" class="fas fa-lock"></fa-icon>
       </span>
-      <input type="text" placeholder="test" class="px-3 py-3 placeholder-slate-300 text-slate-600 relative bg-white bg-white rounded text-sm border-0 shadow outline-none focus:outline-none w-full pl-10"/>
+      <input type="{{type}}" placeholder="{{placeholder}}" class="px-3 py-3 placeholder-slate-300 text-slate-600 relative bg-white bg-white rounded text-sm border-0 shadow outline-none focus:outline-none w-full pl-10"/>
     </div>
   </div>
 </div>

@@ -1,4 +1,14 @@
-<app-text-input-with-icon [icon]="icon">
 
-</app-text-input-with-icon>
+<div class="grid h-screen place-items-center">
+  <div class="shadow-2xl rounded">
+    <app-text-input-with-icon [icon]="pawIcon" [placeholder]="'Nom'"> </app-text-input-with-icon>
+    <app-text-input-with-icon [placeholder]="'Race'"> </app-text-input-with-icon>
+    <app-text-input-with-icon [placeholder]="'Age'" [type]="'number'"> </app-text-input-with-icon>
+
+    <app-dropdown-with-icon></app-dropdown-with-icon>
+
+  </div>
+
+</div>
+
 

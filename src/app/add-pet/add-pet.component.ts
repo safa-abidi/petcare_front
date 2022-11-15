@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {faLock} from "@fortawesome/free-solid-svg-icons";
+import {faPaw} from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: 'app-add-pet',
@@ -8,7 +8,7 @@ import {faLock} from "@fortawesome/free-solid-svg-icons";
 })
 export class AddPetComponent implements OnInit {
 
-  icon = faLock
+  pawIcon = faPaw
 
   constructor() { }
 

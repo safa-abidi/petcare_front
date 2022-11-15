@@ -9,6 +9,8 @@ import {faQuestion} from "@fortawesome/free-solid-svg-icons";
 export class TextInputWithIconComponent implements OnInit {
 
   @Input() icon = faQuestion
+  @Input() placeholder = ""
+  @Input() type = "text"
   constructor() { }
 
   ngOnInit(): void {
