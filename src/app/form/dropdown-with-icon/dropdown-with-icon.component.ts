@@ -9,6 +9,8 @@ import {faQuestion} from "@fortawesome/free-solid-svg-icons";
 export class DropdownWithIconComponent implements OnInit {
 
   @Input() icon = faQuestion
+  @Input() animals : string[] = ["Chat", "Chien", "Hamster", "Oiseau"]
+  @Input() placeholder : string = 'test'
 
   constructor() { }
 

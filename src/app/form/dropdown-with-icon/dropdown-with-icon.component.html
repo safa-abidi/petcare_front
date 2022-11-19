@@ -1,6 +1,6 @@
-<div class="max-w-xs p-5">
+<div class="w-100 p-1">
   <label class="block text-sm font-bold mb-2" style="color: #193A6A">
-    OMG
+    {{placeholder}}
   </label>
 
   <div class="flex w-full relative border-gradient rounded">
@@ -8,11 +8,8 @@
         <fa-icon [icon]="icon" class="fas fa-lock"></fa-icon>
       </span>
     <select class="flex w-full px-6 py-3 bg-white text-left text-slate-700 text-base rounded shadow-md items-center pl-10 dark:text-slate-500">
-      <option disabled selected hidden>Type???</option>
-      <option value="">Chat</option>
-      <option value="">Chien</option>
-      <option value="">Hamster</option>
-      <option value="">Oiseau</option>
+      <option disabled selected hidden>{{placeholder}}</option>
+      <option *ngFor="let animal of animals" value="{{animal.toLowerCase()}}">{{animal}}</option>
     </select>
   </div>
 </div>
