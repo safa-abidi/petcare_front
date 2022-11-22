@@ -8,4 +8,7 @@ select {
   outline: 0px solid transparent;
 }
 
-
+.tt{
+  padding-top: 0.650rem; /* 10px */
+  padding-bottom: 0.670rem;
+}

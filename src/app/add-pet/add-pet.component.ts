@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {faPaw} from "@fortawesome/free-solid-svg-icons";
+import {faCamera, faPaw, faVenusMars, faWeight} from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: 'app-add-pet',
@@ -9,6 +9,9 @@ import {faPaw} from "@fortawesome/free-solid-svg-icons";
 export class AddPetComponent implements OnInit {
 
   pawIcon = faPaw
+  genderIcon = faVenusMars
+  weightIcon = faWeight
+  photoIcon = faCamera
 
   constructor() { }
 
