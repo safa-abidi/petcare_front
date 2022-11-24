@@ -1,0 +1,57 @@
+<div class="grid grid-cols-7 bg-[#FFA630]">
+
+  <div class="col-span-2"></div>
+
+  <div class="col-span-5 h-screen bg-[#FFFFFF] rounded-l-3xl" >
+    <div class="h-full p-10 ">
+
+        <div class="flex gap-10 justify-center mb-10">
+          <div class="w-1/6 aspect-square bg-white grid place-items-center rounded hover:bg-gray-100">
+            <div class="rounded-full aspect-square bg-transparent w-3/5">
+              <img src="assets/images/auth/petowner_choose_card.png">
+            </div>
+            <p>Utilisateur</p>
+          </div>
+          <div class="w-1/6 aspect-square bg-white grid place-items-center rounded hover:bg-gray-100">
+            <div class="rounded-full aspect-square bg-transparent w-3/5">
+              <img src="assets/images/auth/vet_choose_card.png">
+            </div>
+            <p>Vétérinaire</p>
+          </div>
+        </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
+        <app-text-input-with-icon [placeholder]="'Nom'"> </app-text-input-with-icon>
+        <app-text-input-with-icon [placeholder]="'Prénom'"> </app-text-input-with-icon>
+        <app-text-input-with-icon [placeholder]="'Email'" [type]="'email'"> </app-text-input-with-icon>
+        <!--Photo-->
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
+        <app-text-input-with-icon [placeholder]="'Date de Naissance'" [type]="'date'"> </app-text-input-with-icon> <!--Birthday-->
+        <app-dropdown-with-icon [placeholder]="'Ville'" [animals]="['Ben arous','Tunis','Gabes','Bizerte']" ></app-dropdown-with-icon>
+        <div class="flex items-center gap-5 p-5 sm:flex-wrap">
+          <div>
+            <input id="gender-M" type="radio" value="male" name="gender" class="w-4 h-4 text-orange-600 bg-gray-100 border-white-300 focus:ring-orange-500 dark:focus:ring-orange-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+            <label for="gender-M" class="ml-2 text-sm font-medium text-stone-50 dark:text-stone-300 font-semibold text-base">Homme</label>
+          </div>
+          <div>
+            <input checked id="gender-F" type="radio" value="female" name="gender" class="w-4 h-4 text-orange-600 bg-gray-100 border-gray-300 focus:ring-orange-500 dark:focus:ring-orange-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+            <label for="gender-F" class="ml-2 text-sm font-medium text-stone-50 dark:text-stone-300 font-semibold text-base">Femme</label>
+          </div>
+       </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
+
+        <app-text-input-with-icon [placeholder]="'Mot de passe'" [type]="'password'"> </app-text-input-with-icon> <!--Birthday-->
+        <app-text-input-with-icon [placeholder]="'Confirmer mot de passe'" [type]="'password'"> </app-text-input-with-icon> <!--Birthday-->
+      </div>
+
+      <!--Other notres-->
+
+    </div>
+
+  </div>
+
+</div>
