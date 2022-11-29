@@ -6,6 +6,8 @@ import { AddPetComponent } from './add-pet/add-pet.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TextInputWithIconComponent } from './form/text-input-with-icon/text-input-with-icon.component';
 import { DropdownWithIconComponent } from './form/dropdown-with-icon/dropdown-with-icon.component';
+import { LoginComponent } from './login/login.component';
+import { ButtonComponent } from './form/button/button.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +15,8 @@ import { DropdownWithIconComponent } from './form/dropdown-with-icon/dropdown-wi
     AddPetComponent,
     TextInputWithIconComponent,
     DropdownWithIconComponent,
+    LoginComponent,
+    ButtonComponent,
   ],
   imports: [
     BrowserModule,
