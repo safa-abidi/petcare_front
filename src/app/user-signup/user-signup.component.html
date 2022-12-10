@@ -1,0 +1,62 @@
+<div  class="absolute ml-20 sm:ml-52 mt-64 z-10 w-1/3 ">
+  <img src="assets/images/auth/su_dog.png" class=" w-1/3 sm:w-2/3 xl:inline sm:hidden max-sm:hidden">
+</div>
+
+<div  class="grid xl:grid-cols-7 grid-cols-5 bg-[#FFA630] z-auto">
+
+
+
+  <div class=" col-span-2">
+  </div>
+
+  <div class="col-span-5 h-screen bg-[#FFFFFF] xl:rounded-l-3xl" >
+
+
+    <div class="h-full p-10">
+
+      <div class="xl:hidden sm:inline max-sm:inline">
+        <div class="flex justify-center mb-10 text-xl font-sans tracking-wide text-[#FFA630] font-semibold ">
+          S'authentifier
+        </div>
+      </div>
+
+        <div class="flex gap-10 justify-center max-sm:mb-10 max-md:mb-10 max-xl:mb-10 xl:mb-20 content-center	">
+          <div class=" w-1/6 aspect-square categorie-card bg-white grid place-items-center rounded hover:bg-[#f5ca92]">
+            <div class="rounded-full aspect-square bg-transparent w-3/5 h-4/5">
+              <img src="assets/images/auth/petowner_choose_card.png">
+            </div>
+            <p class="text-sm mb-1 max-sm:text-xs">Utilisateur</p>
+          </div>
+          <div class="w-1/6 aspect-square categorie-card bg-white grid place-items-center rounded hover:bg-[#F5ca92]">
+            <div class="rounded-full aspect-square bg-transparent w-3/5 h-4/5">
+              <img src="assets/images/auth/vet_choose_card.png">
+            </div>
+            <p class="text-sm max-sm:text-xs">Vétérinaire</p>
+          </div>
+        </div>
+
+      <div class="mr-10 ml-10 xl:mr-24 xl:ml-36 grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-3 gap-5">
+        <app-text-input-with-icon [placeholder]="'Nom'"> </app-text-input-with-icon>
+        <app-text-input-with-icon [placeholder]="'Prénom'"> </app-text-input-with-icon>
+        <app-text-input-with-icon [placeholder]="'Email'" [type]="'email'"> </app-text-input-with-icon>
+        <app-text-input-with-icon [placeholder]="'Date de Naissance'" [type]="'date'"> </app-text-input-with-icon> <!--Birthday-->
+        <app-dropdown-with-icon [placeholder]="'Ville'" [animals]="['Ben arous','Tunis','Gabes','Bizerte']" ></app-dropdown-with-icon>
+        <div class="flex items-center gap-5 p-5 sm:flex-wrap">
+          <div>
+            <input id="gender-M" type="radio" value="male" name="gender" class="w-4 h-4 text-orange-600 bg-gray-100 border-gray-300 focus:ring-gray-200 dark:focus:ring-orange-600 dark:ring-offset-gray-800 focus:ring-1 dark:bg-gray-700 dark:border-gray-600">
+            <label for="gender-M" class="ml-2 text-sm font-medium text-[#193A6A] dark:text-[#193A6A] font-semibold text-base">Homme</label>
+          </div>
+          <div>
+            <input checked id="gender-F" type="radio" value="female" name="gender" class="w-4 h-4 text-orange-600 bg-gray-100 border-gray-300 focus:ring-gray-200 dark:focus:ring-orange-600 dark:ring-offset-gray-800 focus:ring-1 dark:bg-gray-700 dark:border-gray-600">
+            <label for="gender-F" class="ml-2 text-sm font-medium text-[#193A6A] dark:text-[#193A6A] font-semibold text-base">Femme</label>
+          </div>
+       </div>
+        <app-text-input-with-icon [placeholder]="'Mot de passe'" [type]="'password'"> </app-text-input-with-icon> <!--Birthday-->
+        <app-text-input-with-icon [placeholder]="'Confirmer'" [type]="'password'"> </app-text-input-with-icon> <!--Birthday-->
+      </div>
+    </div>
+
+
+
+</div>
+
