@@ -1,13 +1,14 @@
 
-<div class="grid grid-cols-2">
+<div class="grid grid-cols-2 m-0">
 
-  <div>
-    <img style="height: 100%" src="/assets/images/cat1.png">
+  <div class="responsive-img">
+    <img style="height:102%; object-fit: cover;" src="/assets/images/cat1.png">
   </div>
 
-  <form class="h-full p-10" #addPetForm="ngForm">
-    <div class="mb-2">
-      <div class="grid grid-cols-4 gap-2 pl-10 pr-10">
+  <div class="centered-form">
+    <form class="h-full p-0 m-0" #addPetForm="ngForm">
+      <div class="mb-2">
+        <div class="grid grid-cols-4 gap-2 pl-10 pr-10">
           <div class="aspect-square bg-white grid place-items-center rounded hover:bg-gray-100 border-gray-500 border-2">
             <div class="rounded-full aspect-square bg-transparent w-3/5">
               <img style="border-radius: 50%;" src="assets/images/pets_types/dog.png">
@@ -36,30 +37,32 @@
             <p>Oiseau</p>
           </div>
         </div>
-    </div>
-    <div class="pl-20 pr-20">
+      </div>
+      <div class="pl-20 pr-20">
 
-      <app-text-input-with-icon [icon]="pawIcon" [placeholder]="'Nom'" [name]="'name'"> </app-text-input-with-icon>
+        <app-text-input-with-icon [icon]="pawIcon" [placeholder]="'Nom'" [name]="'name'"> </app-text-input-with-icon>
 
-      <app-text-input-with-icon [placeholder]="'Race'" [name]="'breed'"> </app-text-input-with-icon>
+        <app-text-input-with-icon [placeholder]="'Race'" [name]="'breed'"> </app-text-input-with-icon>
 
-      <app-text-input-with-icon [placeholder]="'Date de Naissance'" [type]="'date'" [icon]="dateIcon" [name]="'birthday'"> </app-text-input-with-icon>
+        <app-text-input-with-icon [placeholder]="'Date de Naissance'" [type]="'date'" [icon]="dateIcon" [name]="'birthday'"> </app-text-input-with-icon>
 
-      <app-dropdown-with-icon [placeholder]="'Genre'" [icon]="genderIcon" [name]="'gender'"></app-dropdown-with-icon>
+        <app-dropdown-with-icon [placeholder]="'Genre'" [icon]="genderIcon" [name]="'gender'"></app-dropdown-with-icon>
 
-      <app-text-input-with-icon [placeholder]="'Poids'" [icon]="weightIcon" [type]="'number'" [name]="'weight'"> </app-text-input-with-icon>
+        <app-text-input-with-icon [placeholder]="'Poids'" [icon]="weightIcon" [type]="'number'" [name]="'weight'"> </app-text-input-with-icon>
 
-    </div>
-    <div class="flex justify-center">
-      <button type="button" class="text-white font-medium rounded text-sm px-10 py-2.5 mb-2 mt-5 bg-[#193A6A] border-2"
-      (click)="addPet(addPetForm)">
-        Confirmer
-      </button>
-    </div>
+      </div>
+      <div class="flex justify-center">
+        <button type="button" class="text-white font-medium rounded text-sm px-10 py-2.5 mb-2 mt-5 bg-[#193A6A] border-2"
+                (click)="addPet(addPetForm)">
+          Confirmer
+        </button>
+      </div>
 
-    {{addPetForm.name}}
+      {{addPetForm.name}}
 
-  </form>
+    </form>
+  </div>
+
 
 
 </div>
