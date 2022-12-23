@@ -5,32 +5,32 @@
     <img style="height:102%; object-fit: cover;" src="/assets/images/cat1.png">
   </div>
 
-  <div class="centered-form">
+  <div class="centered-form pt-6">
     <form class="h-full p-0 m-0" #addPetForm="ngForm">
       <div class="mb-2">
         <div class="grid grid-cols-4 gap-2 pl-10 pr-10">
-          <div class="aspect-square bg-white grid place-items-center rounded hover:bg-gray-100 border-gray-500 border-2">
+          <div class="aspect-square bg-white grid place-items-center rounded hover:bg-gray-100 border-gray-500" [ngClass]="{'border-2': animal == 0}" (click)="chooseAnimal(0)" >
             <div class="rounded-full aspect-square bg-transparent w-3/5">
               <img style="border-radius: 50%;" src="assets/images/pets_types/dog.png">
             </div>
             <p>Chien</p>
           </div>
 
-          <div class="aspect-square bg-white grid place-items-center rounded hover:bg-gray-100">
+          <div class="aspect-square bg-white grid place-items-center rounded hover:bg-gray-100 border-gray-500" [ngClass]="{'border-2': animal == 1}" (click)="chooseAnimal(1)" >
             <div class="rounded-full aspect-square bg-transparent w-3/5">
               <img style="border-radius: 50%;" src="assets/images/pets_types/cat.png">
             </div>
             <p>Chat</p>
           </div>
 
-          <div class="aspect-square bg-white grid place-items-center rounded hover:bg-gray-100">
+          <div class="aspect-square bg-white grid place-items-center rounded hover:bg-gray-100 border-gray-500" [ngClass]="{'border-2': animal == 2}" (click)="chooseAnimal(2)" >
             <div class="rounded-full aspect-square bg-transparent w-3/5">
               <img style="border-radius: 50%;" src="assets/images/pets_types/hamster.png">
             </div>
             <p>Hamster</p>
           </div>
 
-          <div class="aspect-square bg-white grid place-items-center rounded hover:bg-gray-100">
+          <div class="aspect-square bg-white grid place-items-center rounded hover:bg-gray-100 border-gray-500" [ngClass]="{'border-2': animal == 3}" (click)="chooseAnimal(3)" >
             <div class="rounded-full aspect-square bg-transparent w-3/5">
               <img style="border-radius: 50%;" src="assets/images/pets_types/bird.png">
             </div>

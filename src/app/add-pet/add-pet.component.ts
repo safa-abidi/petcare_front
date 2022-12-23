@@ -12,8 +12,8 @@ export class AddPetComponent implements OnInit {
   pawIcon = faPaw
   genderIcon = faVenusMars
   weightIcon = faWeight
-  photoIcon = faCamera
   dateIcon = faCalendar
+  animal = -1;
 
   constructor() { }
 
@@ -22,6 +22,10 @@ export class AddPetComponent implements OnInit {
 
   addPet(form : NgForm){
     console.log(form.value)
+  }
+
+  chooseAnimal(i: number){
+    this.animal = i;
   }
 
 }
