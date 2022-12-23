@@ -2,11 +2,12 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AddPetComponent } from './add-pet/add-pet.component';
+import { AddPetComponent } from './pet/add-pet/add-pet.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TextInputWithIconComponent } from './form/text-input-with-icon/text-input-with-icon.component';
 import { DropdownWithIconComponent } from './form/dropdown-with-icon/dropdown-with-icon.component';
 import {FormsModule} from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {FormsModule} from "@angular/forms";
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

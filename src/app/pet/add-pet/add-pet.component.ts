@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {faCalendar, faCamera, faPaw, faVenusMars, faWeight} from "@fortawesome/free-solid-svg-icons";
 import {NgForm} from "@angular/forms";
+import {PetService} from "../../services/pet.service";
 
 @Component({
   selector: 'app-add-pet',
@@ -15,7 +16,7 @@ export class AddPetComponent implements OnInit {
   dateIcon = faCalendar
   animal = -1;
 
-  constructor() { }
+  constructor(private petService : PetService) { }
 
   ngOnInit(): void {
   }
@@ -26,7 +27,7 @@ export class AddPetComponent implements OnInit {
 
   addPet(form : NgForm){
     if(this.animal != -1 || form.valid){
-      console.log(form.value)
+      this.petService.addPet(form)
     }
   }
 
