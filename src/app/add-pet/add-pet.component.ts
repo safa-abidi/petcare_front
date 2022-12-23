@@ -20,12 +20,14 @@ export class AddPetComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  addPet(form : NgForm){
-    console.log(form.value)
-  }
-
   chooseAnimal(i: number){
     this.animal = i;
+  }
+
+  addPet(form : NgForm){
+    if(this.animal != -1 || form.valid){
+      console.log(form.value)
+    }
   }
 
 }

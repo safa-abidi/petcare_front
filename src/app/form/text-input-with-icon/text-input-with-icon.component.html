@@ -1,6 +1,6 @@
 <div class="w-full p-1" >
-  <label class="block text-sm font-bold mb-2" style="color: #193A6A">
-    {{placeholder}}
+  <label class="block text-sm font-bold mb-1" style="color: #193A6A">
+    {{placeholder}} <strong *ngIf="required" style="color: red">*</strong>
   </label>
 
   <div class="relative flex w-full flex-wrap items-stretch mb-1">
