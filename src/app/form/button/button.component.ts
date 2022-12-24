@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { faQuestion } from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: 'app-button',
@@ -7,6 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ButtonComponent implements OnInit {
   @Input() text = "Button"
+  @Input() icon = faQuestion
 
   constructor() { }
 

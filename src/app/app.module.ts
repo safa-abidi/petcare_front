@@ -8,6 +8,8 @@ import { TextInputWithIconComponent } from './form/text-input-with-icon/text-inp
 import { DropdownWithIconComponent } from './form/dropdown-with-icon/dropdown-with-icon.component';
 import { LoginComponent } from './login/login.component';
 import { ButtonComponent } from './form/button/button.component';
+import { HttpClientModule } from "@angular/common/http";
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { ButtonComponent } from './form/button/button.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
