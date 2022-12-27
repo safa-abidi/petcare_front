@@ -4,9 +4,9 @@ export class Pet {
   gender: string;
   breed: string;
   birthDate: Date;
-  weight: number;
+  weight?: number;
 
-  constructor(type: string, name: string, gender: string, breed: string, birthDate: Date, weight: number) {
+  constructor(type: string, name: string, gender: string, breed: string, birthDate: Date, weight?: number) {
     this.type = type;
     this.name = name;
     this.gender = gender;

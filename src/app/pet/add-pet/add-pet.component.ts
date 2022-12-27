@@ -42,7 +42,7 @@ export class AddPetComponent implements OnInit {
         val.gender,
         val.breed,
         val.birthDate,
-        val.weight,
+        val.weight != 0 ? val.weight : null,
       )
       this.petService.addPet(pet).subscribe()
     }

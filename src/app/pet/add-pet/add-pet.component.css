@@ -2,13 +2,8 @@
   border: 2px solid #193A6A;
 }
 
-@media only screen and (max-width: 500px) {
-  .image {
-    display: none;
-  }
-}
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 800px) {
   .responsive-img {
     display: none;
   }
@@ -17,7 +12,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    max-height: 100vh;
     width: 95vw;
     padding: 10%;
   }
