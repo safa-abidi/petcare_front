@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {NgForm} from "@angular/forms";
+import {Pet} from "../models/pet";
+import {Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -10,8 +11,7 @@ export class PetService {
   url = "http://localhost:3000/pet"; //TODO
   constructor(private httpService : HttpClient) { }
 
-  async addPet(form : NgForm){ //TODO
-    console.log(form.value)
-    console.log(await this.httpService.post(this.url, form.value)) //TODO FIX
+  addPet(pet : Pet) : Observable<Pet>{ //TODO return
+    return this.httpService.post<Pet>(this.url, pet);
   }
 }
