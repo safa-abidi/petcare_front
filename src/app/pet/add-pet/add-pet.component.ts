@@ -31,7 +31,7 @@ export class AddPetComponent implements OnInit {
       let val = form.value
       let petType = ""
 
-      if(this.animal == 0) petType="dog" //TODO
+      if(this.animal == 0) petType="dog"
       else if(this.animal==1) petType="cat"
       else if(this.animal==2) petType="hamster"
       else if(this.animal==3) petType="bird"
