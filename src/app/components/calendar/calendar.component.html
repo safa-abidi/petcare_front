@@ -1,0 +1,5 @@
+<div *ngFor="let week of days;let i = index;" class="row">
+  <div *ngFor="let day of week;let j = index;" class="col">
+    <app-calendar-day [dayNumber]="days[i][j]"></app-calendar-day>
+  </div>
+</div>
