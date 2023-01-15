@@ -1,8 +1,8 @@
-import { formatCurrency } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
-import { faEnvelope, faLock, faArrowRightToBracket } from "@fortawesome/free-solid-svg-icons";
+import { Component, Input, OnInit } from '@angular/core';
 import { LoginService } from '../services/login.service';
-import { NgForm } from "@angular/forms";
+import { FormBuilder, Validators } from '@angular/forms';
+
+import {faLock, faEnvelope} from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: 'app-login',
@@ -10,19 +10,24 @@ import { NgForm } from "@angular/forms";
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  emailIcon = faEnvelope
-  passwordIcon = faLock
-  icon = faArrowRightToBracket
+  loginForm: any;
+  email: any;
+  password: any;
+  errorMsg: string = '';
+  emailIcon = faEnvelope;
+  passwordIcon = faLock;
+  constructor(private fb: FormBuilder, private loginService: LoginService) { }
 
-  constructor(private loginService: LoginService) { }
-
-  ngOnInit(): void {
+  ngOnInit() {
+    this.loginForm = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      password:['', Validators.required],
+    });
   }
 
-  login(credentials: NgForm) {
-    console.log(credentials.value.email);
-
-    this.loginService.login(credentials).subscribe(
+  onSubmit(){
+     console.log(this.loginForm.value);
+     this.loginService.login(this.loginForm).subscribe(
       (response: any) => {
         localStorage.setItem('accessToken', response.accessToken);
         localStorage.setItem('refreshToken', response.refreshToken);
@@ -30,7 +35,9 @@ export class LoginComponent implements OnInit {
       },
       (error) => {
         console.log(error);
+        this.errorMsg = "Veuillez vérifier vos identifiants"
       }
     );
-  }
+ }
+
 }
