@@ -7,6 +7,11 @@ import { UserSignupComponent } from './user-signup/user-signup.component';
 import { DropdownWithIconComponent } from './form/dropdown-with-icon/dropdown-with-icon.component';
 import { TextInputWithIconComponent } from './form/text-input-with-icon/text-input-with-icon.component';
 import { NG_VALUE_ACCESSOR, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
 
 @NgModule({
   declarations: [
@@ -19,7 +24,10 @@ import { NG_VALUE_ACCESSOR, ReactiveFormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    HttpClientModule,
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule
   ],
   providers: [
     {

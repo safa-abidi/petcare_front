@@ -1,47 +1,51 @@
-<div  class="absolute ml-20 sm:ml-52 mt-64 z-10 w-1/3 ">
-  <img src="assets/images/auth/su_dog.png" class=" w-1/3 sm:w-2/3 xl:inline sm:hidden max-sm:hidden">
+<div  class="absolute ml-5  sm:ml-36 mt-64 w-3/4 mr-64  sm:w-3/5 xl:inline sm:hidden max-sm:hidden">
+  <img src="assets/images/auth/su_dog1.svg" >
 </div>
 
-<div  class="grid xl:grid-cols-7 grid-cols-5 bg-[#FFA630] z-auto">
 
 
+<div  class="grid h-screen xl:grid-cols-7 grid-cols-5 bg-[#FFA630] ">
 
-  <div class=" col-span-2">
+
+  <div class="max-sm:hidden sm:hidden md:lg:xl:inline col-span-2 justify-center flex pt-32">
+    <div class=" flex justify-center italic text-5xl  font-sans tracking-wide text-[#FFFFFF] font-bold  ">
+      S'inscrire
+    </div>
   </div>
 
-  <div class="col-span-5 h-screen bg-[#FFFFFF] xl:rounded-l-3xl" >
+
+  <div class="col-span-5 h-full bg-[#FFFFFF] xl:rounded-l-3xl  bg-fill bg-no-repeat
+  max-xl:bg-[url('/assets/images/auth/Path-1.svg')] " >
 
 
     <div class="h-full p-10">
 
-      <div class="xl:hidden sm:inline max-sm:inline">
-        <div class="flex justify-center mb-10 text-xl font-sans tracking-wide text-[#FFA630] font-semibold ">
-          S'authentifier
+      <div class="md:lg:xl:hidden sm:inline max-sm:inline">
+        <div class="flex justify-center mb-10 text-3xl italic font-sans tracking-wide text-[#FFFFFF] font-semibold ">
+          S'inscrire
         </div>
       </div>
-
-        <div class="flex gap-10 justify-center max-sm:mb-10 max-md:mb-10 max-xl:mb-10 xl:mb-20 content-center	">
-          <div class=" w-1/6 aspect-square categorie-card bg-white grid place-items-center rounded hover:bg-[#f5ca92]">
-            <div class="rounded-full aspect-square bg-transparent w-3/5 h-4/5">
+        <div class="flex gap-10 justify-center max-sm:mb-10 max-md:mb-10 max-xl:mb-10 xl:mb-20 content-center" >
+          <div (click)='onSelectUser("petowner")'  class=" w-1/6 aspect-square categorie-card bg-white grid place-items-center rounded hover:bg-[#f5ca92]" [ngClass]="{'bg-[#F5ca92]' : role == 'petowner'}" >
+            <div class="rounded-full aspect-square bg-transparent w-3/5 h-4/5 ">
               <img src="assets/images/auth/petowner_choose_card.png">
             </div>
             <p class="text-sm mb-1 max-sm:text-xs">Utilisateur</p>
           </div>
-          <div class="w-1/6 aspect-square categorie-card bg-white grid place-items-center rounded hover:bg-[#F5ca92]">
-            <div class="rounded-full aspect-square bg-transparent w-3/5 h-4/5">
+          <div (click)='onSelectUser("vet")' [ngClass]="{'bg-[#f5ca92]' : role == 'vet' }" class="w-1/6 aspect-square categorie-card bg-white grid place-items-center rounded hover:bg-[#F5ca92]" [ngClass]="{'bg-[#F5ca92]' : role == 'vet'}">
+            <div  class="rounded-full aspect-square bg-transparent w-3/5 h-4/5">
               <img src="assets/images/auth/vet_choose_card.png">
             </div>
             <p class="text-sm max-sm:text-xs">Vétérinaire</p>
           </div>
         </div>
         
-     
-        <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
-           
-          <div class="mr-10 ml-10 xl:mr-24 xl:ml-36 grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-3 gap-5">
+
+           <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+            <div  class="grid grid-cols-2 mr-10 ml-10 xl:mr-24 xl:ml-36  sm:grid-cols-3 xl:grid-cols-3 gap-5">
               <div class="w-full p-1" >
                 <label class="block text-sm font-bold mb-2" style="color: #193A6A">
-                   lastname
+                   Nom
                 </label>
               
                 <div class="relative flex w-full flex-wrap items-stretch mb-3">
@@ -55,7 +59,7 @@
               </div>
               <div class="w-full p-1" >
                 <label class="block text-sm font-bold mb-2" style="color: #193A6A">
-                   firstname
+                   Prénom
                 </label>
               
                 <div class="relative flex w-full flex-wrap items-stretch mb-3">
@@ -85,7 +89,7 @@
            
               <div class="w-full p-1" >
                 <label class="block text-sm font-bold mb-2" style="color: #193A6A">
-                   Date de naissance
+                  Date de naissance
                 </label>
               
                 <div class="relative flex w-full flex-wrap items-stretch mb-3">
@@ -99,7 +103,7 @@
               </div>
               <div class="w-100 p-1">
                 <label class="block text-sm font-bold mb-2" style="color: #193A6A">
-                  ville
+                  Ville
                 </label>
               
                 <div class="flex w-full relative border-gradient rounded">
@@ -115,14 +119,16 @@
              
                 <div class="w-100 p-1">
                 <label class="block text-sm font-bold mb-2" style="color: #193A6A">
-                  Gender
+                  Genre
                 </label>
                 
-                <div *ngFor="let gender of genders">
-                  <input   type="radio" value="{{gender}}" formControlName="gender" name="gender" class="w-4 h-4 text-orange-600 bg-gray-100 border-gray-300 focus:ring-gray-200 dark:focus:ring-orange-600 dark:ring-offset-gray-800 focus:ring-1 dark:bg-gray-700 dark:border-gray-600">
-                  <label   class="ml-2 text-sm font-medium text-[#193A6A] dark:text-[#193A6A] font-semibold text-base">{{gender}}</label>
-                </div>
-               
+                
+
+                
+                 <div *ngFor="let g of genders">
+                    <input type="radio" value="{{g}}" formControlName="gender" name="gender" class="w-4 h-4 text-orange-600 bg-gray-100 border-gray-300 focus:ring-gray-200 dark:focus:ring-orange-600 dark:ring-offset-gray-800 focus:ring-1 dark:bg-gray-700 dark:border-gray-600">
+                    <label  class="ml-2 text-sm font-medium text-[#193A6A] dark:text-[#193A6A] font-semibold text-base">{{g}}</label>
+                  </div>
               </div>
               
             
@@ -136,12 +142,12 @@
                   <span class="z-10 h-full leading-snug font-normal absolute text-center text-slate-300 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-3 py-3">
                     <fa-icon   class="fas fa-lock"></fa-icon>
                   </span>
-                  <input type="password" formControlName="password"  placeholder="password"  class="px-3 py-3 placeholder-slate-300 text-slate-600 relative bg-white bg-white rounded text-sm border-0 shadow outline-none focus:outline-none w-full pl-10"/>
+                  <input type="password" formControlName="password" title="Mot de passe de 8 caractères qui contient une lettre minuscule, une lettre majuscule, un chiffre et un caractère spécial" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="password"  class="px-3 py-3 placeholder-slate-300 text-slate-600 relative bg-white bg-white rounded text-sm border-0 shadow outline-none focus:outline-none w-full pl-10"/>
                 </div>
               </div>
               <div class="w-100 p-1">
                 <label class="block text-sm font-bold mb-2" style="color: #193A6A">
-                   Confirmer
+                   Confirmer mot de passe
                 </label>
               
                 <div class="flex w-full relative border-gradient rounded">
@@ -150,23 +156,23 @@
                   </span>
                   <input type="password" formControlName="confirmPassword" placeholder="password"  class="px-3 py-3 placeholder-slate-300 text-slate-600 relative bg-white bg-white rounded text-sm border-0 shadow outline-none focus:outline-none w-full pl-10"/>
                 </div>
-               
+                
             </div>
            
       
-         
-      
-      
-       
-              <button type="submit" [disabled]="!profileForm.valid || !createCompareValidator()">Submit</button>
+            <div class="w-100 p-1 flex align-bottom mt-7 bg-green">
+              <button type="submit" [disabled]="profileForm.invalid || !createCompareValidator()" class=" bg-[#193A6A] hover:bg-[#476188] text-white font-bold py-2  h-10 w-24 px-4 rounded">
+                Submit
+              </button>
+            </div>
+        
           </div>
-         </form>
-      
+           </form>
+          
+      </div>
             
       
     </div>
 
  
-
 </div>
-
