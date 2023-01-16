@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {UserService} from "../../services/user.service";
 import {ControlContainer, NgForm} from "@angular/forms";
+import {User} from "../../models/user";
 
 @Component({
   selector: 'app-profile-display',
@@ -10,24 +11,26 @@ import {ControlContainer, NgForm} from "@angular/forms";
 export class ProfileDisplayComponent implements OnInit {
 
   readOnly : Boolean = true;
-  @Input() firstName : string = ""
-  @Input() lastName : string = ""
-  @Input() email : string = ""
-  @Input() city : string = ""
-  @Input() birthDate : string = "2-2-2222";
-  @Input() sexe : string = ""
+  user : User = new User("","","","",new Date(),"","");
+  date : string = "";
 
   constructor(private userService : UserService) { }
 
   ngOnInit(): void {
+    this.userService.getUserById(+localStorage.getItem('userId')!).subscribe(
+      (user) => {
+        this.user = user;
+      })
+    this.date = new Date().toISOString().split('T')[0];
   }
 
   modify(){
     this.readOnly = !this.readOnly
   }
 
-  onConfirmClick(){
-
+  onConfirmClick(modifyUserForm : NgForm){
+    console.log(modifyUserForm.value.birthDate)
+    this.userService.updateUser(modifyUserForm.value,+localStorage.getItem("userId")!).subscribe()
   }
 
 }
