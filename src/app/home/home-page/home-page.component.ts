@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from 'src/app/services/login.service';
+import { faHeart, faUserDoctor, faScissors, faDog } from "@fortawesome/free-solid-svg-icons";
+
 
 @Component({
   selector: 'app-home-page',
@@ -8,10 +10,15 @@ import { LoginService } from 'src/app/services/login.service';
 })
 export class HomePageComponent implements OnInit {
   isLogged: boolean = false;
+  heartIcon = faHeart;
+  doctorIcon = faUserDoctor;
+  brushIcon = faScissors;
+  dogIcon = faDog;
 
   constructor(private loginService: LoginService) { }
 
   ngOnInit(): void {
+    this.checkLoginStatus();
   }
 
   checkLoginStatus(): void {

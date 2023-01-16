@@ -19,8 +19,9 @@ export class NavbarLoggedComponent implements OnInit {
     this.showMenu = !this.showMenu;
   }
   logout(){
+    console.log("logout");
     this.loginService.logout();
-    this.router.navigate(['/home']);
+    this.router.navigate(['/login']);
   }
 
 }
