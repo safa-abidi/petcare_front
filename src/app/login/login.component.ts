@@ -1,8 +1,9 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../services/login.service';
 import { FormBuilder, Validators } from '@angular/forms';
 
 import {faLock, faEnvelope} from "@fortawesome/free-solid-svg-icons";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +17,7 @@ export class LoginComponent implements OnInit {
   errorMsg: string = '';
   emailIcon = faEnvelope;
   passwordIcon = faLock;
-  constructor(private fb: FormBuilder, private loginService: LoginService) { }
+  constructor(private fb: FormBuilder, private loginService: LoginService, private router : Router) { }
 
   ngOnInit() {
     this.loginForm = this.fb.group({
@@ -31,7 +32,7 @@ export class LoginComponent implements OnInit {
       (response: any) => {
         localStorage.setItem('accessToken', response.accessToken);
         localStorage.setItem('refreshToken', response.refreshToken);
-        //this.router.navigate(['/']); //go to home page
+        this.router.navigate(['/']); //go to home page
       },
       (error) => {
         console.log(error);

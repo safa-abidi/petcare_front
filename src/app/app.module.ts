@@ -12,6 +12,7 @@ import { NG_VALUE_ACCESSOR, ReactiveFormsModule } from '@angular/forms';
 import {FormsModule} from "@angular/forms";
 import { HomePageComponent } from './home/home-page/home-page.component';
 import { NavbarComponent } from './home/navbar/navbar.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
 
@@ -24,6 +25,7 @@ import { NavbarComponent } from './home/navbar/navbar.component';
     LoginComponent,
     HomePageComponent,
     NavbarComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
