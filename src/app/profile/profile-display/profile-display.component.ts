@@ -14,6 +14,7 @@ export class ProfileDisplayComponent implements OnInit {
   readOnly : Boolean = true;
   user : User = new User("","","","",new Date(),"","");
   date : string = "";
+  error : string = "";
 
   constructor(private userService : UserService) { }
 
@@ -30,17 +31,16 @@ export class ProfileDisplayComponent implements OnInit {
   }
 
   onConfirmClick(modifyUserForm : NgForm){
-    console.log(modifyUserForm.value.birthDate)
     this.userService.updateUser(modifyUserForm.value,+localStorage.getItem("userId")!).subscribe(
       (e)=> {
-        console.log(e)
+        this.error = "";
+        this.readOnly = !this.readOnly
+
       },
       (e) => {
-        console.log(e)
+        this.error = "Cet email existe déja";
       }
       );
-    this.readOnly !=this.readOnly
-
   }
 
 }

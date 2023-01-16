@@ -33,8 +33,12 @@
       <label class="block mb-2 text-sm font-medium">Email</label>
       <input [(ngModel)]="user.email" name="email" type="email" required [readonly]="readOnly" class="border border-gray-300 text-sm rounded-lg block w-full p-2.5 placeholder-black focus:outline-none" email [ngClass]="{'text-gray-500': readOnly}">
     </div>
-
   </div>
+
+  <div *ngIf="error!=''" class="ml-20 mr-20 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-2 rounded-lg" role="alert">
+        <span class="block sm:inline">{{error}}</span>
+  </div>
+
   <div class="grid place-items-center w-full">
     <button class="text-white bg-blue-700 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-3 w-1/3 invisible truncate" [ngClass]="{'button-disabled': modifyUserForm.invalid, 'invisible': readOnly}" [disabled]="modifyUserForm.invalid"  (click)="onConfirmClick(modifyUserForm)">Confirmer</button>
   </div>
