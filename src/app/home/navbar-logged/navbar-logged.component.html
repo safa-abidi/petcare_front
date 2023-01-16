@@ -1,0 +1,56 @@
+<nav
+  class="relative flex flex-wrap items-center justify-between px-2 py-3 bg-[#FFA630] mb-3"
+>
+  <div
+    class="container px-4 mx-auto flex flex-wrap items-center justify-between"
+  >
+    <div
+      class="w-full relative flex justify-between lg:w-auto px-4 lg:static lg:block lg:justify-start"
+    >
+      <a
+        class="text-lg font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-black"
+        [routerLink]="['/']"
+      >
+        petcare
+      </a>
+      <button
+        class="text-black cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
+        type="button"
+        (click)="toggleNavbar()"
+      >
+      <fa-icon [icon]="menuIcon"></fa-icon>
+      </button>
+    </div>
+    <div
+      [ngClass]="{ hidden: !showMenu, flex: showMenu }"
+      class="lg:flex lg:flex-grow items-center"
+    >
+      <ul class="flex flex-col lg:flex-row list-none ml-auto">
+        <li class="nav-item">
+          <a
+            class="px-3 py-2 flex items-center text-md font-bold leading-snug text-black hover:opacity-75"
+            [routerLink]="['/']"
+          >
+            <span class="ml-2">Profile</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <button
+            class="px-3 py-2 flex items-center text-md font-bold leading-snug text-black hover:opacity-75"
+            (click)="logout()"
+          >
+            <span class="ml-2">Se déconnecter</span>
+          </button>
+        </li>
+        <li class="nav-item">
+          <a
+            class="px-3 py-2 flex items-center text-md font-bold leading-snug text-black hover:opacity-75"
+            [routerLink]="['/']"
+          >
+            <span class="ml-2">Contact</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
