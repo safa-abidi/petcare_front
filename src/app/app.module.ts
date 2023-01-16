@@ -12,6 +12,7 @@ import { NG_VALUE_ACCESSOR, ReactiveFormsModule } from '@angular/forms';
 import {FormsModule} from "@angular/forms";
 import { ProfileComponent } from './profile/profile/profile.component';
 import { ProfileDisplayComponent } from './profile/profile-display/profile-display.component';
+import { ChangePasswordComponent } from './profile/change-password/change-password.component';
 
 
 
@@ -24,6 +25,7 @@ import { ProfileDisplayComponent } from './profile/profile-display/profile-displ
     LoginComponent,
     ProfileComponent,
     ProfileDisplayComponent,
+    ChangePasswordComponent,
   ],
   imports: [
     BrowserModule,

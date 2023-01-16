@@ -9,6 +9,8 @@ import {UserService} from "../../services/user.service";
 })
 export class ProfileComponent implements OnInit {
 
+  pageIndex : number = 0;
+
   constructor(private router: Router, private userService: UserService) { }
 
   ngOnInit(): void {
@@ -23,6 +25,10 @@ export class ProfileComponent implements OnInit {
       this.userService.deleteUser(+localStorage.getItem('userId')!).subscribe();
     }
     this.router.navigate(['']);
+  }
+
+  onPageChange(index : number){
+    this.pageIndex= index;
   }
 
 }

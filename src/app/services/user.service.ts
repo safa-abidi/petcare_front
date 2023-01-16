@@ -26,4 +26,6 @@ export class UserService {
   updateUser(user : User, id : number) : Observable<User>{
     return this.httpService.patch<User>(`${this.url}/${id}`, user)
   }
+
+  //TODO : change pwd
 }

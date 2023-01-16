@@ -3,14 +3,15 @@
   <div class="grid grid-cols-3 gap-4 h-2/3 w-3/4">
 
     <div class="h-full bg-white rounded-xl grid place-items-center py-20 max-md:py-40 px-2" style="background-color: rgba(255, 255, 255, 0.7)">
-      <button class="text-white bg-yellow-500 font-medium rounded-lg text-sm px-5 py-3.5 mb-2 w-3/4 truncate">Mon profile</button>
-      <button class="font-medium rounded-lg text-sm px-5 py-3.5 mb-2 w-3/4 truncate">Changer mot de passe</button>
+      <button class="font-medium rounded-lg text-sm px-5 py-3.5 mb-2 w-3/4 truncate" (click)="onPageChange(0)" [ngClass]="{'bg-yellow-500 text-white' : pageIndex==0}">Mon profile</button>
+      <button class="font-medium rounded-lg text-sm px-5 py-3.5 mb-2 w-3/4 truncate" (click)="onPageChange(1)" [ngClass]="{'bg-yellow-500 text-white' : pageIndex==1}">Changer mot de passe</button>
       <button class="font-medium rounded-lg text-sm px-5 py-3.5 mb-2 w-3/4 truncate" (click)="onAddPetClick()">Ajouter un animal</button>
       <button class="text-white bg-red-700 font-medium rounded-lg text-sm px-5 py-3.5 w-3/4 truncate" (click)="onDeleteClick()">Supprimer compte</button>
     </div>
 
     <div class="col-span-2 h-full bg-white rounded-xl grid place-items-center" style="background-color: rgba(255, 255, 255, 0.7)">
-      <app-profile-display class="w-full"></app-profile-display>
+      <app-profile-display *ngIf="pageIndex==0" class="w-full"></app-profile-display>
+      <app-change-password *ngIf="pageIndex==1" class="w-full"></app-change-password>
     </div>
 
   </div>
