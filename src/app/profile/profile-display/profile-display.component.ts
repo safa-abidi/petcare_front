@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {UserService} from "../../services/user.service";
 import {ControlContainer, NgForm} from "@angular/forms";
 import {User} from "../../models/user";
+import {error} from "@angular/compiler-cli/src/transformers/util";
 
 @Component({
   selector: 'app-profile-display',
@@ -30,7 +31,16 @@ export class ProfileDisplayComponent implements OnInit {
 
   onConfirmClick(modifyUserForm : NgForm){
     console.log(modifyUserForm.value.birthDate)
-    this.userService.updateUser(modifyUserForm.value,+localStorage.getItem("userId")!).subscribe()
+    this.userService.updateUser(modifyUserForm.value,+localStorage.getItem("userId")!).subscribe(
+      (e)=> {
+        console.log(e)
+      },
+      (e) => {
+        console.log(e)
+      }
+      );
+    this.readOnly !=this.readOnly
+
   }
 
 }

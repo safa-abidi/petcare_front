@@ -1,11 +1,11 @@
 
-<div class="grid place-items-end w-full">
-  <button class="mr-6 mb-6 bg-yellow-500 text-white px-5 py-2.5 mr-10 mb-2 rounded-lg" (click)="modify()" [ngClass]="{'opacity-50': readOnly}">Modifier</button>
+<div class="grid place-items-end">
+  <button class="mr-6 mb-4 bg-yellow-500 text-white px-5 py-2.5 mr-10 mb-2 rounded-lg mt-2" (click)="modify()" [ngClass]="{'opacity-50': readOnly}">Modifier</button>
 </div>
 
 <form class="mx-10" #modifyUserForm="ngForm">
 
-  <div class="grid gap-6 mb-6 md:grid-cols-2">
+  <div class="grid md:gap-6 mb-6 md:grid-cols-2">
     <div>
       <label class="block mb-2 text-sm font-medium">Nom</label>
       <input name="lastName" [(ngModel)]="user.lastName" required [readonly]="readOnly" class="border border-gray-300 text-sm rounded-lg block w-full p-2.5 placeholder-black focus:outline-none" [ngClass]="{'text-gray-500': readOnly}">
@@ -36,7 +36,7 @@
 
   </div>
   <div class="grid place-items-center w-full">
-    <button  class="text-white bg-blue-700 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 w-1/3 invisible" [ngClass]="{'button-disabled': modifyUserForm.invalid, 'invisible': readOnly}" [disabled]="modifyUserForm.invalid"  (click)="onConfirmClick(modifyUserForm)">Confirmer</button>
+    <button class="text-white bg-blue-700 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-3 w-1/3 invisible truncate" [ngClass]="{'button-disabled': modifyUserForm.invalid, 'invisible': readOnly}" [disabled]="modifyUserForm.invalid"  (click)="onConfirmClick(modifyUserForm)">Confirmer</button>
   </div>
 
 </form>
