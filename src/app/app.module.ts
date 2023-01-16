@@ -13,6 +13,7 @@ import {FormsModule} from "@angular/forms";
 import { HomePageComponent } from './home/home-page/home-page.component';
 import { NavbarComponent } from './home/navbar/navbar.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { NavbarLoggedComponent } from './home/navbar-logged/navbar-logged.component';
 
 
 
@@ -26,6 +27,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     HomePageComponent,
     NavbarComponent,
     NotFoundComponent,
+    NavbarLoggedComponent,
   ],
   imports: [
     BrowserModule,

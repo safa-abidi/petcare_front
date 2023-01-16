@@ -18,7 +18,7 @@
         type="button"
         (click)="toggleNavbar()"
       >
-        <fa-icon [icon]="menuIcon"></fa-icon>
+      <fa-icon [icon]="menuIcon"></fa-icon>
       </button>
     </div>
     <div
@@ -29,18 +29,18 @@
         <li class="nav-item">
           <a
             class="px-3 py-2 flex items-center text-md font-bold leading-snug text-black hover:opacity-75"
-            [routerLink]="['/login']"
+            [routerLink]="['/']"
           >
-            <span class="ml-2">Se connecter</span>
+            <span class="ml-2">Profile</span>
           </a>
         </li>
         <li class="nav-item">
-          <a
+          <button
             class="px-3 py-2 flex items-center text-md font-bold leading-snug text-black hover:opacity-75"
-            [routerLink]="['/']"
+            (click)="logout()"
           >
-            <span class="ml-2">Créer un compte</span>
-          </a>
+            <span class="ml-2">Se déconnecter</span>
+          </button>
         </li>
         <li class="nav-item">
           <a
