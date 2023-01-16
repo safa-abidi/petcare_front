@@ -1,0 +1,124 @@
+<div class="grid xl:grid-cols-7 grid-cols-2 bg-[#FFA630] z-auto">
+  <div class="col-span-2">
+    <div class="flex items-center justify-center mt-40">
+      <img
+        src="assets/images/login/su_dog.png"
+        class="sm:w-2/3 xl:inline sm:hidden max-sm:hidden"
+      />
+    </div>
+  </div>
+
+  <div class="col-span-5 h-screen bg-[#FFFFFF] xl:rounded-l-3xl">
+    <div class="h-full p-10">
+      <div class="sm:inline max-sm:inline">
+        <h1
+          class="text-4xl flex justify-center mb-10 font-sans tracking-wide text-[#FFA630] font-semibold"
+        >
+          Se connecter
+        </h1>
+      </div>
+
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div
+          class="mr-10 ml-10 xl:mr-24 xl:ml-36 grid grid-cols-1 sm:grid-cols-1 xl:grid-cols-1 gap-5"
+        >
+          <div class="w-full p-1">
+            <label class="block text-sm font-bold mb-2" style="color: #193a6a">
+              Email
+            </label>
+
+            <div class="relative flex w-full flex-wrap items-stretch mb-3">
+              <div class="border-gradient rounded flex w-full">
+                <span
+                  class="z-10 h-full leading-snug font-normal text-center text-slate-300 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-3 py-3"
+                >
+                  <fa-icon [icon]="emailIcon" class="fas fa-lock"></fa-icon>
+                </span>
+                <input
+                  type="email"
+                  formControlName="email"
+                  placeholder="Email"
+                  #email
+                  class="px-3 py-3 placeholder-slate-300 text-slate-600 relative bg-white bg-white rounded text-sm border-0 shadow outline-none focus:outline-none w-full pl-10"
+                />
+              </div>
+            </div>
+            <div
+              class="text-red-500 text-sm"
+              *ngIf="
+                loginForm.get('email').invalid && loginForm.get('email').touched
+              "
+            >
+              <div *ngIf="loginForm.get('email').errors.required">
+                Veuillez entrer votre email
+              </div>
+              <div *ngIf="loginForm.get('email').errors.email">
+                Invalid email
+              </div>
+            </div>
+          </div>
+          <div class="w-full p-1">
+            <label class="block text-sm font-bold mb-2" style="color: #193a6a">
+              Mot de passe
+            </label>
+
+            <div class="relative flex w-full flex-wrap items-stretch mb-3">
+              <div class="border-gradient rounded flex w-full">
+                <span
+                  class="z-10 h-full leading-snug font-normal absolute text-center text-slate-300 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-3 py-3"
+                >
+                <fa-icon [icon]="passwordIcon" class="fas fa-lock"></fa-icon>
+                </span>
+                <input
+                  type="password"
+                  formControlName="password"
+                  placeholder="Mot de passe"
+                  #password
+                  class="px-3 py-3 placeholder-slate-300 text-slate-600 relative bg-white bg-white rounded text-sm border-0 shadow outline-none focus:outline-none w-full pl-10"
+                />
+              </div>
+            </div>
+            <div
+              class="text-red-500 text-sm"
+              *ngIf="
+                loginForm.get('password').invalid &&
+                loginForm.get('password').touched
+              "
+            >
+              <div *ngIf="loginForm.get('password').errors.required">
+                Veuillez entrer votre mot de passe
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center justify-center">
+          <button
+            type="submit"
+            [ngClass]="{ 'button-disabled': loginForm.invalid }"
+            [disabled]="!loginForm.valid"
+            class="text-center rounded-lg text-white font-medium text-sm px-10 py-2.5 mb-1 mt-5 bg-[#193A6A] border-2"
+          >
+            Se connecter
+          </button>
+        </div>
+        <div class="text-red-500 text-sm flex items-center justify-center">
+          {{ errorMsg }}
+        </div>
+        <div>
+          <a
+            class="text-sm text-[#193A6A] flex items-center justify-center mt-3"
+          >
+            Mot de passe oublié?
+          </a>
+        </div>
+
+        <div class="flex items-center justify-center mt-3">
+          <h3 class="text-sm">Vous n'avez pas de compte?</h3>
+          <a routerLink="/register" class="text-sm text-[#193A6A]">
+            Inscrivez-vous
+          </a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

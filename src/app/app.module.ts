@@ -1,33 +1,59 @@
-<<<<<<< HEAD
 import { forwardRef, NgModule } from '@angular/core';
-=======
-import { NgModule } from '@angular/core';
->>>>>>> 73796be5cbafbcdc6b2304159b6e48f633192223
 import { BrowserModule } from '@angular/platform-browser';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { UserSignupComponent } from './user-signup/user-signup.component';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { UserSignupComponent } from './user-signup/user-signup.component';
-import { DropdownWithIconComponent } from './form/dropdown-with-icon/dropdown-with-icon.component';
+import { AddPetComponent } from './pet/add-pet/add-pet.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TextInputWithIconComponent } from './form/text-input-with-icon/text-input-with-icon.component';
-<<<<<<< HEAD
+import { DropdownWithIconComponent } from './form/dropdown-with-icon/dropdown-with-icon.component';
+import { LoginComponent } from './login/login.component';
+import { HttpClientModule } from "@angular/common/http";
 import { NG_VALUE_ACCESSOR, ReactiveFormsModule } from '@angular/forms';
-=======
->>>>>>> 73796be5cbafbcdc6b2304159b6e48f633192223
+import {FormsModule} from "@angular/forms";
+import { HomePageComponent } from './home/home-page/home-page.component';
+import { NavbarComponent } from './home/navbar/navbar.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { NavbarLoggedComponent } from './home/navbar-logged/navbar-logged.component';
+import { FooterComponent } from './home/footer/footer.component';
+import { ProfileComponent } from './profile/profile/profile.component';
+import { ProfileDisplayComponent } from './profile/profile-display/profile-display.component';
+import { ChangePasswordComponent } from './profile/change-password/change-password.component';
+import { AddServiceComponent } from './service_provider/add-service/add-service.component';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     UserSignupComponent,
     DropdownWithIconComponent,
-    TextInputWithIconComponent
+    TextInputWithIconComponent,
+    AddPetComponent,
+    TextInputWithIconComponent,
+    DropdownWithIconComponent,
+    LoginComponent,
+    HomePageComponent,
+    NavbarComponent,
+    NotFoundComponent,
+    NavbarLoggedComponent,
+    FooterComponent,
+    ProfileComponent,
+    ProfileDisplayComponent,
+    ChangePasswordComponent,
+    AddServiceComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-<<<<<<< HEAD
+    FontAwesomeModule,
+    HttpClientModule,
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule,
     ReactiveFormsModule,
-    FontAwesomeModule
+    FormsModule,
   ],
   providers: [
     {
@@ -36,12 +62,6 @@ import { NG_VALUE_ACCESSOR, ReactiveFormsModule } from '@angular/forms';
       multi: true
     }
   ],
-  
-=======
-    FontAwesomeModule
-  ],
-  providers: [],
->>>>>>> 73796be5cbafbcdc6b2304159b6e48f633192223
   bootstrap: [AppComponent]
 })
 export class AppModule { }

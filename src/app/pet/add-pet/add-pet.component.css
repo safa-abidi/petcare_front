@@ -1,0 +1,23 @@
+.container-border {
+  border: 2px solid #193A6A;
+}
+
+
+@media only screen and (max-width: 900px) {
+  .responsive-img {
+    display: none;
+  }
+
+  .centered-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    padding: 3% 10% 10% 1%;
+  }
+}
+
+.button-disabled{
+  opacity: 0.6;
+}
+
