@@ -26,11 +26,13 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(){
-     console.log(this.loginForm.value);
      this.loginService.login(this.loginForm).subscribe(
       (response: any) => {
         localStorage.setItem('accessToken', response.accessToken);
         localStorage.setItem('refreshToken', response.refreshToken);
+        localStorage.setItem('userId', response.id);
+        localStorage.setItem('role', response.role);
+        console.log(response.role)
         //this.router.navigate(['/']); //go to home page
       },
       (error) => {
