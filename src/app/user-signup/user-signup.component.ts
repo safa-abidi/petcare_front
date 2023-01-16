@@ -42,7 +42,7 @@ export class UserSignupComponent {
     "Tunis",
     "Zaghouan"]
   genders: string[] = ["female", "male"]
-  constructor(private router: Router,private fb: FormBuilder, private signupService: SignupService,private toastr: ToastrService) { }
+  constructor(private router: Router, private fb: FormBuilder, private signupService: SignupService, private toastr: ToastrService) { }
 
 
   profileForm = this.fb.group({
@@ -71,6 +71,7 @@ export class UserSignupComponent {
       case "admin": this.role = UserRoleEnum.admin; break;
       case "petowner": this.role = UserRoleEnum.petOwner; break;
       case "vet": this.role = UserRoleEnum.vet; break;
+      case "provider": this.role = UserRoleEnum.provider; break;
       default: this.role = UserRoleEnum.admin; break;
     }
   }
@@ -78,13 +79,13 @@ export class UserSignupComponent {
 
     console.log(this.profileForm.value)
     this.signupService.signup(this.profileForm.value).subscribe((response: any) => {
-      this.toastr.success('Utilisateur inscrit avec succès', 'Succès', {timeOut: 700});
+      this.toastr.success('Utilisateur inscrit avec succès', 'Succès', { timeOut: 700 });
       setTimeout(() => {
         this.router.navigate(['/home']);
       }, 900);
     },
       (error) => {
-        this.toastr.error("Utilisateur existe déjà", 'Erreur', {timeOut: 1000});
+        this.toastr.error("Utilisateur existe déjà", 'Erreur', { timeOut: 1000 });
       }
 
     )
