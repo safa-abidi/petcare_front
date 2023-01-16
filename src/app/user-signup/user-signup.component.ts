@@ -3,6 +3,7 @@ import { AbstractControl, FormBuilder, Validators } from '@angular/forms';
 import { SignupService } from '../services/signup.service';
 import { UserRoleEnum } from '../utils/user-role.enum';
 import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -41,7 +42,7 @@ export class UserSignupComponent {
     "Tunis",
     "Zaghouan"]
   genders: string[] = ["female", "male"]
-  constructor(private fb: FormBuilder, private signupService: SignupService,private toastr: ToastrService) { }
+  constructor(private router: Router,private fb: FormBuilder, private signupService: SignupService,private toastr: ToastrService) { }
 
 
   profileForm = this.fb.group({
@@ -77,11 +78,13 @@ export class UserSignupComponent {
 
     console.log(this.profileForm.value)
     this.signupService.signup(this.profileForm.value).subscribe((response: any) => {
-      this.toastr.success('Utilisateur inscrit avec succès', 'Succès', {timeOut: 3000});
-      //@todo redirect user to the login page
+      this.toastr.success('Utilisateur inscrit avec succès', 'Succès', {timeOut: 700});
+      setTimeout(() => {
+        this.router.navigate(['/home']);
+      }, 900);
     },
       (error) => {
-        this.toastr.error("Utilisateur existe déjà", 'Erreur', {timeOut: 3000});
+        this.toastr.error("Utilisateur existe déjà", 'Erreur', {timeOut: 1000});
       }
 
     )
