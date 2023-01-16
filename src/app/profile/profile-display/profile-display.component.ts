@@ -1,9 +1,11 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {UserService} from "../../services/user.service";
+import {ControlContainer, NgForm} from "@angular/forms";
 
 @Component({
   selector: 'app-profile-display',
   templateUrl: './profile-display.component.html',
-  styleUrls: ['./profile-display.component.css']
+  styleUrls: ['./profile-display.component.css'],
 })
 export class ProfileDisplayComponent implements OnInit {
 
@@ -15,13 +17,17 @@ export class ProfileDisplayComponent implements OnInit {
   @Input() birthDate : string = "2-2-2222";
   @Input() sexe : string = ""
 
-  constructor() { }
+  constructor(private userService : UserService) { }
 
   ngOnInit(): void {
   }
 
   modify(){
     this.readOnly = !this.readOnly
+  }
+
+  onConfirmClick(){
+
   }
 
 }

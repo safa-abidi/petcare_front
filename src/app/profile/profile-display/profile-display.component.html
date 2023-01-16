@@ -1,40 +1,40 @@
 
 <div class="grid place-items-end w-full">
-  <button class="mr-6 mb-6 bg-yellow-500 text-white px-5 py-2.5 mr-2 mb-2 rounded-lg" (click)="modify()">Modifier</button>
+  <button class="mr-6 mb-6 bg-yellow-500 text-white px-5 py-2.5 mr-10 mb-2 rounded-lg" (click)="modify()">Modifier</button>
 </div>
 
-<div class="mx-10">
+<form class="mx-10" #modifyUser="ngForm">
 
-  <div class="grid gap-6 mb-6 md:grid-cols-2 ">
+  <div class="grid gap-6 mb-6 md:grid-cols-2">
     <div>
-      <label class="block mb-2 text-sm font-medium">Nom</label>
-      <input [readonly]="readOnly" class="border border-gray-300 text-sm rounded-lg block w-full p-2.5 placeholder-black focus:outline-none" placeholder="{{lastName}}">
+      <label class="block mb-2 text-sm font-medium" required ngModel>Nom</label>
+      <input name="lastName" ngModel required [readonly]="readOnly" class="border border-gray-300 text-sm rounded-lg block w-full p-2.5 placeholder-black focus:outline-none" placeholder="{{lastName}}">
     </div>
     <div>
       <label class="block mb-2 text-sm font-medium">Prenom</label>
-      <input [readonly]="readOnly" class="border border-gray-300 text-sm rounded-lg block w-full p-2.5 placeholder-black focus:outline-none" placeholder="{{firstName}}">
+      <input ngModel name="firstName" [readonly]="readOnly" class="border border-gray-300 text-sm rounded-lg block w-full p-2.5 placeholder-black focus:outline-none" placeholder="{{firstName}}">
     </div>
     <div>
       <label class="block mb-2 text-sm font-medium">Date de naissance</label>
-      <input [readonly]="readOnly" class="border border-gray-300 text-sm rounded-lg block w-full p-2.5 placeholder-black focus:outline-none" placeholder="{{birthDate | date:'dd/MM/YYYY'}}">
+      <input ngModel name="birthDate" [readonly]="readOnly" class="border border-gray-300 text-sm rounded-lg block w-full p-2.5 placeholder-black focus:outline-none" placeholder="{{birthDate | date:'dd/MM/YYYY'}}">
     </div>
     <div>
       <label class="block mb-2 text-sm font-medium">Ville</label>
-      <input [readonly]="readOnly" class="border border-gray-300 text-sm rounded-lg block w-full p-2.5 placeholder-black focus:outline-none" placeholder="{{city}}">
+      <input ngModel name="city" [readonly]="readOnly" class="border border-gray-300 text-sm rounded-lg block w-full p-2.5 placeholder-black focus:outline-none" placeholder="{{city}}">
     </div>
     <div>
       <label class="block mb-2 text-sm font-medium">Sexe</label>
-      <input [readonly]="readOnly" class="border border-gray-300 text-sm rounded-lg block w-full p-2.5 placeholder-black focus:outline-none" placeholder="{{sexe}}">
+      <input ngModel name="sexe" [readonly]="readOnly" class="border border-gray-300 text-sm rounded-lg block w-full p-2.5 placeholder-black focus:outline-none" placeholder="{{sexe}}">
     </div>
     <div>
       <label class="block mb-2 text-sm font-medium">Email</label>
-      <input [readonly]="readOnly" class="border border-gray-300 text-sm rounded-lg block w-full p-2.5 placeholder-black focus:outline-none" placeholder="{{email}}">
+      <input ngModel name="email" type="email" [readonly]="readOnly" class="border border-gray-300 text-sm rounded-lg block w-full p-2.5 placeholder-black focus:outline-none" placeholder="{{email}}">
     </div>
 
   </div>
   <div class="grid place-items-center w-full">
-    <button class="text-white bg-blue-700 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 w-1/3" [ngClass]="{'invisible': readOnly}">Confirmer</button>
+    <button class="text-white bg-blue-700 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 w-1/3" [disabled]="modifyUser.invalid" [ngClass]="{'invisible': readOnly}" (click)="onConfirmClick()">Confirmer</button>
 
   </div>
 
-</div>
+</form>
