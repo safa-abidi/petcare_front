@@ -1,5 +1,8 @@
 import { forwardRef, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { UserSignupComponent } from './user-signup/user-signup.component';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AddPetComponent } from './pet/add-pet/add-pet.component';
@@ -25,6 +28,9 @@ import { AddServiceComponent } from './service_provider/add-service/add-service.
 @NgModule({
   declarations: [
     AppComponent,
+    UserSignupComponent,
+    DropdownWithIconComponent,
+    TextInputWithIconComponent,
     AddPetComponent,
     TextInputWithIconComponent,
     DropdownWithIconComponent,
@@ -44,14 +50,15 @@ import { AddServiceComponent } from './service_provider/add-service/add-service.
     AppRoutingModule,
     FontAwesomeModule,
     HttpClientModule,
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule,
   ],
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => ""),
+      useExisting: forwardRef(() =>""),
       multi: true
     }
   ],

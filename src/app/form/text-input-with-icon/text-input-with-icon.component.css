@@ -3,7 +3,6 @@
   position: relative;
   background: linear-gradient(to right, #172D4E, #738dc2, #193A6A);
 }
-
 input.ng-invalid.ng-touched{
   border: red 1px solid;
 }

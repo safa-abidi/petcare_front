@@ -1,0 +1,23 @@
+.categorie-card {
+    border: 1.6px solid #f5ca92;
+}
+.border-gradient {
+    padding: 0.09rem;
+    position: relative;
+    background: linear-gradient(to right, #172D4E, #738dc2, #193A6A);
+  }
+  .border-gradient {
+    padding: 0.09rem;
+    position: relative;
+    background: linear-gradient(to right, #172D4E, #738dc2, #193A6A);
+  }
+  
+  select {
+    outline: 0px solid transparent;
+  }
+  
+  .tt{
+    padding-top: 0.650rem; /* 10px */
+    padding-bottom: 0.670rem;
+  }
+  
