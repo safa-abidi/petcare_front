@@ -10,6 +10,8 @@ import { LoginComponent } from './login/login.component';
 import { HttpClientModule } from "@angular/common/http";
 import { NG_VALUE_ACCESSOR, ReactiveFormsModule } from '@angular/forms';
 import {FormsModule} from "@angular/forms";
+import { ProfileComponent } from './profile/profile/profile.component';
+import { ProfileDisplayComponent } from './profile/profile-display/profile-display.component';
 
 
 
@@ -20,6 +22,8 @@ import {FormsModule} from "@angular/forms";
     TextInputWithIconComponent,
     DropdownWithIconComponent,
     LoginComponent,
+    ProfileComponent,
+    ProfileDisplayComponent,
   ],
   imports: [
     BrowserModule,
