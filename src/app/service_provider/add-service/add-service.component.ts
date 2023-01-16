@@ -25,10 +25,10 @@ export class AddServiceComponent implements OnInit {
       addServiceForm.value.title,
       addServiceForm.value.description,
       addServiceForm.value.price,
-      addServiceForm.value.cit,
+      addServiceForm.value.city,
       +localStorage.getItem('userId')!
     )
-    this.serviceProviderService.addService(service)
+    this.serviceProviderService.addService(service).subscribe()
   }
 
 }
