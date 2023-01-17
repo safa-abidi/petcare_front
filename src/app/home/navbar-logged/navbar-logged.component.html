@@ -1,5 +1,5 @@
 <nav
-  class="relative flex flex-wrap items-center justify-between px-2 py-3 bg-[#FFA630] mb-3"
+  class="relative flex flex-wrap items-center justify-between px-2 py-3 bg-[#{{bgColor}}] mb-3"
 >
   <div
     class="container px-4 mx-auto flex flex-wrap items-center justify-between"
@@ -31,7 +31,7 @@
             class="px-3 py-2 flex items-center text-md font-bold leading-snug text-black hover:opacity-75"
             [routerLink]="['/profile']"
           >
-            <span class="ml-2 text-white">Profile</span>
+            <span class="ml-2" [ngClass]="{'text-white': !textBlack}">Profile</span>
           </a>
         </li>
         <li class="nav-item">
@@ -39,7 +39,7 @@
             class="px-3 py-2 flex items-center text-md font-bold leading-snug text-black hover:opacity-75"
             (click)="logout()"
           >
-            <span class="ml-2 text-white">Se déconnecter</span>
+            <span class="ml-2" [ngClass]="{'text-white': !textBlack}">Se déconnecter</span>
           </button>
         </li>
         <li class="nav-item">
@@ -47,7 +47,7 @@
             class="px-3 py-2 flex items-center text-md font-bold leading-snug text-black hover:opacity-75"
             [routerLink]="['/']"
           >
-            <span class="ml-2 text-white">Contact</span>
+            <span class="ml-2" [ngClass]="{'text-white': !textBlack}">Contact</span>
           </a>
         </li>
       </ul>
