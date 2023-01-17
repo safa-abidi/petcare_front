@@ -1,0 +1,36 @@
+.dayCard {
+  border-radius: 5vw;
+  border: 0.2vw midnightblue solid;
+  padding: 2vw;
+  width: 100%;
+  height: 20vw;
+  text-align: center;
+}
+
+.pointer-cursor {
+  cursor: pointer;
+}
+
+.tasksList {
+  height: 92.5%;
+}
+
+.addTaskButton {
+  border: none;
+  background-color: midnightblue;
+  color: white;
+  font-size: 1.125vw;
+  border-radius: 50vw;
+  padding: 0.5vw 1.5vw;
+  text-decoration: none;
+  z-index: 2;
+}
+
+.today {
+  background-color: #193A6A;
+}
+
+li span {
+  position: relative;
+  left: -0.75vw;
+}

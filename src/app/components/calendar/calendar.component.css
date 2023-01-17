@@ -1,0 +1,12 @@
+.fitContent {
+  width: fit-content;
+}
+
+.grayed {
+  color: gray;
+  border-color: gray;
+}
+
+.colored {
+  background-color: midnightblue;
+}
