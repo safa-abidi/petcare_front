@@ -18,8 +18,33 @@
 
 
       <div class="px-2 py-1">
-        <div class="text-sm md:text-base font-bold pr-2 text-center truncate">{{service.title}}</div>
+        <div class="text-sm md:text-base font-bold text-center truncate">{{service.title}}</div>
+
+        <div class="h-0.5 w-full bg-gray-200 mt-1"></div>
+
         <div class="flex pt-1">
+          <div class="flex justify-between item-center w-full">
+            <div class="flex items-center w-full">
+              <p class="text-gray-600 font-semibold text-xs md:text-sm truncate text-center w-full truncate">
+                Nom: {{service.user!.lastName}} {{service.user!.firstName}}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex pt-1">
+          <div class="flex justify-between item-center w-full">
+            <div class="flex items-center w-full">
+              <p class="text-gray-600 font-semibold text-xs md:text-sm truncate text-center w-full truncate">
+                Email: {{service.user!.email}}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="h-0.5 w-full bg-gray-200 mt-1"></div>
+
+        <div class="flex p-1">
           <div class="flex justify-between item-center">
             <div class="flex items-center">
               <fa-icon [icon]="locationIcon" class="fas fa-lock icon"></fa-icon>
@@ -46,13 +71,18 @@
 
         <div class="pb-2">
           <p class="text-gray-600 font-bold text-xs md:text-sm">Description : </p>
-          <p class="text-xs text-xs md:text-sm text-gray-500 truncate">
-            {{service.description}}
+          <p class="text-xs text-xs md:text-sm text-gray-500" [ngClass]="{'truncate': truncate}">
+            {{service.description}}  {{service.description}}  {{service.description}}  {{service.description}}  {{service.description}}
           </p>
         </div>
 
 
-        <div class="flex justify-center item-center ">
+        <div class="flex justify-center item-center text-sm underline">
+        <button (click)="onDetailsClick()">{{detailsButtonText}}</button>
+        </div>
+
+
+        <div class="flex justify-center item-center">
           <button class="text-white bg-blue-600 hover:bg-blue-800 font-medium rounded-lg text-xs md:text-sm px-2 md:px-5 py-1 md:py-2.5 mr-2 mb-2 mt-2">Demander</button>
 
         </div>
