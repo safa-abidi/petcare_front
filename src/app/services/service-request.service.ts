@@ -21,5 +21,12 @@ export class ServiceRequestService {
     return this.httpService.get<ServiceRequest[]>(`${this.url}/provider/${id}`)
   }
 
+  confirmServiceRequest(id: number){
+    return this.httpService.get(`${this.url}/confirm/${id}`)
+  }
+
+  cancelServiceRequest(id: number){
+    return this.httpService.get(`${this.url}/cancel/${id}`)
+  }
 
 }

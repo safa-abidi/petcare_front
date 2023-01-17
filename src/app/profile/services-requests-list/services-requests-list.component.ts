@@ -44,10 +44,23 @@ export class ServicesRequestsListComponent implements OnInit {
     else if(type=="canceled"){
       return "Annulé"
     }
-    else if(type=="accepted"){
+    else if(type=="confirmed"){
       return "Accepté"
     }
     return ""
+  }
+
+  onConfirmClick(id: number){
+    console.log(id)
+    this.serviceRequestService.confirmServiceRequest(id).subscribe()
+    let i = this.servicesRequests.findIndex((r)=>r.id==id)
+    this.servicesRequests[i].status = "confirmed"
+  }
+
+  onCancelClick(id: number,){
+    this.serviceRequestService.cancelServiceRequest(id).subscribe()
+    let i = this.servicesRequests.findIndex((r)=>r.id==id)
+    this.servicesRequests[i].status = "canceled"
   }
 
 }
