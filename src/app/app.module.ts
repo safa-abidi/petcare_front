@@ -30,7 +30,6 @@ import { ServicesRequestsListComponent } from './profile/services-requests-list/
 
 
 import { UpdateServiceComponent } from './service_provider/update-service/update-service.component';
-<<<<<<< HEAD
 import { CalendarComponent } from './components/calendar/calendar.component';
 import { CalendarDayComponent } from './components/calendar/calendar-day/calendar-day.component';
 import { CalendarViewComponent } from './views/calendar-view/calendar-view.component';
@@ -41,11 +40,7 @@ import { TimePipePipe } from './pipes/time-pipe.pipe';
 import { ShopComponent } from './views/shop/shop.component';
 import { AccessoryComponent } from './components/accessory/accessory.component'
 import { ListServicesComponent } from './service_provider/list-services/list-services.component';
-=======
 import { MyServicesComponent } from './service_provider/my-services/my-services.component';
-
-
->>>>>>> my-services
 
 @NgModule({
   declarations: [
