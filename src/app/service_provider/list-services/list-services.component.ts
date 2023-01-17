@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ServiceProviderService} from "../../services/service-provider.service";
 import {Service} from "../../models/service";
 import {ServiceCategories} from "../../enums/service_categories";
+import {NgForm} from "@angular/forms";
 
 @Component({
   selector: 'app-list-services',
@@ -19,7 +20,7 @@ export class ListServicesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.serviceProviderService.getService().subscribe(
+    this.serviceProviderService.getServices().subscribe(
       (s)=>{
         this.servicesList = s
       }
@@ -30,7 +31,7 @@ export class ListServicesComponent implements OnInit {
     this.serviceCategoriesActivated[i] = !this.serviceCategoriesActivated[i]
   }
 
-  onSearchClick(){
+  onSearchClick(searchForm : NgForm){
     const categories = Object.keys(ServiceCategories)
     const searchCategories : string[] = []
     this.serviceCategoriesActivated.map(
@@ -39,7 +40,14 @@ export class ListServicesComponent implements OnInit {
           searchCategories.push(categories[index])
       }
     )
-    console.log(searchCategories)
+    this.serviceProviderService.searchServices({
+      "text": searchForm.value.text,
+      "categories": searchCategories,
+      "maxPrice": searchForm.value.maxPrice=="" ? null : searchForm.value.maxPrice
+    })
+      .subscribe(
+      (s)=> this.servicesList=s
+    )
   }
 
 }
