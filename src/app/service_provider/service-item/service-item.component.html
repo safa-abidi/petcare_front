@@ -77,13 +77,13 @@
         </div>
 
 
-        <div class="flex justify-center item-center text-sm underline">
+        <div class="flex justify-center item-center text-sm underline mb-2">
         <button (click)="onDetailsClick()">{{detailsButtonText}}</button>
         </div>
 
 
-        <div class="flex justify-center item-center">
-          <button class="text-white bg-blue-600 hover:bg-blue-800 font-medium rounded-lg text-xs md:text-sm px-2 md:px-5 py-1 md:py-2.5 mr-2 mb-2 mt-2">Demander</button>
+        <div class="flex justify-center item-center" *ngIf="role!=undefined && role!='' && role.toLowerCase().includes('petowner')">
+          <button class="text-white bg-blue-600 hover:bg-blue-800 font-medium rounded-lg text-xs md:text-sm px-2 md:px-5 py-1 md:py-2.5 mr-2 mb-2 mt-2" (click)="onRequestClick()" >Demander</button>
 
         </div>
       </div>

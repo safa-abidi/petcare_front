@@ -1,0 +1,26 @@
+.button-disabled{
+  opacity: 0.6;
+}
+
+.bg{
+  background-image: url('../../../assets/images/orange_motif.png');
+  object-fit: contain;
+  background-size: auto 100%
+}
+
+
+@media (min-width: 1024px){
+  .bg{
+    background-image: url('../../../assets/images/orange_motif.png');
+    object-fit: contain;
+    background-size: 100%
+  }
+}
+
+.button-disabled{
+  opacity: 0.6;
+}
+
+textarea {
+  resize: none;
+}
