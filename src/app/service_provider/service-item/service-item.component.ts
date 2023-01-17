@@ -15,12 +15,24 @@ export class ServiceItemComponent implements OnInit {
   @Input() service!: Service;
   category : string = ""
   isMine : boolean = false;
+  truncate  : boolean = true
+  detailsButtonText = "Voir details"
 
   constructor() { }
 
   ngOnInit(): void {
     this.category = Object.values(ServiceCategories)[Object.keys(ServiceCategories).indexOf(this.service.category)]
     this.isMine = this.service.user!.id == +localStorage.getItem("userId")!
+  }
+
+  onDetailsClick(){
+    this.truncate = !this.truncate;
+    if(this.truncate){
+      this.detailsButtonText = "Voir details"
+    }
+    else{
+      this.detailsButtonText= "Masquer details"
+    }
   }
 
 }
