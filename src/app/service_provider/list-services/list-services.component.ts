@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ServiceProviderService} from "../../services/service-provider.service";
 import {Service} from "../../models/service";
+import {ServiceCategories} from "../../enums/service_categories";
 
 @Component({
   selector: 'app-list-services',
@@ -10,8 +11,13 @@ import {Service} from "../../models/service";
 export class ListServicesComponent implements OnInit {
 
   servicesList : Service[] = [];
+  serviceCategories : string[] = Object.values(ServiceCategories)
+  serviceCategoriesActivated : boolean[] = []
+  advancedSearch: boolean = true
 
-  constructor(private serviceProviderService : ServiceProviderService) { }
+  constructor(private serviceProviderService : ServiceProviderService) {
+    this.serviceCategories.map(()=> this.serviceCategoriesActivated.push(false))
+  }
 
   ngOnInit(): void {
     this.serviceProviderService.getService().subscribe(
@@ -19,6 +25,26 @@ export class ListServicesComponent implements OnInit {
         this.servicesList = s
       }
     )
+  }
+
+  onAdvancedSearchClick(){
+    this.advancedSearch = !this.advancedSearch
+  }
+
+  onCategoryChipClick(i : number){
+    this.serviceCategoriesActivated[i] = !this.serviceCategoriesActivated[i]
+  }
+
+  onSearchClick(){
+    const categories = Object.keys(ServiceCategories)
+    const searchCategories : string[] = []
+    this.serviceCategoriesActivated.map(
+      (value, index)=>{
+        if(value==true)
+          searchCategories.push(categories[index])
+      }
+    )
+    console.log(searchCategories)
   }
 
 }
