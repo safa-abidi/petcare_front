@@ -1,4 +1,5 @@
 import {ServiceCategories} from "../enums/service_categories";
+import {User} from "./user";
 
 export class Service {
   category: ServiceCategories;
@@ -6,7 +7,8 @@ export class Service {
   description: string;
   price: number;
   city: string;
-  userId: number
+  userId: number;
+  user?: User;
 
   constructor(category: ServiceCategories, title: string, description: string, price: number, city: string, userId: number) {
     this.category = category;

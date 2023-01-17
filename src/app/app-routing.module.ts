@@ -11,13 +11,19 @@ import {PetOwnerGuard} from "./guards/pet-owner.guard";
 import { NotFoundComponent } from './not-found/not-found.component';
 import { UserSignupComponent } from './user-signup/user-signup.component';
 import {HomePageComponent} from "./home/home-page/home-page.component";
+import {ListServicesComponent} from "./service_provider/list-services/list-services.component";
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent , canActivate: [NotloggedinGuard]},
   { path: 'pet/add', component: AddPetComponent, canActivate: [LoggedInGuard, PetOwnerGuard],},
   { path: 'profile', component: ProfileComponent, canActivate: [LoggedInGuard]},
   { path: 'signup', component: UserSignupComponent},
-  { path: 'service/add', component: AddServiceComponent, canActivate: [LoggedInGuard, ServiceProviderGuard]},
+  { path: 'service',
+    component: ListServicesComponent,
+    children: [
+      {path: 'add', component: AddServiceComponent, canActivate: [LoggedInGuard, ServiceProviderGuard]}
+    ]
+  },
   { path: 'home', component: HomePageComponent},
   { path: '', redirectTo: '/home', pathMatch: 'full'},
   { path:'**', component: NotFoundComponent},
