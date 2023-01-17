@@ -1,9 +1,12 @@
 import {Time} from "@angular/common";
 import {User} from "./user";
+import {Service} from "./service";
 
 export class ServiceRequest {
   id? : number
   petOwner?: User;
+  provider?: User;
+  service?: Service;
   status? : string;
   date: Date;
   address: string;

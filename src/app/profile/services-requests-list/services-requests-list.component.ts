@@ -66,6 +66,19 @@ export class ServicesRequestsListComponent implements OnInit {
     return ""
   }
 
+  categoryType(type: string): string{
+    if(type=="grooming"){
+      return "Toilettage"
+    }
+    else if(type=="daycare"){
+      return "Garderie"
+    }
+    else if(type=="walking"){
+      return "Promenade"
+    }
+    else return ""
+  }
+
   onConfirmClick(id: number){
     console.log(id)
     this.serviceRequestService.confirmServiceRequest(id).subscribe()
@@ -91,4 +104,6 @@ export class ServicesRequestsListComponent implements OnInit {
       if(f.includes(e.status!)) this.servicesRequestsFiltered.push(e)
     })
   }
+
+
 }
