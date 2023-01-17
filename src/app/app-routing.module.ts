@@ -12,13 +12,15 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { UserSignupComponent } from './user-signup/user-signup.component';
 import {HomePageComponent} from "./home/home-page/home-page.component";
 import {ListServicesComponent} from "./service_provider/list-services/list-services.component";
+import { ModifyPetComponent } from './pet/modify-pet/modify-pet.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent , canActivate: [NotloggedinGuard]},
   { path: 'pets/add', component: AddPetComponent, canActivate: [LoggedInGuard, PetOwnerGuard],},
+  { path: 'pet/modify/:id', component: ModifyPetComponent, canActivate: [LoggedInGuard, PetOwnerGuard],},
   { path: 'profile', component: ProfileComponent, canActivate: [LoggedInGuard]},
   { path: 'signup', component: UserSignupComponent, canActivate: [NotloggedinGuard]},
-  {path: 'services/add', component: AddServiceComponent, canActivate: [LoggedInGuard, ServiceProviderGuard]},
+  { path: 'services/add', component: AddServiceComponent, canActivate: [LoggedInGuard, ServiceProviderGuard]},
   { path: 'services', component: ListServicesComponent,},
   { path: 'home', component: HomePageComponent},
   { path: '', redirectTo: '/home', pathMatch: 'full'},
