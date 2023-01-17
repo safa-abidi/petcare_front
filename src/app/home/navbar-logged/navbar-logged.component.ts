@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/services/login.service';
 import {faBars} from "@fortawesome/free-solid-svg-icons";
@@ -11,6 +11,8 @@ import {faBars} from "@fortawesome/free-solid-svg-icons";
 export class NavbarLoggedComponent implements OnInit {
   showMenu = false;
   menuIcon = faBars;
+  @Input() bgColor :string = "FFA630"
+  @Input() textBlack :boolean = false
   constructor(private loginService: LoginService, private router: Router) { }
 
   ngOnInit(): void {

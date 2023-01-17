@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
 import {UserService} from "../../services/user.service";
+import {LoginService} from "../../services/login.service";
 
 @Component({
   selector: 'app-profile',
@@ -10,14 +11,31 @@ import {UserService} from "../../services/user.service";
 export class ProfileComponent implements OnInit {
 
   pageIndex : number = 0;
+  isAuthenticated = false;
+  role: string = ""
+  addText: string = ""
 
-  constructor(private router: Router, private userService: UserService) { }
+  constructor(private router: Router, private userService: UserService, private loginService: LoginService) { }
 
   ngOnInit(): void {
+    this.isAuthenticated = this.loginService.isLogged()
+    this.role = localStorage.getItem("role")!
+    if(this.role.toLowerCase().includes("petowner")){
+      this.addText="animal"
+    }
+    else if(this.role.toLowerCase().includes("service")){
+      this.addText="service"
+    }
   }
 
-  onAddPetClick(){
-    this.router.navigate(["pets/add"]);
+  onAddClick(){
+    if(this.role.toLowerCase().includes("petowner")){
+      this.router.navigate(["pets/add"]);
+    }
+    else if(this.role.toLowerCase().includes("service")){
+      this.router.navigate(["services/add"]);
+
+    }
   }
 
   onDeleteClick(){

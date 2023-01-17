@@ -1,3 +1,7 @@
+<button class="btn btn-blue fixed rounded-full mt-8 ml-8 bg-white px-3 py-2 text-yellow-500" (click)="backClicked()">
+  <fa-icon [icon]="backIcon" class="fas fa-lock"></fa-icon>
+</button>
+
 <div  class="absolute ml-5  sm:ml-36 mt-64 w-3/4 mr-64  sm:w-3/5 xl:inline sm:hidden max-sm:hidden">
   <img src="assets/images/auth/su_dog1.svg" >
 </div>
@@ -45,7 +49,7 @@
             <p class="text-sm max-sm:text-xs">Vétérinaire</p>
           </div>-->
         </div>
-        
+
 
            <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
             <div  class="grid grid-cols-2 mr-10 ml-10 xl:mr-24 xl:ml-36  sm:grid-cols-3 xl:grid-cols-3 gap-5">
@@ -53,7 +57,7 @@
                 <label class="block text-sm font-bold mb-2" style="color: #193A6A">
                    Nom
                 </label>
-              
+
                 <div class="relative flex w-full flex-wrap items-stretch mb-3">
                   <div class="border-gradient rounded flex w-full">
                     <span class="z-10 h-full leading-snug font-normal absolute text-center text-slate-300 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-3 py-3">
@@ -67,7 +71,7 @@
                 <label class="block text-sm font-bold mb-2" style="color: #193A6A">
                    Prénom
                 </label>
-              
+
                 <div class="relative flex w-full flex-wrap items-stretch mb-3">
                   <div class="border-gradient rounded flex w-full">
                     <span class="z-10 h-full leading-snug font-normal absolute text-center text-slate-300 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-3 py-3">
@@ -81,7 +85,7 @@
                 <label class="block text-sm font-bold mb-2" style="color: #193A6A">
                    Email
                 </label>
-              
+
                 <div class="relative flex w-full flex-wrap items-stretch mb-3">
                   <div class="border-gradient rounded flex w-full">
                     <span class="z-10 h-full leading-snug font-normal absolute text-center text-slate-300 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-3 py-3">
@@ -91,13 +95,13 @@
                   </div>
                 </div>
               </div>
-            
-           
+
+
               <div class="w-full p-1" >
                 <label class="block text-sm font-bold mb-2" style="color: #193A6A">
                   Date de naissance
                 </label>
-              
+
                 <div class="relative flex w-full flex-wrap items-stretch mb-3">
                   <div class="border-gradient rounded flex w-full">
                     <span class="z-10 h-full leading-snug font-normal absolute text-center text-slate-300 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-3 py-3">
@@ -111,7 +115,7 @@
                 <label class="block text-sm font-bold mb-2" style="color: #193A6A">
                   Ville
                 </label>
-              
+
                 <div class="flex w-full relative border-gradient rounded">
                   <span class="z-10 h-full leading-snug font-normal absolute text-center text-slate-300 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-3 py-3">
                       <fa-icon  class="fas fa-lock"></fa-icon>
@@ -122,28 +126,28 @@
                   </select>
                 </div>
               </div>
-             
+
                 <div class="w-100 p-1">
                 <label class="block text-sm font-bold mb-2" style="color: #193A6A">
                   Genre
                 </label>
-                
-                
 
-                
+
+
+
                  <div *ngFor="let g of genders">
                     <input type="radio" value="{{g}}" formControlName="gender" name="gender" class="w-4 h-4 text-orange-600 bg-gray-100 border-gray-300 focus:ring-gray-200 dark:focus:ring-orange-600 dark:ring-offset-gray-800 focus:ring-1 dark:bg-gray-700 dark:border-gray-600">
                     <label  class="ml-2 text-sm font-medium text-[#193A6A] dark:text-[#193A6A] font-semibold text-base">{{g}}</label>
                   </div>
               </div>
-              
-            
-             
+
+
+
               <div class="w-100 p-1">
                 <label class="block text-sm font-bold mb-2" style="color: #193A6A">
                   Mot de passe
                 </label>
-              
+
                 <div class="flex w-full relative border-gradient rounded">
                   <span class="z-10 h-full leading-snug font-normal absolute text-center text-slate-300 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-3 py-3">
                     <fa-icon   class="fas fa-lock"></fa-icon>
@@ -155,30 +159,30 @@
                 <label class="block text-sm font-bold mb-2" style="color: #193A6A">
                    Confirmer mot de passe
                 </label>
-              
+
                 <div class="flex w-full relative border-gradient rounded">
                   <span class="z-10 h-full leading-snug font-normal absolute text-center text-slate-300 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-3 py-3">
                     <fa-icon   class="fas fa-lock"></fa-icon>
                   </span>
                   <input type="password" formControlName="confirmPassword" placeholder="password"  class="px-3 py-3 placeholder-slate-300 text-slate-600 relative bg-white bg-white rounded text-sm border-0 shadow outline-none focus:outline-none w-full pl-10"/>
                 </div>
-                
+
             </div>
-           
-      
+
+
             <div class="w-100 p-1 flex align-bottom mt-7 bg-green">
               <button type="submit" [disabled]="profileForm.invalid || !createCompareValidator()" class=" bg-[#193A6A] hover:bg-[#476188] text-white font-bold py-2  h-10 w-24 px-4 rounded">
                 Submit
               </button>
             </div>
-        
+
           </div>
            </form>
-          
+
       </div>
-            
-      
+
+
     </div>
 
- 
+
 </div>

@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../services/login.service';
 import { FormBuilder, Validators } from '@angular/forms';
 
-import {faLock, faEnvelope} from "@fortawesome/free-solid-svg-icons";
+import {faLock, faEnvelope, faArrowLeft} from "@fortawesome/free-solid-svg-icons";
 import { Router } from '@angular/router';
+import {Location} from "@angular/common";
 
 @Component({
   selector: 'app-login',
@@ -17,7 +18,8 @@ export class LoginComponent implements OnInit {
   errorMsg: string = '';
   emailIcon = faEnvelope;
   passwordIcon = faLock;
-  constructor(private fb: FormBuilder, private loginService: LoginService, private router : Router) { }
+  backIcon = faArrowLeft;
+  constructor(private fb: FormBuilder, private loginService: LoginService, private router : Router,private location: Location) { }
 
   ngOnInit() {
     this.loginForm = this.fb.group({
@@ -43,5 +45,9 @@ export class LoginComponent implements OnInit {
       }
     );
  }
+
+  backClicked() {
+    this.location.back();
+  }
 
 }
