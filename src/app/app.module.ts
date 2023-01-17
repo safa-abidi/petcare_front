@@ -22,8 +22,13 @@ import { ProfileComponent } from './profile/profile/profile.component';
 import { ProfileDisplayComponent } from './profile/profile-display/profile-display.component';
 import { ChangePasswordComponent } from './profile/change-password/change-password.component';
 import { AddServiceComponent } from './service_provider/add-service/add-service.component';
+import { ListServicesComponent } from './service_provider/list-services/list-services.component';
 import { ServiceItemComponent } from './service_provider/service-item/service-item.component';
 import { ModifyPetComponent } from './pet/modify-pet/modify-pet.component';
+import { AddRequestComponent } from './service_request/add-request/add-request.component';
+import { ServicesRequestsListComponent } from './profile/services-requests-list/services-requests-list.component';
+
+
 import { UpdateServiceComponent } from './service_provider/update-service/update-service.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
 import { CalendarDayComponent } from './components/calendar/calendar-day/calendar-day.component';
@@ -67,6 +72,8 @@ import { ListServicesComponent } from './service_provider/list-services/list-ser
     ListServicesComponent,
     ServiceItemComponent,
     ModifyPetComponent,
+    AddRequestComponent,
+    ServicesRequestsListComponent,
     UpdateServiceComponent,
   ],
   imports: [

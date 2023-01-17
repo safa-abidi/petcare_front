@@ -2,6 +2,7 @@ import {ServiceCategories} from "../enums/service_categories";
 import {User} from "./user";
 
 export class Service {
+  id? : number
   category: ServiceCategories;
   title: string;
   description: string;

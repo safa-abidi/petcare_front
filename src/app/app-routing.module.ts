@@ -13,6 +13,7 @@ import { UserSignupComponent } from './user-signup/user-signup.component';
 import { HomePageComponent } from "./home/home-page/home-page.component";
 import {ListServicesComponent} from "./service_provider/list-services/list-services.component";
 import { ModifyPetComponent } from './pet/modify-pet/modify-pet.component';
+import {AddRequestComponent} from "./service_request/add-request/add-request.component";
 import { UpdateServiceComponent } from './service_provider/update-service/update-service.component';
 import { CalendarViewComponent } from "./views/calendar-view/calendar-view.component";
 import { CalendarDayDetailsComponent } from "./views/calendar-day-details/calendar-day-details.component";
@@ -37,6 +38,12 @@ const routes: Routes = [
   { path: "shop", component: ShopComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', component: NotFoundComponent },]
+  { path: 'requests/add/:providerId/:serviceId', component: AddRequestComponent},
+  { path: 'home', component: HomePageComponent},
+  { path: '', redirectTo: '/home', pathMatch: 'full'},
+  { path:'**', component: NotFoundComponent},
+
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
