@@ -13,10 +13,9 @@ export class ListServicesComponent implements OnInit {
   servicesList : Service[] = [];
   serviceCategories : string[] = Object.values(ServiceCategories)
   serviceCategoriesActivated : boolean[] = []
-  advancedSearch: boolean = true
 
   constructor(private serviceProviderService : ServiceProviderService) {
-    this.serviceCategories.map(()=> this.serviceCategoriesActivated.push(false))
+    this.serviceCategories.map(()=> this.serviceCategoriesActivated.push(true))
   }
 
   ngOnInit(): void {
@@ -25,10 +24,6 @@ export class ListServicesComponent implements OnInit {
         this.servicesList = s
       }
     )
-  }
-
-  onAdvancedSearchClick(){
-    this.advancedSearch = !this.advancedSearch
   }
 
   onCategoryChipClick(i : number){

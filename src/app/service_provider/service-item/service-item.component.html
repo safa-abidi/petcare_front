@@ -10,50 +10,50 @@
       <div class="relative">
 
 
-        <img src="../../../assets/images/pets_types/bird.png" class="max-h-60 w-full object-fill rounded-t-xl">
+        <img src="../../../assets/images/services_categories/{{service.category}}.png" class="max-h-60 w-full object-fill rounded-t-xl">
 
-        <div class="bottom-0 right-0 mb-2 mr-2 px-2 rounded-lg absolute bg-yellow-500 text-gray-100 text-sm font-medium">{{category}}</div>
+        <div class="bottom-0 right-0 mb-2 mr-2 px-2 rounded-lg absolute bg-yellow-500 text-gray-100 test-xs md:text-sm md:font-medium">{{category}}</div>
 
       </div>
 
 
       <div class="px-2 py-1">
-        <div class="text-sm md:text-base font-bold pr-2 text-center">{{service.title}}</div>
+        <div class="text-sm md:text-base font-bold pr-2 text-center truncate">{{service.title}}</div>
         <div class="flex pt-1">
           <div class="flex justify-between item-center">
             <div class="flex items-center">
               <fa-icon [icon]="locationIcon" class="fas fa-lock icon"></fa-icon>
-              <p class="text-gray-600 font-bold text-xs md:text-sm ml-1">
+              <p class="text-gray-600 font-bold text-xs md:text-sm ml-1 truncate">
                 {{service.city}}
               </p>
             </div>
           </div>
         </div>
 
-        <div class="flex pb-1">
+        <div class="flex  ">
           <div class="flex justify-between item-center">
             <div class="flex items-center">
               <fa-icon [icon]="moneyIcon" class="fas fa-lock icon"></fa-icon>
-              <p class="text-gray-600 font-bold text-xs md:text-sm ml-1">
+              <p class="text-gray-600 font-bold text-xs md:text-sm ml-1 truncate">
                 {{service.price}}
               </p>
-              <p class="text-gray-600 font-light text-sm ml-1">
-                Dinars/Heure
+              <p class="text-gray-600 font-light text-xs ml-1 truncate">
+                Dinars/H
               </p>
             </div>
           </div>
         </div>
 
-        <div class="flex items-center pb-2">
+        <div class="pb-2">
           <p class="text-gray-600 font-bold text-xs md:text-sm">Description : </p>
-          <p class="text-xs md:text-sm text-gray-500">
+          <p class="text-xs text-xs md:text-sm text-gray-500 truncate">
             {{service.description}}
           </p>
         </div>
 
 
         <div class="flex justify-center item-center ">
-          <button class="text-white bg-blue-600 hover:bg-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 mt-2">Demander</button>
+          <button class="text-white bg-blue-600 hover:bg-blue-800 font-medium rounded-lg text-xs md:text-sm px-2 md:px-5 py-1 md:py-2.5 mr-2 mb-2 mt-2">Demander</button>
 
         </div>
       </div>
