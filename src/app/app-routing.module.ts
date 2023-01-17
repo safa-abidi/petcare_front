@@ -15,15 +15,11 @@ import {ListServicesComponent} from "./service_provider/list-services/list-servi
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent , canActivate: [NotloggedinGuard]},
-  { path: 'pet/add', component: AddPetComponent, canActivate: [LoggedInGuard, PetOwnerGuard],},
+  { path: 'pets/add', component: AddPetComponent, canActivate: [LoggedInGuard, PetOwnerGuard],},
   { path: 'profile', component: ProfileComponent, canActivate: [LoggedInGuard]},
-  { path: 'signup', component: UserSignupComponent},
-  { path: 'service',
-    component: ListServicesComponent,
-    children: [
-      {path: 'add', component: AddServiceComponent, canActivate: [LoggedInGuard, ServiceProviderGuard]}
-    ]
-  },
+  { path: 'signup', component: UserSignupComponent, canActivate: [NotloggedinGuard]},
+  {path: 'services/add', component: AddServiceComponent, canActivate: [LoggedInGuard, ServiceProviderGuard]},
+  { path: 'services', component: ListServicesComponent,},
   { path: 'home', component: HomePageComponent},
   { path: '', redirectTo: '/home', pathMatch: 'full'},
   { path:'**', component: NotFoundComponent},

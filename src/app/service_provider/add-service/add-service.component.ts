@@ -3,6 +3,7 @@ import {ServiceCategories} from "../../enums/service_categories";
 import {NgForm} from "@angular/forms";
 import {ServiceProviderService} from "../../services/service-provider.service";
 import {Service} from "../../models/service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-add-service',
@@ -14,7 +15,7 @@ export class AddServiceComponent implements OnInit {
   serviceCategories = Object.values(ServiceCategories)
   serviceCategoriesEN = Object.keys(ServiceCategories)
 
-  constructor(private serviceProviderService : ServiceProviderService) { }
+  constructor(private serviceProviderService : ServiceProviderService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -28,7 +29,11 @@ export class AddServiceComponent implements OnInit {
       addServiceForm.value.city,
       +localStorage.getItem('userId')!
     )
-    this.serviceProviderService.addService(service).subscribe()
+    this.serviceProviderService.addService(service).subscribe(
+      ()=>{
+        this.router.navigate(['/home'])
+      }
+    )
   }
 
 }

@@ -21,7 +21,9 @@ export class NavbarLoggedComponent implements OnInit {
   logout(){
     console.log("logout");
     this.loginService.logout();
-    this.router.navigate(['/login']);
+    this.router.navigate(['/home'],).then(() => {
+      window.location.reload();
+    });
   }
 
 }
