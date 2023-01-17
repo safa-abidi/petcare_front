@@ -22,6 +22,7 @@ import { ProfileComponent } from './profile/profile/profile.component';
 import { ProfileDisplayComponent } from './profile/profile-display/profile-display.component';
 import { ChangePasswordComponent } from './profile/change-password/change-password.component';
 import { AddServiceComponent } from './service_provider/add-service/add-service.component';
+import { MyPetsComponent } from './pet/my-pets/my-pets.component';
 
 
 
@@ -44,6 +45,7 @@ import { AddServiceComponent } from './service_provider/add-service/add-service.
     ProfileDisplayComponent,
     ChangePasswordComponent,
     AddServiceComponent,
+    MyPetsComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,20 @@
+     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 w-full p-24">
+      <div *ngFor="let i of myPets" [style.background-color]="i.type == 'cat' ? '#cce9ef' : (i.type=='dog' ? '#bac4d2':(i.type=='bird' ? '#FFA630':'#ffdfc1'))" class="shadow hover:shadow-md w-full bg-white rounded-lg overflow-hidden cursor-pointer">
+          
+        <img
+         class="object-cover w-full h-48"
+         [src]= 'i.type == "cat" ? "./assets/images/auth/provider.png" : "assets/images/dog.png"'
+         alt="Flower and sky"
+         />
+    
+      <div class="relative p-4 rounded-2xl">
+        <h3 class="text-base md:text-xl font-medium text-gray-800 ">
+         {{i.name}}
+        </h3>
+    
+        <p class="mt-4 text-base md:text-lg text-gray-600">
+          {{ getAge(i.birthDate.toString()) | number: '1.0-0' }} ans
+        </p>
+      </div>
+      </div>
+    </div>

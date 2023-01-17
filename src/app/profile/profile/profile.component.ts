@@ -20,6 +20,10 @@ export class ProfileComponent implements OnInit {
     this.router.navigate(["pet/add"]);
   }
 
+  onConsultPets(){
+    this.router.navigate(["pet","all"]);
+  }
+
   onDeleteClick(){
     if(confirm("Voulez vous supprimer votre compte?",)) {
       this.userService.deleteUser(+localStorage.getItem('userId')!).subscribe();
