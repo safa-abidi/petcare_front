@@ -1,9 +1,21 @@
 import { Injectable } from '@angular/core';
+import {environment} from "../../environments/environment";
+import {HttpClient} from "@angular/common/http";
+import {Pet} from "../models/pet";
+import {Observable} from "rxjs";
+import {ServiceRequest} from "../models/service_request";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ServiceRequestService {
 
-  constructor() { }
+  url = environment.baseUrl + "/service_request";
+  constructor(private httpService : HttpClient) { }
+
+  addServiceRequest(serviceRequest : ServiceRequest) : Observable<ServiceRequest>{
+    return this.httpService.post<ServiceRequest>(this.url, serviceRequest);
+  }
+
+
 }

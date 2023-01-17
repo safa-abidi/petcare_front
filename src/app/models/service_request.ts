@@ -1,6 +1,6 @@
 import {Time} from "@angular/common";
 
-export class Service_request {
+export class ServiceRequest {
   date: Date;
   time?: Time;
   address: string;

@@ -39,7 +39,7 @@ export class ServiceItemComponent implements OnInit {
   }
 
   onRequestClick(){
-    this.router.navigate(['requests/add']);
+    this.router.navigate(['requests/add',this.service.user?.id!]);
   }
 
 }
