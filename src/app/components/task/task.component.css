@@ -9,3 +9,11 @@
   border-style: solid;
   padding: 1vw;
 }
+
+.w-10 {
+  width: 10%;
+}
+
+.pointer-cursor {
+  cursor: pointer;
+}

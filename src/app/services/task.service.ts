@@ -21,4 +21,11 @@ export class TaskService {
     );
   }
 
+  deleteTask(id:number) {
+    this.http.delete(this.urlBase+id).subscribe(
+      (res) => {console.log(res)},
+      error => console.log(error)
+    )
+  }
+
 }

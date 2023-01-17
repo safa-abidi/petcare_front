@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {TaskService} from "../../../services/task.service";
 
 @Component({
   selector: 'app-calendar-day',
@@ -12,10 +13,15 @@ export class CalendarDayComponent implements OnInit {
   isButtonVisible:boolean = false;
   @Input() isToday:boolean = false;
   @Input() enabled:boolean = true;
+  dayTasks: any;
 
-  constructor() { }
+  constructor(private taskService:TaskService) { }
 
   ngOnInit(): void {
+    this.taskService.getTasks().subscribe(
+      (res) => { this.dayTasks= res},
+      (err)=> {console.log(err)}
+    )
   }
 
   setButtonVisibility(){

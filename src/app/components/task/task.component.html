@@ -9,5 +9,8 @@
     <div class="col task-element">
       {{ task.time | timePipe}}
     </div>
+    <a class="col-lg-1 pointer-cursor" [ngStyle]="{color:task.color}" (click)="deleteTask()">
+      <fa-icon [icon]="faTrash"></fa-icon>
+    </a>
   </div>
 </div>

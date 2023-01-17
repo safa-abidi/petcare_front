@@ -1,5 +1,11 @@
 <div class="dayCard" (mouseenter)="setButtonVisibility()" (mouseleave)="setButtonVisibility()">
   <div>{{dayNumber}}</div>
-  <div class="tasksList"></div>
+  <div class="tasksList">
+    <ul>
+      <li *ngFor="let task of dayTasks">
+        <span>{{ task.title }}</span>
+      </li>
+    </ul>
+  </div>
   <a *ngIf="isButtonVisible" class="addTaskButton" [routerLink]="['day',dayNumber,monthNumber,year]" routerLinkActive="active" [ngClass]="{today: isToday}">Add</a>
 </div>

@@ -12,6 +12,7 @@ import { RankPipePipe } from './pipes/rank-pipe.pipe';
 import { TaskComponent } from './components/task/task.component';
 import {HttpClientModule} from "@angular/common/http";
 import { TimePipePipe } from './pipes/time-pipe.pipe';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { TimePipePipe } from './pipes/time-pipe.pipe';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    routing
+    routing,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

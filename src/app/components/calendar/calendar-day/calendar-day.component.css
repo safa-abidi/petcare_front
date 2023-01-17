@@ -29,3 +29,8 @@
 .today {
   background-color: #193A6A;
 }
+
+li span {
+  position: relative;
+  left: -0.75vw;
+}
