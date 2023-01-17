@@ -1,7 +1,7 @@
 <div *ngFor="let request of servicesRequests" class="m-2">
 
-  <div class="grid grid-cols-5 w-full p-6 bg-gray-300 border border-gray-200 rounded-lg shadow-md my-2 gap-3">
-    <div class="col-span-4">
+  <div class="w-full p-6 bg-gray-300 border border-gray-200 rounded-lg shadow-md my-2 gap-3" [ngClass]="{'grid grid-cols-5': role.toLowerCase().includes('provider')}">
+    <div [ngClass]="{'col-span-4': role.toLowerCase().includes('provider')}">
       <p class="font-normal text-gray-700 text-sm">Date: {{request.date | date:"dd/MM/YYYY"}}</p>
       <p class="font-normal text-gray-700 text-sm">Animal: {{animalType(request.animalType)}}</p>
       <p class="font-normal text-gray-700 text-sm">Téléphone: {{request.phone}}</p>
