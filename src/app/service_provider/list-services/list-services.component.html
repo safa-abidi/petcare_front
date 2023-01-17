@@ -25,7 +25,7 @@
     </div>
 
     <div class="flex items-center justify-center my-1">
-      <button type="submit" class="text-white right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-4 py-2 mt-3" (click)="onSearchClick(searchForm)">Rechercher</button>
+      <button type="submit" class="text-white right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-4 py-2 mt-3" (click)="onSearchClick(searchForm)">Filtrer</button>
     </div>
 
   </form>
@@ -33,6 +33,10 @@
 
   <div *ngIf="servicesList.length!=0" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-0 md:gap-3 place-items-center col-start-3 md:col-start-2 col-span-3 md:col-span-4">
     <app-service-item *ngFor="let service of servicesList" class="w-full" [service]="service" ></app-service-item>
+  </div>
+
+  <div *ngIf="servicesList.length==0" class="h-screen flex items-center justify-center place-items-center col-start-3 md:col-start-2 col-span-3 md:col-span-4">
+    <p class="text-lg text-gray-500">Aucun service trouvé</p>
   </div>
 
 </div>
