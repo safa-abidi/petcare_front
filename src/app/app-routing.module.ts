@@ -23,7 +23,7 @@ const routes: Routes = [
   { path: 'signup', component: UserSignupComponent, canActivate: [NotloggedinGuard]},
   { path: 'services/add', component: AddServiceComponent, canActivate: [LoggedInGuard, ServiceProviderGuard]},
   { path: 'services', component: ListServicesComponent,},
-  { path: 'requests/add/:providerId', component: AddRequestComponent},
+  { path: 'requests/add/:providerId/:serviceId', component: AddRequestComponent},
   { path: 'home', component: HomePageComponent},
   { path: '', redirectTo: '/home', pathMatch: 'full'},
   { path:'**', component: NotFoundComponent},

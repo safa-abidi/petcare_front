@@ -13,12 +13,14 @@ import {ServiceRequestService} from "../../services/service-request.service";
 export class AddRequestComponent implements OnInit {
 
   providerId?: number;
+  serviceId? : number;
   constructor(private activatedRoute : ActivatedRoute, private serviceRequestService: ServiceRequestService, private router: Router) { }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(
       (p)=>{
         this.providerId = p['providerId']
+        this.serviceId= p['serviceId']
       }
     )
   }
@@ -30,8 +32,11 @@ export class AddRequestComponent implements OnInit {
         addRequestForm.value.animal,
         this.providerId!,
         +localStorage.getItem('userId')!,
-        addRequestForm.value.time
-      )
+        this.serviceId!,
+        addRequestForm.value.phone,
+
+      );
+      console.log(serviceRequest)
       this.serviceRequestService.addServiceRequest(serviceRequest).subscribe(
         ()=>{
           this.router.navigate(['/home'],)
