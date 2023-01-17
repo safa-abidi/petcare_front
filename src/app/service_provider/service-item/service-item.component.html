@@ -86,6 +86,9 @@
           <button class="text-white bg-blue-600 hover:bg-blue-800 font-medium rounded-lg text-xs md:text-sm px-2 md:px-5 py-1 md:py-2.5 mr-2 mb-2 mt-2">Demander</button>
 
         </div>
+        <div *ngIf="isMine" class="flex justify-center item-center">
+          <button (click)="updateService()" class="text-white bg-green-600 hover:bg-green-800 font-medium rounded-lg text-xs md:text-sm px-2 md:px-5 py-1 md:py-2.5 mr-2 mb-2 mt-2">Modifier</button>
+        </div>
       </div>
     </div>
   </div>

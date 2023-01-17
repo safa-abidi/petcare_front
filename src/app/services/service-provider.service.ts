@@ -32,4 +32,8 @@ export class ServiceProviderService {
   getServiceById(id: number) : Observable<Service>{
     return this.httpService.get<Service>(`${this.url}/${id}`)
   }
+
+  getServicesByProviderId(id: number) : Observable<Service[]>{
+    return this.httpService.get<Service[]>(`${this.url}/find/${id}`)
+  }
 }

@@ -14,6 +14,7 @@ import { HomePageComponent } from "./home/home-page/home-page.component";
 import {ListServicesComponent} from "./service_provider/list-services/list-services.component";
 import { ModifyPetComponent } from './pet/modify-pet/modify-pet.component';
 import { UpdateServiceComponent } from './service_provider/update-service/update-service.component';
+import { MyServicesComponent } from './service_provider/my-services/my-services.component';
 import { CalendarViewComponent } from "./views/calendar-view/calendar-view.component";
 import { CalendarDayDetailsComponent } from "./views/calendar-day-details/calendar-day-details.component";
 import { ShopComponent } from "./views/shop/shop.component";
@@ -27,6 +28,7 @@ const routes: Routes = [
   { path: 'services/add', component: AddServiceComponent, canActivate: [LoggedInGuard, ServiceProviderGuard] },
   { path: 'service/modify/:id', component: UpdateServiceComponent, canActivate: [LoggedInGuard, ServiceProviderGuard]},
   { path: 'services', component: ListServicesComponent,},
+  { path: 'my-services/:id', component: MyServicesComponent, canActivate: [LoggedInGuard, ServiceProviderGuard]},
   { path: 'home', component: HomePageComponent },
   {
     path: "calendar", children: [
