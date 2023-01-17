@@ -13,6 +13,8 @@ export class ServicesRequestsListComponent implements OnInit {
   confirmIcon = faCheck
   cancelIcon = faClose
   servicesRequests: ServiceRequest[] = []
+  servicesRequestsFiltered = this.servicesRequests
+  filterOptions: boolean[] = [true,true,true]
   role: string = ""
   constructor(private serviceRequestService : ServiceRequestService) { }
 
@@ -22,6 +24,7 @@ export class ServicesRequestsListComponent implements OnInit {
       this.serviceRequestService.getServiceRequestWithProviderId(+localStorage.getItem('userId')!).subscribe(
         (e) => {
           this.servicesRequests = e
+          this.servicesRequestsFiltered = e
         }
       )
     }
@@ -29,6 +32,7 @@ export class ServicesRequestsListComponent implements OnInit {
       this.serviceRequestService.getServiceRequestWithPetOwnerId(+localStorage.getItem('userId')!).subscribe(
         (e) => {
           this.servicesRequests = e
+          this.servicesRequestsFiltered = e
         }
       )
     }
@@ -57,7 +61,7 @@ export class ServicesRequestsListComponent implements OnInit {
       return "Annulé"
     }
     else if(type=="confirmed"){
-      return "Accepté"
+      return "Confirmé"
     }
     return ""
   }
@@ -75,4 +79,16 @@ export class ServicesRequestsListComponent implements OnInit {
     this.servicesRequests[i].status = "canceled"
   }
 
+  onChipClick(index: number){
+    this.filterOptions[index] = !this.filterOptions[index]
+    let f : string[] = []
+    if(this.filterOptions[0]== true) f.push('pending')
+    if(this.filterOptions[1]== true) f.push('confirmed')
+    if(this.filterOptions[2]== true) f.push('canceled')
+
+    this.servicesRequestsFiltered = []
+    this.servicesRequests.map((e)=>{
+      if(f.includes(e.status!)) this.servicesRequestsFiltered.push(e)
+    })
+  }
 }
