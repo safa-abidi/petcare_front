@@ -1,0 +1,21 @@
+<div *ngFor="let request of servicesRequests" class="m-2">
+
+  <div class="grid grid-cols-5 w-full p-6 bg-gray-300 border border-gray-200 rounded-lg shadow-md my-2 gap-3">
+    <div class="col-span-4">
+      <p class="font-normal text-gray-700 text-sm">Date: {{request.date | date:"dd/MM/YYYY"}}</p>
+      <p class="font-normal text-gray-700 text-sm">Animal: {{animalType(request.animalType)}}</p>
+      <p class="font-normal text-gray-700 text-sm">Téléphone: {{request.phone}}</p>
+      <p class="font-normal text-gray-700 text-sm">Addresse: {{request.address}}</p>
+      <p class="font-normal text-gray-700 text-sm">Propriétaire de l'animal : {{request.petOwner!.lastName}} {{request.petOwner!.firstName}}</p>
+      <p class="font-normal text-gray-700 text-sm">Status: {{statusType(request.status!)}}</p>
+    </div>
+
+    <div class="grid grid-cols-1 my-8 md:my-0.5">
+      <button type="button" class="text-white bg-green-600 font-medium rounded-full text-sm mb-2 p-0.5 truncate"><fa-icon [icon]="confirmIcon" class="fas fa-lock"></fa-icon> Confirmer</button>
+      <button type="button" class="text-white bg-red-500 font-medium rounded-full text-sm mb-2 p-0.5 truncate"><fa-icon [icon]="cancelIcon" class="fas fa-lock"></fa-icon> Annuler</button>
+
+    </div>
+
+  </div>
+
+</div>

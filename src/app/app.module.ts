@@ -26,6 +26,7 @@ import { ListServicesComponent } from './service_provider/list-services/list-ser
 import { ServiceItemComponent } from './service_provider/service-item/service-item.component';
 import { ModifyPetComponent } from './pet/modify-pet/modify-pet.component';
 import { AddRequestComponent } from './service_request/add-request/add-request.component';
+import { ServicesRequestsListComponent } from './profile/services-requests-list/services-requests-list.component';
 
 
 
@@ -52,6 +53,7 @@ import { AddRequestComponent } from './service_request/add-request/add-request.c
     ServiceItemComponent,
     ModifyPetComponent,
     AddRequestComponent,
+    ServicesRequestsListComponent,
   ],
   imports: [
     BrowserModule,

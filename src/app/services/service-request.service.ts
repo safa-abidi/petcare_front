@@ -17,5 +17,9 @@ export class ServiceRequestService {
     return this.httpService.post<ServiceRequest>(this.url, serviceRequest);
   }
 
+  getServiceRequestWithProviderId(id: number){
+    return this.httpService.get<ServiceRequest[]>(`${this.url}/provider/${id}`)
+  }
+
 
 }
