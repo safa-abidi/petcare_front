@@ -17,7 +17,7 @@ export class ProfileComponent implements OnInit {
   }
 
   onAddPetClick(){
-    this.router.navigate(["pet/add"]);
+    this.router.navigate(["pets/add"]);
   }
 
   onDeleteClick(){
