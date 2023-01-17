@@ -39,7 +39,6 @@ import { TaskComponent } from './components/task/task.component';
 import { TimePipePipe } from './pipes/time-pipe.pipe';
 import { ShopComponent } from './views/shop/shop.component';
 import { AccessoryComponent } from './components/accessory/accessory.component'
-import { ListServicesComponent } from './service_provider/list-services/list-services.component';
 import { MyServicesComponent } from './service_provider/my-services/my-services.component';
 
 @NgModule({

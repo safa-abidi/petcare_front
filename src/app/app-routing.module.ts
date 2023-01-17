@@ -30,7 +30,6 @@ const routes: Routes = [
   { path: 'service/modify/:id', component: UpdateServiceComponent, canActivate: [LoggedInGuard, ServiceProviderGuard]},
   { path: 'services', component: ListServicesComponent,},
   { path: 'my-services/:id', component: MyServicesComponent, canActivate: [LoggedInGuard, ServiceProviderGuard]},
-  { path: 'home', component: HomePageComponent },
   {
     path: "calendar", children: [
       { path: "", component: CalendarViewComponent },
@@ -38,8 +37,6 @@ const routes: Routes = [
     ]
   },
   { path: "shop", component: ShopComponent },
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: '**', component: NotFoundComponent },]
   { path: 'requests/add/:providerId/:serviceId', component: AddRequestComponent},
   { path: 'home', component: HomePageComponent},
   { path: '', redirectTo: '/home', pathMatch: 'full'},
