@@ -1,0 +1,23 @@
+.image-container {
+  border-radius: 1.5vw;
+  padding: 0.8vw 0;
+}
+
+.box {
+  background-color: rgba(255,166,48,40%);
+  border-radius: 1vw;
+}
+
+.item-info {
+  font-size: 7.5vw;
+}
+
+.button-achat {
+  border: none;
+  background-color: rgba(255,166,48,100%);
+  color: white;
+  border-radius: 1vw;
+  margin-top: 8vw;
+  font-weight: bold;
+  margin-left: -0.5vw;
+}

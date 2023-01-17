@@ -12,7 +12,9 @@ import { RankPipePipe } from './pipes/rank-pipe.pipe';
 import { TaskComponent } from './components/task/task.component';
 import {HttpClientModule} from "@angular/common/http";
 import { TimePipePipe } from './pipes/time-pipe.pipe';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ShopComponent } from './views/shop/shop.component';
+import { AccessoryComponent } from './components/accessory/accessory.component'
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
     CalendarDayDetailsComponent,
     RankPipePipe,
     TaskComponent,
-    TimePipePipe
+    TimePipePipe,
+    ShopComponent,
+    AccessoryComponent
   ],
   imports: [
     BrowserModule,
