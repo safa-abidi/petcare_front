@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {faCircleDollarToSlot, faLocationDot, faMoneyBill} from "@fortawesome/free-solid-svg-icons";
 import {Service} from "../../models/service";
 import {ServiceCategories} from "../../enums/service_categories";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-service-item',
@@ -17,12 +18,14 @@ export class ServiceItemComponent implements OnInit {
   isMine : boolean = false;
   truncate  : boolean = true
   detailsButtonText = "Voir details"
+  serviceId : number = 0;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
     this.category = Object.values(ServiceCategories)[Object.keys(ServiceCategories).indexOf(this.service.category)]
     this.isMine = this.service.user!.id == +localStorage.getItem("userId")!
+    this.serviceId = this.service.id!;
   }
 
   onDetailsClick(){
@@ -33,6 +36,11 @@ export class ServiceItemComponent implements OnInit {
     else{
       this.detailsButtonText= "Masquer details"
     }
+  }
+
+  updateService(){
+    console.log("update service");
+    this.router.navigate(['/service/modify/'+this.serviceId]);
   }
 
 }

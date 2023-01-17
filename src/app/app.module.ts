@@ -26,6 +26,7 @@ import { ListServicesComponent } from './service_provider/list-services/list-ser
 import { ServiceItemComponent } from './service_provider/service-item/service-item.component';
 import { ModifyPetComponent } from './pet/modify-pet/modify-pet.component';
 import { UpdateServiceComponent } from './service_provider/update-service/update-service.component';
+import { MyServicesComponent } from './service_provider/my-services/my-services.component';
 
 
 
@@ -52,6 +53,7 @@ import { UpdateServiceComponent } from './service_provider/update-service/update
     ServiceItemComponent,
     ModifyPetComponent,
     UpdateServiceComponent,
+    MyServicesComponent,
   ],
   imports: [
     BrowserModule,
