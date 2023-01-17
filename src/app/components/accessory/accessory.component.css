@@ -1,3 +1,6 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+
 .image-container {
   border-radius: 1.5vw;
   padding: 0.8vw 0;

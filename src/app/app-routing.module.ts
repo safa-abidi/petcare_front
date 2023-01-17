@@ -34,7 +34,7 @@ const routes: Routes = [
       { path: "day/:day/:month/:year", component: CalendarDayDetailsComponent },
     ]
   },
-  { path: "shop", component: ShopComponent }
+  { path: "shop", component: ShopComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', component: NotFoundComponent },]
 

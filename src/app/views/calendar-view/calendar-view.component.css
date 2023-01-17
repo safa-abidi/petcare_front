@@ -1,3 +1,6 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+
 .months-container {
   margin-left: 10vw;
   margin-top: 2vw;
