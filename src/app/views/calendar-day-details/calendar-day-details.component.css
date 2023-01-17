@@ -1,0 +1,68 @@
+.date {
+  font-size: 2.5vw
+}
+ .day {
+   font-size: 5vw;
+ }
+
+ .sched-tasks {
+   margin-top: 5vw;
+   margin-left: 2vw;
+   font-size: 2vw;
+ }
+
+ .tasks-container {
+   background-color: rgba(230,200,180,10%);
+   border-radius: 1vw;
+   margin: 0.5vw;
+   padding: 2.5vw;
+ }
+
+ .bg-svg {
+   position: absolute;
+   z-index: -2;
+   margin-left: -25vw;
+   margin-top: 10vw;
+   height: 90%;
+ }
+
+ .under {
+   z-index: -1;
+ }
+
+ .task-form {
+   margin-left: 2vw;
+   font-size: 1.5vw;
+ }
+
+ .input {
+   border: 0.2vw #193A6A solid;
+   border-radius: 1vw;
+   padding: 0.5vw 1vw;
+   width: 90%;
+ }
+
+ .color-input {
+   border-radius: 0.5vw;
+   background-color: white;
+   padding: 0.5vw;
+   width: 50%;
+   border-color: #193A6A;
+   border-width: 0.2vw;
+   height: 2.5vw;
+ }
+
+ .submit-button {
+   align-self: center;
+   margin: 2.5vw 10vw;
+   width: 50%;
+   background-color: #193A6A;
+   border-radius: 1vw;
+   padding: 1vw 2vw;
+   color: white;
+   border: none;
+ }
+
+input {
+  appearance: none;
+}

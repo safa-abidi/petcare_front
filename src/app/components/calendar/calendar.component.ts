@@ -12,8 +12,8 @@ export class CalendarComponent implements OnInit {
   constructor(private calendarService:CalendarService) { }
 
   ngOnInit(): void {
-    this.days = this.calendarService.generateMonthDays().days;
-    this.dayNames = this.calendarService.generateMonthDays().dayNames;
+    this.days = this.calendarService.generateCalendar().days;
+    this.dayNames = this.calendarService.generateCalendar().dayNames;
   }
 
 }

@@ -1,0 +1,13 @@
+<div class="row task-container m-3" [ngStyle]="{'border-color': task.color}">
+  <div class="row">
+    <div class="col task-element">
+      {{ task.title }}
+    </div>
+    <div class="col task-element">
+      {{ task.content }}
+    </div>
+    <div class="col task-element">
+      {{ task.time | timePipe}}
+    </div>
+  </div>
+</div>

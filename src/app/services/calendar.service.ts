@@ -7,7 +7,13 @@ export class CalendarService {
 
   constructor() { }
 
-  generateMonthDays() {
+  monthToString(month:number) {
+    return new Date(0,month).toLocaleString('en-US', {
+      month: 'long',
+    })
+  }
+
+  generateCalendar() {
     const date:Date = new Date();
     const day:number = date.getDate();
     const month:number = date.getMonth();
@@ -89,6 +95,9 @@ export class CalendarService {
     return {
       dayNames: days_names,
       days: days,
+      day: day,
+      month: month,
+      year: year
     }
   }
 }
