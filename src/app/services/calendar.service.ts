@@ -13,8 +13,7 @@ export class CalendarService {
     })
   }
 
-  generateCalendar() {
-    const date:Date = new Date();
+  generateCalendar(date: Date) {
     const day:number = date.getDate();
     const month:number = date.getMonth();
     const year:number = date.getFullYear();
@@ -98,6 +97,38 @@ export class CalendarService {
       day: day,
       month: month,
       year: year
+    }
+  }
+
+  nextMonth(month: number,year: number) {
+    let nextMonth = month === 12 ? 1 : month+1;
+    let nextYear = month === 12 ? year+1 : year;
+    let date = new Date(1,nextMonth,nextYear);
+    let days = this.generateCalendar(date).days
+    return {
+      days,
+      month: nextMonth,
+      year: nextYear,
+      nextMonth: nextMonth === 12 ? 1 : nextMonth+1,
+      nextYear: nextMonth === 12 ? nextYear+1 : nextYear,
+      lastMonth: nextMonth === 1 ? 12 : nextMonth-1,
+      lastYear: nextMonth === 1 ? nextYear-1:nextYear
+    }
+  }
+
+  lastMonth(month: number,year: number) {
+    let lastMonth = month === 1 ? 12 : month-1;
+    let lastYear = month === 1 ? year-1 : year;
+    let date = new Date(1,lastMonth,lastYear);
+    let days = this.generateCalendar(date).days
+    return {
+      days,
+      month: lastMonth,
+      year: lastYear,
+      nextMonth: lastMonth === 12 ? 1 : lastMonth+1,
+      nextYear: lastMonth === 12 ? lastYear+1 : lastYear,
+      lastMonth: lastMonth === 1 ? 12 : lastMonth-1,
+      lastYear: lastMonth === 1 ? lastYear-1:lastYear
     }
   }
 }

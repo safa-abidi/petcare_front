@@ -14,8 +14,11 @@ export class TaskService {
     return this.http.get(this.urlBase+1/*localStorage.getItem('accessToken')*/)
   }
 
-  postTask(body: Task) {
-    return this.http.post(this.urlBase,body);
+  postTask(body: string) {
+    this.http.post(this.urlBase,body).subscribe(
+      (response) => { console.log(response);},
+      (error) => { console.log(error);}
+    );
   }
 
 }

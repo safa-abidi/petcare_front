@@ -1,5 +1,5 @@
 <div *ngFor="let week of days;let i = index;" class="row m-4">
   <div *ngFor="let day of week;let j = index;" class="col fitContent">
-    <app-calendar-day [dayNumber]="days[i][j]" [ngClass]="{ grayed: (i == 0 && days[i][j] > 20) || ((i == 4 || i == 5) && days[i][j] < 20)}"></app-calendar-day>
+    <app-calendar-day [dayNumber]="days[i][j]" [ngClass]="{ grayed: (i == 0 && days[i][j] > 20) || ((i == 4 || i == 5) && days[i][j] < 20)}" [monthNumber]="month" [year]="year" [isToday]="days[i][j] == today && setEnabled(i,j)" [enabled]="setEnabled(i,j)"></app-calendar-day>
   </div>
 </div>

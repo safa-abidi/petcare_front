@@ -27,8 +27,7 @@ export class CalendarDayDetailsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.month = this.calendarService.monthToString(this.monthNumber);
-    this.year = this.calendarService.generateCalendar().year;
+    this.month = this.calendarService.monthToString(this.monthNumber-1);
     this.taskService.getTasks().subscribe(
       (response) => { this.tasks = response;console.log(this.tasks);},
       (error) => { console.log(error);}
@@ -36,17 +35,14 @@ export class CalendarDayDetailsComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-    this.taskService.postTask({
-      "date": new Date(this.dayNumber,this.monthNumber,this.year),
+    this.taskService.postTask(JSON.stringify({
+      "date": this.monthNumber+"/"+this.dayNumber+"/"+this.year,
       "content": this.content,
       "title": this.title,
       "color" : this.color,
-      "userId": 1,
-      "time": this.time
-    }).subscribe(
-      (response) => { console.log(response);},
-      (error) => { console.log(error);}
-    );
+      "user": 1,
+      "time": this.year+"-"+this.monthNumber+"-"+this.dayNumber+" "+this.time+":00"
+    }));
   }
 
 }

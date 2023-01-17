@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {CalendarService} from "../../services/calendar.service";
 
 @Component({
@@ -7,13 +7,22 @@ import {CalendarService} from "../../services/calendar.service";
   styleUrls: ['./calendar.component.css']
 })
 export class CalendarComponent implements OnInit {
-  days:number[][] = [[]]
+  @Input() days:number[][] = [[]]
   dayNames:string[] = []
-  constructor(private calendarService:CalendarService) { }
+  @Input() month:number = 0;
+  @Input() year: number = 0;
+  today: number = new Date().getDate();
+
+  constructor(private calendarService:CalendarService) {
+    console.log(this.today)
+  }
 
   ngOnInit(): void {
-    this.days = this.calendarService.generateCalendar().days;
-    this.dayNames = this.calendarService.generateCalendar().dayNames;
+    this.dayNames = this.calendarService.generateCalendar(new Date()).dayNames;
+  }
+
+  setEnabled(i:number,j:number) {
+    return !((i <= 1 && this.days[i][j] > 14)|| (i >=4 && this.days[i][j]<20))
   }
 
 }

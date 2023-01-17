@@ -4,8 +4,10 @@ import {CalendarViewComponent} from "./views/calendar-view/calendar-view.compone
 import {CalendarDayDetailsComponent} from "./views/calendar-day-details/calendar-day-details.component";
 
 const routes: Routes = [
-  {path:"calendar",component:CalendarViewComponent},
-  {path:"calendar/day/:day/:month/:year",component:CalendarDayDetailsComponent}
+  {path:"calendar", children: [
+      {path:"",component:CalendarViewComponent},
+      {path:"day/:day/:month/:year",component:CalendarDayDetailsComponent},
+  ]}
 ];
 
 export const routing = RouterModule.forRoot(routes);

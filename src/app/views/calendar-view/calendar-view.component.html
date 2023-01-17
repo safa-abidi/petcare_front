@@ -1,1 +1,23 @@
-<app-calendar></app-calendar>
+<div class="row calendar-container">
+  <div class="col">
+    <div class="row months-container">
+      <div class="col grayed-text">
+        <button class="text-decoration-none month-button" (click)="lastMonthMthd()">{{ lastMonthName }} {{ lastYear }}</button>
+      </div>
+      <div class="col highlighted-text">
+        {{ monthName }} {{ year }}
+      </div>
+      <div class="col grayed-text">
+        <button class="text-decoration-none month-button" (click)="nextMonthMthd()">{{ nextMonthName }} {{ nextYear }}</button>
+      </div>
+    </div>
+    <div class="row">
+
+    </div>
+    <div class="row">
+      <app-calendar [month]="month+1" [year]="year" [days]="days"></app-calendar>
+    </div>
+  </div>
+</div>
+<img src="assets/svg/calBg.svg" class="position-absolute under w-100 top">
+

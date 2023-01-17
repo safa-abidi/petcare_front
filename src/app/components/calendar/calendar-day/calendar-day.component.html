@@ -1,5 +1,5 @@
-<div class="dayCard pointer-cursor" (mouseenter)="setButtonVisibility()" (mouseleave)="setButtonVisibility()">
+<div class="dayCard" (mouseenter)="setButtonVisibility()" (mouseleave)="setButtonVisibility()">
   <div>{{dayNumber}}</div>
   <div class="tasksList"></div>
-  <a *ngIf="isButtonVisible" class="addTaskButton" [routerLink]="['calendar','day',dayNumber]" routerLinkActive="active">Add</a>
+  <a *ngIf="isButtonVisible" class="addTaskButton" [routerLink]="['day',dayNumber,monthNumber,year]" routerLinkActive="active" [ngClass]="{today: isToday}">Add</a>
 </div>

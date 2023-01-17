@@ -13,7 +13,7 @@
     <div class="col">
       <app-task *ngFor="let task of tasks" [task]="task" class="row"></app-task>
     </div>
-    <img src="assets/img/Paws.png" class="position-absolute under">
+    <img src="assets/img/Paws.png" class="position-absolute under position-paws-left">
   </div>
   <div class="col tasks-container">
     <img src="assets/img/Paws.png" class="position-absolute under">
@@ -27,7 +27,7 @@
       </div>
       <div class="col mt-4">
         <label class="row">Content</label>
-        <textarea class="row input" [(ngModel)]="content"></textarea>
+        <textarea class="row input" [(ngModel)]="content" name="content" cols="3"></textarea>
       </div>
       <div class="col mt-4">
         <label class="row">Time</label>
@@ -45,6 +45,6 @@
         <button type="submit" class="submit-button">Submit</button>
       </div>
     </form>
-    <img src="assets/img/Paws.png" class="position-absolute under">
+    <img src="assets/img/Paws.png" class="position-absolute under position-paws">
   </div>
 </div>

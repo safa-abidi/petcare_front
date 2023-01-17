@@ -7,7 +7,11 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class CalendarDayComponent implements OnInit {
   @Input() dayNumber:number = 0;
+  @Input() monthNumber:number = 0;
+  @Input() year:number = 0;
   isButtonVisible:boolean = false;
+  @Input() isToday:boolean = false;
+  @Input() enabled:boolean = true;
 
   constructor() { }
 
@@ -15,7 +19,9 @@ export class CalendarDayComponent implements OnInit {
   }
 
   setButtonVisibility(){
-    this.isButtonVisible = !this.isButtonVisible;
+    if(this.enabled) {
+      this.isButtonVisible = !this.isButtonVisible;
+    }
   }
 
 

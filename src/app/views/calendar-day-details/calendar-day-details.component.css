@@ -66,3 +66,13 @@
 input {
   appearance: none;
 }
+
+.position-paws {
+  margin-top: -10vw;
+  margin-left: 35vw;
+}
+
+.position-paws-left {
+  margin-top: 7.5vw;
+  margin-left: 35vw;
+}
