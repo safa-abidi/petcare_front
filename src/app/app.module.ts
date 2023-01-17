@@ -24,6 +24,7 @@ import { ChangePasswordComponent } from './profile/change-password/change-passwo
 import { AddServiceComponent } from './service_provider/add-service/add-service.component';
 import { ListServicesComponent } from './service_provider/list-services/list-services.component';
 import { ServiceItemComponent } from './service_provider/service-item/service-item.component';
+import { ModifyPetComponent } from './pet/modify-pet/modify-pet.component';
 
 
 
@@ -48,6 +49,7 @@ import { ServiceItemComponent } from './service_provider/service-item/service-it
     AddServiceComponent,
     ListServicesComponent,
     ServiceItemComponent,
+    ModifyPetComponent,
   ],
   imports: [
     BrowserModule,
