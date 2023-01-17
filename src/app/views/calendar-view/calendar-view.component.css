@@ -1,0 +1,36 @@
+.months-container {
+  margin-left: 10vw;
+  margin-top: 2vw;
+}
+
+.calendar-container {
+  margin: 5vw 2vw;
+  background-color: rgba(180,215,220,40%);
+  border-radius: 2vw;
+}
+
+.grayed-text {
+  font-size: 2vw;
+  color: darkslategray;
+  padding-top: 0.5vw;
+}
+
+.highlighted-text {
+  font-size: 3vw;
+  font-weight: bold;
+  color: #193A6A;
+}
+
+.under {
+  z-index: -2;
+}
+
+.top {
+  margin-top: -125vw;
+}
+
+.month-button {
+  border: none;
+  background-color: transparent;
+  color: darkslategray;
+}

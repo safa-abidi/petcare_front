@@ -25,6 +25,16 @@ import { AddServiceComponent } from './service_provider/add-service/add-service.
 
 
 
+import { CalendarComponent } from './components/calendar/calendar.component';
+import { CalendarDayComponent } from './components/calendar/calendar-day/calendar-day.component';
+import { CalendarViewComponent } from './views/calendar-view/calendar-view.component';
+import { CalendarDayDetailsComponent } from './views/calendar-day-details/calendar-day-details.component';
+import { RankPipePipe } from './pipes/rank-pipe.pipe';
+import { TaskComponent } from './components/task/task.component';
+import { TimePipePipe } from './pipes/time-pipe.pipe';
+import { ShopComponent } from './views/shop/shop.component';
+import { AccessoryComponent } from './components/accessory/accessory.component'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,6 +54,15 @@ import { AddServiceComponent } from './service_provider/add-service/add-service.
     ProfileDisplayComponent,
     ChangePasswordComponent,
     AddServiceComponent,
+    CalendarComponent,
+    CalendarDayComponent,
+    CalendarViewComponent,
+    CalendarDayDetailsComponent,
+    RankPipePipe,
+    TaskComponent,
+    TimePipePipe,
+    ShopComponent,
+    AccessoryComponent
   ],
   imports: [
     BrowserModule,

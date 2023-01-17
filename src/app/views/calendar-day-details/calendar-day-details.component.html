@@ -1,0 +1,49 @@
+<img src="assets/svg/BG.svg" class="bg-svg">
+<div class="row m-3 tasks-containers">
+  <div class="col tasks-container">
+    <img src="assets/img/Paws.png" class="position-absolute under">
+    <div class="date">
+      <span class="day">
+        {{ dayNumber | rankPipe }}
+      </span> of {{ month }}, {{ year }}
+    </div>
+    <div class="sched-tasks">
+      Scheduled Tasks :
+    </div>
+    <div class="col">
+      <app-task *ngFor="let task of tasks" [task]="task" class="row"></app-task>
+    </div>
+  </div>
+  <div class="col tasks-container">
+    <img src="assets/img/Paws.png" class="position-absolute under">
+    <h1>
+      Add a Task
+    </h1>
+    <form (ngSubmit)="onSubmit(task)" #task="ngForm" class="task-form">
+      <div class="col mt-4">
+        <label class="row">Title</label>
+        <input class="row input" type="text" name="title" placeholder="Title" [(ngModel)]="title">
+      </div>
+      <div class="col mt-4">
+        <label class="row">Content</label>
+        <textarea class="row input" [(ngModel)]="content" name="content" cols="3" placeholder="Content"></textarea>
+      </div>
+      <div class="col mt-4">
+        <label class="row">Time</label>
+        <input class="row input" [(ngModel)]="time" name="time" type="time">
+      </div>
+      <div class="col mt-4">
+        <label class="row">Color</label>
+        <input class="row color-input" name="color" type="color" list="presets" value="#193A6A" [(ngModel)]="color">
+      </div>
+      <datalist id="presets">
+        <option value="#FF9330">Orange</option>
+        <option value="#193A6A">Blue</option>
+      </datalist>
+      <div class="mt-4">
+        <button type="submit" class="submit-button">Submit</button>
+      </div>
+    </form>
+    <img src="assets/img/Paws.png" class="position-absolute under position-paws">
+  </div>
+</div>
