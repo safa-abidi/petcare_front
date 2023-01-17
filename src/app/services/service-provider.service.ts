@@ -16,4 +16,12 @@ export class ServiceProviderService {
   addService(service : Service) : Observable<Service>{
     return this.httpService.post<Service>(this.url, service);
   }
+
+  getServices(): Observable<Service[]>{
+    return this.httpService.get<Service[]>(this.url)
+  }
+
+  searchServices(body: Object) : Observable<Service[]>{
+    return this.httpService.post<Service[]>(this.url+"/search",body)
+  }
 }

@@ -22,6 +22,8 @@ import { ProfileComponent } from './profile/profile/profile.component';
 import { ProfileDisplayComponent } from './profile/profile-display/profile-display.component';
 import { ChangePasswordComponent } from './profile/change-password/change-password.component';
 import { AddServiceComponent } from './service_provider/add-service/add-service.component';
+import { ListServicesComponent } from './service_provider/list-services/list-services.component';
+import { ServiceItemComponent } from './service_provider/service-item/service-item.component';
 
 
 
@@ -44,6 +46,8 @@ import { AddServiceComponent } from './service_provider/add-service/add-service.
     ProfileDisplayComponent,
     ChangePasswordComponent,
     AddServiceComponent,
+    ListServicesComponent,
+    ServiceItemComponent,
   ],
   imports: [
     BrowserModule,
