@@ -1,8 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {faCircleDollarToSlot, faLocationDot, faMoneyBill} from "@fortawesome/free-solid-svg-icons";
+import {faCircleDollarToSlot, faLocationDot} from "@fortawesome/free-solid-svg-icons";
 import {Service} from "../../models/service";
+import { Router } from '@angular/router';
 import {ServiceCategories} from "../../enums/service_categories";
-import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-service-item',
@@ -19,6 +19,7 @@ export class ServiceItemComponent implements OnInit {
   truncate  : boolean = true
   detailsButtonText = "Voir details"
   role : string = ""
+  serviceId : number = 0;
 
   constructor(private router: Router) { }
 
@@ -26,6 +27,7 @@ export class ServiceItemComponent implements OnInit {
     this.category = Object.values(ServiceCategories)[Object.keys(ServiceCategories).indexOf(this.service.category)]
     this.isMine = this.service.user!.id == +localStorage.getItem("userId")!
     this.role = localStorage.getItem("role")!
+    this.serviceId = this.service.id!;
   }
 
   onDetailsClick(){
@@ -38,8 +40,14 @@ export class ServiceItemComponent implements OnInit {
     }
   }
 
-  onRequestClick(){
-    this.router.navigate(['requests/add',this.service.user?.id!, this.service.id!]);
+
+  onRequestClick() {
+    this.router.navigate(['requests/add', this.service.user?.id!, this.service!.id!]);
+  }
+
+  updateService(){
+    console.log("update service");
+    this.router.navigate(['/service/modify/'+this.serviceId]);
   }
 
 }

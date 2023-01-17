@@ -10,6 +10,7 @@ export class Service {
   city: string;
   userId: number;
   user?: User;
+  id?: number;
 
   constructor(category: ServiceCategories, title: string, description: string, price: number, city: string, userId: number) {
     this.category = category;
