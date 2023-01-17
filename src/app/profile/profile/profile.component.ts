@@ -23,7 +23,7 @@ export class ProfileComponent implements OnInit {
     if(this.role.toLowerCase().includes("petowner")){
       this.addText="animal"
     }
-    else if(this.role.toLowerCase().includes("service")){
+    else if(this.role.toLowerCase().includes("provider")){
       this.addText="service"
     }
   }
@@ -32,7 +32,7 @@ export class ProfileComponent implements OnInit {
     if(this.role.toLowerCase().includes("petowner")){
       this.router.navigate(["pets/add"]);
     }
-    else if(this.role.toLowerCase().includes("service")){
+    else if(this.role.toLowerCase().includes("provider")){
       this.router.navigate(["services/add"]);
 
     }

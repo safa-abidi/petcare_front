@@ -3,7 +3,7 @@
 <div class="grid grid-cols-5 p-0 pt-20">
 
   <div class="md:fixed col-span-2 md:col-span-1 ml-5">
-    <button *ngIf="isAuthenticated && role.toLowerCase().includes('service')" type="button" class="w-full text-white bg-green-600 font-medium rounded-lg text-sm px-3 py-2.5 mr-2 mb-2 mt-10" (click)="onAddServiceClick()">Ajouter votre service</button>
+    <button *ngIf="isAuthenticated && role.toLowerCase().includes('provider')" type="button" class="w-full text-white bg-green-600 font-medium rounded-lg text-sm px-3 py-2.5 mr-2 mb-2 mt-10" (click)="onAddServiceClick()">Ajouter votre service</button>
     <form class="p-5 mt-6 bg-gray-200 rounded-lg h-fit " #searchForm="ngForm">
       <label class="block mb-2 text-lg font-medium font-semibold text-gray-500 text-center">Recherche</label>
 

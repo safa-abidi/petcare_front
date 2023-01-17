@@ -68,8 +68,6 @@ export class UserSignupComponent {
 
 
   onSelectUser(user: String) {
-    console.log(user);
-
     switch (user) {
       case "admin": this.role = UserRoleEnum.admin; break;
       case "petowner": this.role = UserRoleEnum.petOwner; break;
@@ -79,8 +77,7 @@ export class UserSignupComponent {
     }
   }
   onSubmit() {
-
-    console.log(this.profileForm.value)
+    this.profileForm.value.role = this.role;
     this.signupService.signup(this.profileForm.value).subscribe((response: any) => {
       this.toastr.success('Utilisateur inscrit avec succès', 'Succès', { timeOut: 700 });
       setTimeout(() => {

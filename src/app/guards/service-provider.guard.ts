@@ -12,7 +12,7 @@ export class ServiceProviderGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     const role: string = localStorage.getItem('role')!
-    if(!role.toLowerCase().includes('service')){
+    if(!role.toLowerCase().includes('provider')){
       this.router.navigate(['/home'])
     }
 
