@@ -13,14 +13,26 @@ export class ServicesRequestsListComponent implements OnInit {
   confirmIcon = faCheck
   cancelIcon = faClose
   servicesRequests: ServiceRequest[] = []
+  role: string = ""
   constructor(private serviceRequestService : ServiceRequestService) { }
 
   ngOnInit(): void {
-    this.serviceRequestService.getServiceRequestWithProviderId(+localStorage.getItem('userId')!).subscribe(
-      (e) => {
-        this.servicesRequests = e
-      }
-    )
+    this.role = localStorage.getItem('role')!
+    if(this.role.toLowerCase().includes('provider')){
+      this.serviceRequestService.getServiceRequestWithProviderId(+localStorage.getItem('userId')!).subscribe(
+        (e) => {
+          this.servicesRequests = e
+        }
+      )
+    }
+    else if(this.role.toLowerCase().includes('petowner')){
+      this.serviceRequestService.getServiceRequestWithPetOwnerId(+localStorage.getItem('userId')!).subscribe(
+        (e) => {
+          this.servicesRequests = e
+        }
+      )
+    }
+
   }
 
   animalType(type: string): string{

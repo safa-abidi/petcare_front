@@ -10,7 +10,7 @@
       <p class="font-normal text-gray-700 text-sm">Status: {{statusType(request.status!)}}</p>
     </div>
 
-    <div *ngIf="request.status=='pending'" class="grid grid-cols-1 my-8 md:my-0.5">
+    <div *ngIf="role.toLowerCase().includes('provider') && request.status=='pending'" class="grid grid-cols-1 my-8 md:my-0.5">
       <button type="button" class="text-white bg-green-600 font-medium rounded-full text-sm mb-2 p-0.5 truncate" (click)="onConfirmClick(request.id!)" ><fa-icon [icon]="confirmIcon" class="fas fa-lock"></fa-icon> Confirmer</button>
       <button type="button" class="text-white bg-red-500 font-medium rounded-full text-sm mb-2 p-0.5 truncate" (click)="onCancelClick(request.id!)"><fa-icon [icon]="cancelIcon" class="fas fa-lock"></fa-icon> Annuler</button>
 

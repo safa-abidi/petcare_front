@@ -20,6 +20,9 @@ export class ServiceRequestService {
   getServiceRequestWithProviderId(id: number){
     return this.httpService.get<ServiceRequest[]>(`${this.url}/provider/${id}`)
   }
+  getServiceRequestWithPetOwnerId(id: number){
+    return this.httpService.get<ServiceRequest[]>(`${this.url}/petowner/${id}`)
+  }
 
   confirmServiceRequest(id: number){
     return this.httpService.get(`${this.url}/confirm/${id}`)

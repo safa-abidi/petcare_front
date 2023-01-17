@@ -16,7 +16,7 @@
       <app-profile-display *ngIf="pageIndex==0" class="w-full"></app-profile-display>
       <app-change-password *ngIf="pageIndex==1" class="w-full"></app-change-password>
       <div *ngIf="pageIndex==2" class="w-full my-5 mx-7">
-        <app-services-requests-list *ngIf="role.toLowerCase().includes('provider')" ></app-services-requests-list>
+        <app-services-requests-list></app-services-requests-list>
       </div>
     </div>
 
