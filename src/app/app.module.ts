@@ -22,9 +22,9 @@ import { ProfileComponent } from './profile/profile/profile.component';
 import { ProfileDisplayComponent } from './profile/profile-display/profile-display.component';
 import { ChangePasswordComponent } from './profile/change-password/change-password.component';
 import { AddServiceComponent } from './service_provider/add-service/add-service.component';
-
-
-
+import { ServiceItemComponent } from './service_provider/service-item/service-item.component';
+import { ModifyPetComponent } from './pet/modify-pet/modify-pet.component';
+import { UpdateServiceComponent } from './service_provider/update-service/update-service.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
 import { CalendarDayComponent } from './components/calendar/calendar-day/calendar-day.component';
 import { CalendarViewComponent } from './views/calendar-view/calendar-view.component';
@@ -34,6 +34,7 @@ import { TaskComponent } from './components/task/task.component';
 import { TimePipePipe } from './pipes/time-pipe.pipe';
 import { ShopComponent } from './views/shop/shop.component';
 import { AccessoryComponent } from './components/accessory/accessory.component'
+import { ListServicesComponent } from './service_provider/list-services/list-services.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,11 @@ import { AccessoryComponent } from './components/accessory/accessory.component'
     TaskComponent,
     TimePipePipe,
     ShopComponent,
-    AccessoryComponent
+    AccessoryComponent,
+    ListServicesComponent,
+    ServiceItemComponent,
+    ModifyPetComponent,
+    UpdateServiceComponent,
   ],
   imports: [
     BrowserModule,

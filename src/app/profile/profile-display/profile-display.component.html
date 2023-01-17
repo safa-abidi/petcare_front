@@ -1,46 +1,108 @@
-
 <div class="grid place-items-end">
-  <button class="mr-6 mb-4 bg-yellow-500 text-white px-5 py-2.5 mr-10 mb-2 rounded-lg mt-2" (click)="modify()" [ngClass]="{'opacity-50': readOnly}">Modifier</button>
+  <button
+    class="mr-6 mb-4 bg-yellow-500 text-white px-5 py-2.5 mr-10 mb-2 rounded-lg mt-2"
+    (click)="modify()"
+    [ngClass]="{ 'opacity-50': readOnly }"
+  >
+    Modifier
+  </button>
 </div>
 
 <form class="mx-10" #modifyUserForm="ngForm">
-
   <div class="grid md:gap-6 mb-6 md:grid-cols-2">
     <div>
       <label class="block mb-2 text-sm font-medium">Nom</label>
-      <input name="lastName" [(ngModel)]="user.lastName" required [readonly]="readOnly" class="border border-gray-300 text-sm rounded-lg block w-full p-2.5 placeholder-black focus:outline-none" [ngClass]="{'text-gray-500': readOnly}">
+      <input
+        name="lastName"
+        [(ngModel)]="user.lastName"
+        required
+        [readonly]="readOnly"
+        class="border border-gray-300 text-sm rounded-lg block w-full p-2.5 placeholder-black focus:outline-none"
+        [ngClass]="{ 'text-gray-500': readOnly }"
+      />
     </div>
     <div>
       <label class="block mb-2 text-sm font-medium">Prenom</label>
-      <input [(ngModel)]="user.firstName" name="firstName" required [readonly]="readOnly" class="border border-gray-300 text-sm rounded-lg block w-full p-2.5 placeholder-black focus:outline-none" [ngClass]="{'text-gray-500': readOnly}">
+      <input
+        [(ngModel)]="user.firstName"
+        name="firstName"
+        required
+        [readonly]="readOnly"
+        class="border border-gray-300 text-sm rounded-lg block w-full p-2.5 placeholder-black focus:outline-none"
+        [ngClass]="{ 'text-gray-500': readOnly }"
+      />
     </div>
     <div>
       <label class="block mb-2 text-sm font-medium">Date de naissance</label>
-      <input [(ngModel)] ="date" type="date" name="birthDate" required [readonly]="readOnly" class="border border-gray-300 text-sm rounded-lg block w-full p-2.5 placeholder-black focus:outline-none" [ngClass]="{'text-gray-500': readOnly}">
+      <input
+        [(ngModel)]="date"
+        type="date"
+        name="birthDate"
+        required
+        [readonly]="readOnly"
+        class="border border-gray-300 text-sm rounded-lg block w-full p-2.5 placeholder-black focus:outline-none"
+        [ngClass]="{ 'text-gray-500': readOnly }"
+      />
     </div>
     <div>
       <label class="block mb-2 text-sm font-medium">Ville</label>
-      <input [(ngModel)]="user.city" name="city" required [readonly]="readOnly" class="border border-gray-300 text-sm rounded-lg block w-full p-2.5 placeholder-black focus:outline-none" [ngClass]="{'text-gray-500': readOnly}">
+      <input
+        [(ngModel)]="user.city"
+        name="city"
+        required
+        [readonly]="readOnly"
+        class="border border-gray-300 text-sm rounded-lg block w-full p-2.5 placeholder-black focus:outline-none"
+        [ngClass]="{ 'text-gray-500': readOnly }"
+      />
     </div>
     <div>
       <label class="block mb-2 text-sm font-medium">Sexe</label>
-      <select [(ngModel)]="user.gender" name="gender" [disabled]="readOnly.toString()" required class="border border-gray-300 text-sm rounded-lg block w-full p-2.5 placeholder-black focus:outline-none bg-white" [ngClass]="{'opacity-100': readOnly, 'text-gray-500': readOnly}">
+      <select
+        [(ngModel)]="user.gender"
+        name="gender"
+        [disabled]="readOnly.toString()"
+        required
+        class="border border-gray-300 text-sm rounded-lg block w-full p-2.5 placeholder-black focus:outline-none bg-white"
+        [ngClass]="{ 'opacity-100': readOnly, 'text-gray-500': readOnly }"
+      >
         <option>male</option>
         <option>female</option>
       </select>
     </div>
     <div>
       <label class="block mb-2 text-sm font-medium">Email</label>
-      <input [(ngModel)]="user.email" name="email" type="email" required [readonly]="readOnly" class="border border-gray-300 text-sm rounded-lg block w-full p-2.5 placeholder-black focus:outline-none" email [ngClass]="{'text-gray-500': readOnly}">
+      <input
+        [(ngModel)]="user.email"
+        name="email"
+        type="email"
+        required
+        [readonly]="readOnly"
+        class="border border-gray-300 text-sm rounded-lg block w-full p-2.5 placeholder-black focus:outline-none"
+        email
+        [ngClass]="{ 'text-gray-500': readOnly }"
+      />
     </div>
   </div>
 
-  <div *ngIf="error!=''" class="ml-20 mr-20 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-2 rounded-lg" role="alert">
-        <span class="block sm:inline">{{error}}</span>
+  <div
+    *ngIf="error != ''"
+    class="ml-20 mr-20 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-2 rounded-lg"
+    role="alert"
+  >
+    <span class="block sm:inline">{{ error }}</span>
   </div>
 
   <div class="grid place-items-center w-full">
-    <button class="text-white bg-blue-700 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-3 w-1/3 invisible truncate" [ngClass]="{'button-disabled': modifyUserForm.invalid, 'invisible': readOnly}" [disabled]="modifyUserForm.invalid"  (click)="onConfirmClick(modifyUserForm)">Confirmer</button>
+    <button
+      class="text-white bg-blue-700 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-3 w-1/3 invisible truncate"
+      [ngClass]="{
+        'button-disabled': modifyUserForm.invalid,
+        invisible: readOnly
+      }"
+      [disabled]="modifyUserForm.invalid"
+      (click)="onConfirmClick(modifyUserForm)"
+    >
+      Confirmer
+    </button>
   </div>
-
 </form>

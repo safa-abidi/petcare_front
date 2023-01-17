@@ -1,7 +1,3 @@
-.button-disabled{
-  opacity: 0.6;
-}
-
 .bg{
   background-image: url('../../../assets/images/orange_motif_with_cat.png');
   object-fit: contain;
@@ -17,6 +13,10 @@
   }
 }
 
+
+textarea {
+  resize: none;
+}
 .button-disabled{
   opacity: 0.6;
 }

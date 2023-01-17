@@ -4,6 +4,8 @@ import { SignupService } from '../services/signup.service';
 import { UserRoleEnum } from '../utils/user-role.enum';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
+import {faArrowLeft} from "@fortawesome/free-solid-svg-icons";
+import {Location} from "@angular/common";
 
 
 @Component({
@@ -13,6 +15,7 @@ import { Router } from '@angular/router';
 })
 export class UserSignupComponent {
 
+  backIcon = faArrowLeft;
   role: UserRoleEnum = UserRoleEnum.petOwner;
   lastName: string = "lastName";
   confirm: boolean = true;
@@ -42,7 +45,7 @@ export class UserSignupComponent {
     "Tunis",
     "Zaghouan"]
   genders: string[] = ["female", "male"]
-  constructor(private router: Router, private fb: FormBuilder, private signupService: SignupService, private toastr: ToastrService) { }
+  constructor(private router: Router, private fb: FormBuilder, private signupService: SignupService, private toastr: ToastrService, private location: Location) { }
 
 
   profileForm = this.fb.group({
@@ -68,8 +71,6 @@ export class UserSignupComponent {
 
 
   onSelectUser(user: String) {
-    console.log(user);
-
     switch (user) {
       case "admin": this.role = UserRoleEnum.admin; break;
       case "petowner": this.role = UserRoleEnum.petOwner; break;
@@ -79,8 +80,7 @@ export class UserSignupComponent {
     }
   }
   onSubmit() {
-
-    console.log(this.profileForm.value)
+    this.profileForm.value.role = this.role;
     this.signupService.signup(this.profileForm.value).subscribe((response: any) => {
       this.toastr.success('Utilisateur inscrit avec succès', 'Succès', { timeOut: 700 });
       setTimeout(() => {
@@ -94,6 +94,8 @@ export class UserSignupComponent {
     )
   }
 
-
+  backClicked() {
+    this.location.back();
+  }
 
 }
