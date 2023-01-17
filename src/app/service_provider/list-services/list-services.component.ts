@@ -3,6 +3,8 @@ import {ServiceProviderService} from "../../services/service-provider.service";
 import {Service} from "../../models/service";
 import {ServiceCategories} from "../../enums/service_categories";
 import {NgForm} from "@angular/forms";
+import {LoginService} from "../../services/login.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-list-services',
@@ -14,9 +16,12 @@ export class ListServicesComponent implements OnInit {
   servicesList : Service[] = [];
   serviceCategories : string[] = Object.values(ServiceCategories)
   serviceCategoriesActivated : boolean[] = []
+  isAuthenticated = false;
+  role: string = ""
 
-  constructor(private serviceProviderService : ServiceProviderService) {
+  constructor(private serviceProviderService : ServiceProviderService, private loginService : LoginService, private router: Router) {
     this.serviceCategories.map(()=> this.serviceCategoriesActivated.push(true))
+
   }
 
   ngOnInit(): void {
@@ -25,6 +30,8 @@ export class ListServicesComponent implements OnInit {
         this.servicesList = s
       }
     )
+    this.isAuthenticated = this.loginService.isLogged()
+    this.role = localStorage.getItem("role")!
   }
 
   onCategoryChipClick(i : number){
@@ -48,6 +55,10 @@ export class ListServicesComponent implements OnInit {
       .subscribe(
       (s)=> this.servicesList=s
     )
+  }
+
+  onAddServiceClick(){
+    this.router.navigate(["services/add"])
   }
 
 }

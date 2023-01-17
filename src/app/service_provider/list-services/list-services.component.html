@@ -1,38 +1,44 @@
-<app-navbar-logged class="fixed w-full z-10" ></app-navbar-logged>
+<app-navbar-logged *ngIf="isAuthenticated" class="fixed w-full z-10" ></app-navbar-logged>
+<app-navbar *ngIf="!isAuthenticated" class="fixed w-full z-10" ></app-navbar>
 <div class="grid grid-cols-5 p-0 pt-20">
-  <form class="p-5 ml-5 mt-10 bg-gray-200 rounded-lg h-fit md:fixed col-span-2 md:col-span-1" #searchForm="ngForm">
 
-    <label class="block mb-2 text-lg font-medium font-semibold text-gray-500 text-center">Recherche</label>
+  <div class="md:fixed col-span-2 md:col-span-1 ml-5">
+    <button *ngIf="isAuthenticated && role.toLowerCase().includes('service')" type="button" class="w-full text-white bg-green-600 font-medium rounded-lg text-sm px-3 py-2.5 mr-2 mb-2 mt-10" (click)="onAddServiceClick()">Ajouter votre service</button>
+    <form class="p-5 mt-6 bg-gray-200 rounded-lg h-fit " #searchForm="ngForm">
+      <label class="block mb-2 text-lg font-medium font-semibold text-gray-500 text-center">Recherche</label>
 
-    <label class="block mb-2 text-sm font-medium text-gray-500">Titre</label>
-    <div class="relative my-2">
-      <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-        <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+      <label class="block mb-2 text-sm font-medium text-gray-500">Titre</label>
+      <div class="relative my-2">
+        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+          <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+        </div>
+        <input ngModel name="text" class="w-full p-3 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:outline-none" placeholder="Rechercher">
       </div>
-      <input ngModel name="text" class="w-full p-3 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:outline-none" placeholder="Rechercher">
-    </div>
 
 
-    <label class="block mb-2 text-sm font-medium text-gray-500">Categories</label>
-    <div class="grid md:grid-cols-2 my-2">
-      <div *ngFor="let category of serviceCategories; let i=index" class="px-4 py-2 my-1 mx-0 rounded-full bg-gray-300 font-semibold text-sm flex align-center w-max text-white" [ngClass]="{'bg-blue-500':serviceCategoriesActivated[i]}" (click)="onCategoryChipClick(i)">
-        {{category}}
+      <label class="block mb-2 text-sm font-medium text-gray-500">Categories</label>
+      <div class="grid md:grid-cols-2 my-2">
+        <div *ngFor="let category of serviceCategories; let i=index" class="px-4 py-2 my-1 mx-0 rounded-full bg-gray-300 font-semibold text-sm flex align-center w-max text-white" [ngClass]="{'bg-blue-500':serviceCategoriesActivated[i]}" (click)="onCategoryChipClick(i)">
+          {{category}}
+        </div>
       </div>
-    </div>
 
-    <div class="w-full pt-1">
-      <label class="block mb-2 text-sm font-medium text-gray-500">Prix maximale</label>
-      <input type="number" ngModel name='maxPrice' class="w-full p-3 pl-2 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:outline-none">
-    </div>
+      <div class="w-full pt-1">
+        <label class="block mb-2 text-sm font-medium text-gray-500">Prix maximale</label>
+        <input type="number" ngModel name='maxPrice' class="w-full p-3 pl-2 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:outline-none">
+      </div>
 
-    <div class="flex items-center justify-center my-1">
-      <button type="submit" class="text-white right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-4 py-2 mt-3" (click)="onSearchClick(searchForm)">Filtrer</button>
-    </div>
+      <div class="flex items-center justify-center my-1">
+        <button type="submit" class="text-white right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-4 py-2 mt-3" (click)="onSearchClick(searchForm)">Filtrer</button>
+      </div>
 
-  </form>
+    </form>
 
+
+  </div>
 
   <div *ngIf="servicesList.length!=0" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-0 md:gap-3 place-items-center col-start-3 md:col-start-2 col-span-3 md:col-span-4">
+
     <app-service-item *ngFor="let service of servicesList" class="w-full" [service]="service" ></app-service-item>
   </div>
 
