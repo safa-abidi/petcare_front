@@ -17,7 +17,7 @@ import { ModifyPetComponent } from './pet/modify-pet/modify-pet.component';
 const routes: Routes = [
   { path: 'login', component: LoginComponent , canActivate: [NotloggedinGuard]},
   { path: 'pets/add', component: AddPetComponent, canActivate: [LoggedInGuard, PetOwnerGuard],},
-  { path: 'pet/modify', component: ModifyPetComponent, canActivate: [LoggedInGuard, PetOwnerGuard],},
+  { path: 'pet/modify/:id', component: ModifyPetComponent, canActivate: [LoggedInGuard, PetOwnerGuard],},
   { path: 'profile', component: ProfileComponent, canActivate: [LoggedInGuard]},
   { path: 'signup', component: UserSignupComponent, canActivate: [NotloggedinGuard]},
   { path: 'services/add', component: AddServiceComponent, canActivate: [LoggedInGuard, ServiceProviderGuard]},

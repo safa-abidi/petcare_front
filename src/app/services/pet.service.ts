@@ -3,7 +3,6 @@ import {HttpClient} from "@angular/common/http";
 import {Pet} from "../models/pet";
 import {Observable} from "rxjs";
 import {environment} from "../../environments/environment";
-import {LoginService} from "./login.service";
 
 @Injectable({
   providedIn: 'root'
@@ -15,5 +14,13 @@ export class PetService {
 
   addPet(pet : Pet) : Observable<Pet>{
     return this.httpService.post<Pet>(this.url, pet);
+  }
+
+  updatePet(pet : Pet, id : number) : Observable<Pet>{
+    return this.httpService.patch<Pet>(`${this.url}/${id}`, pet)
+  }
+
+  getPetById(id: number) : Observable<Pet>{
+    return this.httpService.get<Pet>(`${this.url}/${id}`)
   }
 }

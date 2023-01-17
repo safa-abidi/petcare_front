@@ -1,1 +1,61 @@
-<p>modify-pet works!</p>
+<div class="grid grid-cols-7 m-0 p-0" style="min-height: 100vh">
+
+  <div class="responsive-img col-span-3 w-full" style="max-height:100vh;">
+    <img class="w-full" style="min-height:100%; object-fit: cover;" src="../../../assets/images/cat_background.png">
+  </div>
+
+  <div class="centered-form pt-2 col-span-4" >
+    <form class="h-full p-0 m-0 pt-2 px-16 max-[1800px]:px-0" #updatePetForm="ngForm">
+      <label class="block text-sm font-bold mb-2 pl-14 pr-14" style="color: #193A6A">
+        C'est quoi votre animal ? <strong style="color: red">*</strong>
+      </label>
+      <div class="mx-16 mb-5 pt-1">
+        <div class="grid grid-cols-4 place-items-center gap-0 ml-1 mr-1">
+          <div class="rounded-full min-[700px]:w-2/3 max-[700px]:mx-1" style="border-width: 3px" [ngClass]="{'border-gray-700': animal == 0}" (click)="chooseAnimal(0)">
+            <img style="border-radius: 50%" src="../../../assets/images/pets_types/dog.png">
+          </div>
+          <div class="rounded-full min-[700px]:w-2/3 max-[700px]:mx-1" style="border-width: 3px" [ngClass]="{'border-gray-700': animal == 1}" (click)="chooseAnimal(1)">
+            <img style="border-radius: 50%" src="../../../assets/images/pets_types/cat.png">
+          </div>
+          <div class="rounded-full min-[700px]:w-2/3 max-[700px]:mx-1" style="border-width: 3px" [ngClass]="{'border-gray-700': animal == 2}" (click)="chooseAnimal(2)">
+            <img style="border-radius: 50%" src="../../../assets/images/pets_types/hamster.png">
+          </div>
+          <div class="rounded-full min-[700px]:w-2/3 max-[700px]:mx-1" style="border-width: 3px" [ngClass]="{'border-gray-700': animal == 3}" (click)="chooseAnimal(3)">
+            <img style="border-radius: 50%" src="../../../assets/images/pets_types/bird.png">
+          </div>
+        </div>
+      </div>
+
+      <div class="pl-20 pr-20 ">
+
+        <app-text-input-with-icon [(ngModel)]="pet.name" [icon]="pawIcon" [placeholder]="'Nom'" [name]="'name'"> </app-text-input-with-icon>
+
+        <app-text-input-with-icon [(ngModel)]="pet.breed" [placeholder]="'Race'" [name]="'breed'"> </app-text-input-with-icon>
+
+        <app-text-input-with-icon [(ngModel)]="date" [placeholder]="'Date de Naissance'" [type]="'date'" [icon]="dateIcon" [name]="'birthDate'"> </app-text-input-with-icon>
+
+        <app-dropdown-with-icon [(ngModel)]="pet.gender" [placeholder]="'Genre'" [icon]="genderIcon" [name]="'gender'"></app-dropdown-with-icon>
+
+        <app-text-input-with-icon [(ngModel)]="pet.weight" [placeholder]="'Poids'" [icon]="weightIcon" [type]="'number'" [name]="'weight'" [required]="false"> </app-text-input-with-icon>
+
+      </div>
+
+      <!--<div *ngIf="showAlert" class="ml-20 mr-20 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+        <span class="block sm:inline">Veuillez remplir tous les champs obligatoires.</span>
+      </div>-->
+
+      <div class="flex justify-center">
+        <button type="button"
+                class="text-white font-medium rounded text-sm px-10 py-2.5 mb-1 mt-5 bg-[#193A6A] border-2 w-1/3"
+                [disabled]="updatePetForm.invalid || animal == -1"
+                [ngClass]="{'button-disabled': updatePetForm.invalid || animal == -1}"
+                (click)="updatePet(updatePetForm)">
+          Confirmer
+        </button>
+      </div>
+
+    </form>
+  </div>
+
+</div>
+
