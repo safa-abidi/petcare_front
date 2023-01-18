@@ -28,8 +28,6 @@ export class MyPetsComponent implements OnInit {
       console.log(result.length);
       this.myPets = result;
       this.filtered  = result;
-
-
     });
   }
 
