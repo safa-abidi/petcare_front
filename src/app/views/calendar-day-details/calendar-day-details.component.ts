@@ -4,6 +4,8 @@ import {NgForm} from "@angular/forms";
 import {CalendarService} from "../../services/calendar.service";
 import {TaskService} from "../../services/task.service";
 import {Observable} from "rxjs";
+import {faArrowLeft} from "@fortawesome/free-solid-svg-icons";
+import {Location} from "@angular/common";
 
 @Component({
   selector: 'app-calendar-day-details',
@@ -20,8 +22,9 @@ export class CalendarDayDetailsComponent implements OnInit {
   content:string = "";
   color:string = "#193A6A";
   time: Date = new Date();
+  backIcon = faArrowLeft;
 
-  constructor(private activatedRoute:ActivatedRoute, private calendarService:CalendarService, private taskService:TaskService) {
+  constructor(private activatedRoute:ActivatedRoute, private calendarService:CalendarService, private taskService:TaskService, private location: Location) {
     activatedRoute.params.subscribe(params => {this.dayNumber = params['day']})
     activatedRoute.params.subscribe(params => {this.monthNumber = params['month']})
     activatedRoute.params.subscribe(params => {this.year = params['year']})
@@ -47,4 +50,7 @@ export class CalendarDayDetailsComponent implements OnInit {
     window.location.reload();
   }
 
+  backClicked() {
+    this.location.back();
+  }
 }
