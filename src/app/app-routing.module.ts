@@ -39,7 +39,7 @@ const routes: Routes = [
   },
   { path: "shop", component: ShopComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: '**', component: NotFoundComponent },]
+  { path: '**', component: NotFoundComponent },
   { path: 'requests/add/:providerId/:serviceId', component: AddRequestComponent},
   { path: 'home', component: HomePageComponent},
   { path: '', redirectTo: '/home', pathMatch: 'full'},

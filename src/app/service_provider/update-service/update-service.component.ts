@@ -45,7 +45,7 @@ export class UpdateServiceComponent implements OnInit {
     )
     this.serviceProviderService.updateService(service, this.serviceId).subscribe(
       ()=>{
-        this.router.navigate(['/profile']) //for now redirect to profile
+        this.router.navigate(['/my-services', localStorage.getItem("userId")!]) //for now redirect to profile
       }
     )
   }

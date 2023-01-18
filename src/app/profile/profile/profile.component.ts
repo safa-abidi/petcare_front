@@ -14,6 +14,7 @@ export class ProfileComponent implements OnInit {
   isAuthenticated = false;
   role: string = ""
   addText: string = ""
+  myObject: string = ""
 
   constructor(private router: Router, private userService: UserService, private loginService: LoginService) { }
 
@@ -22,9 +23,11 @@ export class ProfileComponent implements OnInit {
     this.role = localStorage.getItem("role")!
     if(this.role.toLowerCase().includes("petowner")){
       this.addText="animal"
+      this.myObject= "animaux"
     }
     else if(this.role.toLowerCase().includes("provider")){
       this.addText="service"
+      this.myObject= "services"
     }
   }
 
@@ -47,6 +50,16 @@ export class ProfileComponent implements OnInit {
 
   onPageChange(index : number){
     this.pageIndex= index;
+  }
+
+  onMyObjectsClick(){
+    if(this.role.toLowerCase().includes("petowner")){
+      //this.router.navigate([""]);
+    }
+    else if(this.role.toLowerCase().includes("provider")){
+      this.router.navigate(["my-services",localStorage.getItem("userId")!]);
+
+    }
   }
 
 }

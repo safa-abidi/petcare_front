@@ -9,6 +9,7 @@
       <button class="font-medium rounded-lg text-sm px-5 py-3.5 mb-2 w-3/4 truncate" (click)="onPageChange(1)" [ngClass]="{'bg-yellow-500 text-white' : pageIndex==1}">Changer mot de passe</button>
       <button class="font-medium rounded-lg text-sm px-5 py-3.5 mb-2 w-3/4 truncate" (click)="onPageChange(2)" [ngClass]="{'bg-yellow-500 text-white' : pageIndex==2}">Mes demandes de services</button>
       <button class="font-medium rounded-lg text-sm px-5 py-3.5 mb-2 w-3/4 truncate" (click)="onAddClick()">Ajouter un {{addText}}</button>
+      <button class="font-medium rounded-lg text-sm px-5 py-3.5 mb-2 w-3/4 truncate" (click)="onMyObjectsClick()">Mes {{myObject}}</button>
       <button class="text-white bg-red-700 font-medium rounded-lg text-sm px-5 py-3.5 w-3/4 truncate" (click)="onDeleteClick()">Supprimer compte</button>
     </div>
 

@@ -27,8 +27,6 @@ import { ServiceItemComponent } from './service_provider/service-item/service-it
 import { ModifyPetComponent } from './pet/modify-pet/modify-pet.component';
 import { AddRequestComponent } from './service_request/add-request/add-request.component';
 import { ServicesRequestsListComponent } from './profile/services-requests-list/services-requests-list.component';
-
-
 import { UpdateServiceComponent } from './service_provider/update-service/update-service.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
 import { CalendarDayComponent } from './components/calendar/calendar-day/calendar-day.component';
@@ -39,7 +37,6 @@ import { TaskComponent } from './components/task/task.component';
 import { TimePipePipe } from './pipes/time-pipe.pipe';
 import { ShopComponent } from './views/shop/shop.component';
 import { AccessoryComponent } from './components/accessory/accessory.component'
-import { ListServicesComponent } from './service_provider/list-services/list-services.component';
 import { MyServicesComponent } from './service_provider/my-services/my-services.component';
 
 @NgModule({
