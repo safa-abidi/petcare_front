@@ -23,8 +23,24 @@ import { ProfileDisplayComponent } from './profile/profile-display/profile-displ
 import { ChangePasswordComponent } from './profile/change-password/change-password.component';
 import { AddServiceComponent } from './service_provider/add-service/add-service.component';
 import { MyPetsComponent } from './pet/my-pets/my-pets.component';
+import { ListServicesComponent } from './service_provider/list-services/list-services.component';
+import { ServiceItemComponent } from './service_provider/service-item/service-item.component';
+import { ModifyPetComponent } from './pet/modify-pet/modify-pet.component';
+import { AddRequestComponent } from './service_request/add-request/add-request.component';
+import { ServicesRequestsListComponent } from './profile/services-requests-list/services-requests-list.component';
 
 
+import { UpdateServiceComponent } from './service_provider/update-service/update-service.component';
+import { CalendarComponent } from './components/calendar/calendar.component';
+import { CalendarDayComponent } from './components/calendar/calendar-day/calendar-day.component';
+import { CalendarViewComponent } from './views/calendar-view/calendar-view.component';
+import { CalendarDayDetailsComponent } from './views/calendar-day-details/calendar-day-details.component';
+import { RankPipePipe } from './pipes/rank-pipe.pipe';
+import { TaskComponent } from './components/task/task.component';
+import { TimePipePipe } from './pipes/time-pipe.pipe';
+import { ShopComponent } from './views/shop/shop.component';
+import { AccessoryComponent } from './components/accessory/accessory.component'
+import { MyServicesComponent } from './service_provider/my-services/my-services.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +62,22 @@ import { MyPetsComponent } from './pet/my-pets/my-pets.component';
     ChangePasswordComponent,
     AddServiceComponent,
     MyPetsComponent,
+    CalendarComponent,
+    CalendarDayComponent,
+    CalendarViewComponent,
+    CalendarDayDetailsComponent,
+    RankPipePipe,
+    TaskComponent,
+    TimePipePipe,
+    ShopComponent,
+    AccessoryComponent,
+    ListServicesComponent,
+    ServiceItemComponent,
+    ModifyPetComponent,
+    AddRequestComponent,
+    ServicesRequestsListComponent,
+    UpdateServiceComponent,
+    MyServicesComponent,
   ],
   imports: [
     BrowserModule,

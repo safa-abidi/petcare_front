@@ -1,23 +1,22 @@
-.container-border {
-  border: 2px solid #193A6A;
+.button-disabled{
+  opacity: 0.6;
+}
+
+.bg{
+  background-image: url('../../../assets/images/orange_motif_with_cat.png');
+  object-fit: contain;
+  background-size: auto 100%
 }
 
 
-@media only screen and (max-width: 900px) {
-  .responsive-img {
-    display: none;
-  }
-
-  .centered-form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    padding: 3% 10% 10% 1%;
+@media (min-width: 1024px){
+  .bg{
+    background-image: url('../../../assets/images/orange_motif_with_cat.png');
+    object-fit: contain;
+    background-size: 100%
   }
 }
 
 .button-disabled{
   opacity: 0.6;
 }
-

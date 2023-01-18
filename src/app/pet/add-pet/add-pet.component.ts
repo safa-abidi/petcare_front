@@ -3,6 +3,7 @@ import {faCalendar, faCamera, faPaw, faVenusMars, faWeight} from "@fortawesome/f
 import {NgForm} from "@angular/forms";
 import {PetService} from "../../services/pet.service";
 import {Pet} from "../../models/pet";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-add-pet',
@@ -17,7 +18,7 @@ export class AddPetComponent implements OnInit {
   dateIcon = faCalendar
   animal = -1;
 
-  constructor(private petService : PetService) { }
+  constructor(private petService : PetService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -45,7 +46,11 @@ export class AddPetComponent implements OnInit {
         +localStorage.getItem("userId")!,
         val.weight != 0 ? val.weight : null,
       )
-      this.petService.addPet(pet).subscribe()
+      this.petService.addPet(pet).subscribe(
+        ()=>{
+          this.router.navigate(['/home'],)
+        }
+      )
     }
   }
 

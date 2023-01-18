@@ -1,0 +1,14 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+.fitContent {
+  width: fit-content;
+}
+
+.grayed {
+  color: gray;
+  border-color: gray;
+}
+
+.colored {
+  background-color: midnightblue;
+}
