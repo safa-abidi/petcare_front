@@ -39,7 +39,7 @@ export class AddRequestComponent implements OnInit {
       console.log(serviceRequest)
       this.serviceRequestService.addServiceRequest(serviceRequest).subscribe(
         ()=>{
-          this.router.navigate(['/home'],)
+          this.router.navigate(['/services'],)
         }
       )
   }

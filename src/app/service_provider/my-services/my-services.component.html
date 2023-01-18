@@ -1,6 +1,10 @@
 <app-navbar-logged *ngIf="isAuthenticated" class="fixed w-full z-10" ></app-navbar-logged>
 <app-navbar *ngIf="!isAuthenticated" class="fixed w-full z-10" ></app-navbar>
+
+
+
 <div class="grid grid-cols-5 p-0 pt-20">
+  <p class="text-center text-xl font-bold">Mes services</p>
 
   <div class="md:fixed col-span-2 md:col-span-1 ml-5">
     <button *ngIf="isAuthenticated && role.toLowerCase().includes('provider')" type="button" class="w-full text-white bg-green-600 font-medium rounded-lg text-sm px-3 py-2.5 mr-2 mb-2 mt-10" (click)="onAddServiceClick()">Ajouter votre service</button>

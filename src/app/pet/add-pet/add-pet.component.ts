@@ -48,7 +48,7 @@ export class AddPetComponent implements OnInit {
       )
       this.petService.addPet(pet).subscribe(
         ()=>{
-          this.router.navigate(['/home'],)
+          this.router.navigate(['/profile'],)
         }
       )
     }

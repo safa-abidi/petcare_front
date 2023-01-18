@@ -31,7 +31,7 @@ export class AddServiceComponent implements OnInit {
     )
     this.serviceProviderService.addService(service).subscribe(
       ()=>{
-        this.router.navigate(['/home'])
+        this.router.navigate(['/profile'])
       }
     )
   }
