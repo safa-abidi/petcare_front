@@ -21,8 +21,6 @@ import { CalendarViewComponent } from "./views/calendar-view/calendar-view.compo
 import { CalendarDayDetailsComponent } from "./views/calendar-day-details/calendar-day-details.component";
 import { ShopComponent } from "./views/shop/shop.component";
 
-
-
 const routes: Routes = [
   { path: 'login', component: LoginComponent, canActivate: [NotloggedinGuard] },
   { path: 'pets/add', component: AddPetComponent, canActivate: [LoggedInGuard, PetOwnerGuard], },
