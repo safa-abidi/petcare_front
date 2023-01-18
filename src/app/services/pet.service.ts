@@ -21,7 +21,7 @@ export class PetService {
   }
 
   getPetById(id: number) : Observable<Pet>{
-    return this.httpService.get<Pet>(`${this.url}/${id}`)
+    return this.httpService.get<Pet>(`${this.url}/one/${id}`)
   }
 
   getMyPets(id : string) : Observable<Pet[]> {

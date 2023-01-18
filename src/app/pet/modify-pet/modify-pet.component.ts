@@ -28,8 +28,10 @@ export class ModifyPetComponent implements OnInit {
     this.activatedRoute.params.subscribe(
       params => {
         this.animalId = params['id']
+
       }
     );
+
     this.petService.getPetById(this.animalId).subscribe(
       (pet: Pet) => {
         this.pet = pet;
@@ -37,6 +39,7 @@ export class ModifyPetComponent implements OnInit {
         this.date = new Date(pet.birthDate).toISOString().split('T')[0];
       }
     )
+
   }
 
   chooseAnimal(i: number){
@@ -71,7 +74,7 @@ export class ModifyPetComponent implements OnInit {
 
       this.petService.updatePet(pet, this.animalId).subscribe(
         ()=>{
-          this.router.navigate(['/profile'],) //should redirect to pets list
+          this.router.navigate(['/pet/all'],) //should redirect to pets list
         }
       )
     }

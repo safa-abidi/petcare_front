@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Pet } from 'src/app/models/pet';
 import { PetService } from 'src/app/services/pet.service';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-my-pets',
@@ -15,7 +16,7 @@ export class MyPetsComponent implements OnInit {
   currentDate: Date = new Date();
 
   // localStorage.getItem("userId")
-  constructor(private petService: PetService) {
+  constructor(private petService: PetService, private router: Router) {
 
   }
 
@@ -47,6 +48,10 @@ export class MyPetsComponent implements OnInit {
       this.getPets();
     }
 
+  }
+
+  onModifyPetClick(id: number){
+    this.router.navigate(['pet/modify',id]);
   }
 
 }
