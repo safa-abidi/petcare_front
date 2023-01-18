@@ -1,0 +1,43 @@
+<div style="position: fixed; top:0px;" class="w-full z-40"><app-navbar-logged></app-navbar-logged></div>
+<div  style=" margin-left: 20%; "class="absolute sm:ml-36 content-center w-1/2 ml-96 sm:w-3/5 xl:inline sm:hidden max-sm:hidden">
+  <img src="./assets/images/search_bg.png" >
+</div>
+
+  <div class="flex h-48 mt-44">
+    <div class="relative " style=" margin: auto; padding: 10px; ">
+        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+            <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
+        </div>
+        <input type="text" (change) = "searchPets($event)" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#193A6A] focus:border-[#193A6A] block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search" required>
+    </div>
+  </div>
+  <div class="font-medium text-3xl text-[#FFA630] text-center">Voici vos animaux domestiques ❤️
+  </div>
+
+
+     
+     <div class="grid grid-cols-2 items-center sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 w-full p-10">
+      <div *ngFor="let i of filtered" [style.background-color]="i.type == 'cat' ? '#cce9ef' : (i.type=='dog' ? '#eaedf2':(i.type=='bird' ? '#ffedd6':'#ffdfc1'))" 
+      class="shadow hover:shadow-md m-5 w-full bg-white rounded-lg overflow-hidden cursor-pointer">
+          
+        <img
+         class="object-cover w-full h-48"
+         [src]= '"./assets/images/my_pets/"+i.type+".png"'
+         alt="Flower and sky"
+         />
+    
+      <div class="relative p-6 rounded-2xl ">
+        <h3 class="text-base md:text-2xl font-medium text-[#703E78] text-center">
+         {{i.name}}
+        </h3>
+    
+        <p class="mt-4 text-base md:text-lg text-[#703E78] text-center">
+          {{ getAge(i.birthDate.toString()) | number: '1.0-0' }} an(s)
+        </p>
+        <p class="  text-[#FF9330] font-semibold text-sm text-center">
+          {{ i.gender }} {{ i.type }}
+        </p>
+      </div>
+      </div>
+    </div>
+

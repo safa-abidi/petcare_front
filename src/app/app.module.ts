@@ -22,6 +22,7 @@ import { ProfileComponent } from './profile/profile/profile.component';
 import { ProfileDisplayComponent } from './profile/profile-display/profile-display.component';
 import { ChangePasswordComponent } from './profile/change-password/change-password.component';
 import { AddServiceComponent } from './service_provider/add-service/add-service.component';
+import { MyPetsComponent } from './pet/my-pets/my-pets.component';
 import { ListServicesComponent } from './service_provider/list-services/list-services.component';
 import { ServiceItemComponent } from './service_provider/service-item/service-item.component';
 import { ModifyPetComponent } from './pet/modify-pet/modify-pet.component';
@@ -60,6 +61,7 @@ import { MyServicesComponent } from './service_provider/my-services/my-services.
     ProfileDisplayComponent,
     ChangePasswordComponent,
     AddServiceComponent,
+    MyPetsComponent,
     CalendarComponent,
     CalendarDayComponent,
     CalendarViewComponent,

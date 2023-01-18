@@ -38,6 +38,10 @@ export class ProfileComponent implements OnInit {
     }
   }
 
+  onConsultPets(){
+    this.router.navigate(["pet","all"]);
+  }
+
   onDeleteClick(){
     if(confirm("Voulez vous supprimer votre compte?",)) {
       this.userService.deleteUser(+localStorage.getItem('userId')!).subscribe();

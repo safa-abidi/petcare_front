@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpParams} from "@angular/common/http";
 import {Pet} from "../models/pet";
 import {Observable} from "rxjs";
 import {environment} from "../../environments/environment";
@@ -22,5 +22,9 @@ export class PetService {
 
   getPetById(id: number) : Observable<Pet>{
     return this.httpService.get<Pet>(`${this.url}/${id}`)
+  }
+
+  getMyPets(id : string) : Observable<Pet[]> {
+    return this.httpService.get<Pet[]>(this.url+"/"+id)
   }
 }
