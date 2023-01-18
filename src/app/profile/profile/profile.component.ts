@@ -54,7 +54,7 @@ export class ProfileComponent implements OnInit {
 
   onMyObjectsClick(){
     if(this.role.toLowerCase().includes("petowner")){
-      //this.router.navigate([""]);
+      this.router.navigate(["pet/all"]);
     }
     else if(this.role.toLowerCase().includes("provider")){
       this.router.navigate(["my-services",localStorage.getItem("userId")!]);

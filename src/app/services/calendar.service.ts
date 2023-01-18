@@ -8,7 +8,7 @@ export class CalendarService {
   constructor() { }
 
   monthToString(month:number) {
-    return new Date(0,month).toLocaleString('en-US', {
+    return new Date(0,month).toLocaleString('fr-FR', {
       month: 'long',
     })
   }
@@ -82,7 +82,7 @@ export class CalendarService {
         }
       }
     }
-    const days_names:string[] = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    const days_names:string[] = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"];
     const days:number[][] = [[], [], [], [], [], []];
     for (let i = 0; i < 6; i++) {
       for (let j = 0; j < 7; j++) {
@@ -131,4 +131,6 @@ export class CalendarService {
       lastYear: lastMonth === 1 ? lastYear-1:lastYear
     }
   }
+
+
 }

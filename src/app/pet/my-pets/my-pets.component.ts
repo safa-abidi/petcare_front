@@ -25,7 +25,6 @@ export class MyPetsComponent implements OnInit {
   }
   getPets() {
     this.petService.getMyPets(localStorage.getItem("userId")!).subscribe((result) => {
-      console.log(result.length);
       this.myPets = result;
       this.filtered  = result;
     });
@@ -38,19 +37,13 @@ export class MyPetsComponent implements OnInit {
   }
 
   public searchPets(event : any) {
-
-    console.log("hell")
-    console.log(event.target.value);
-    
     const key :string = event.target.value;
     const results: Pet[] = [];
     for (const pet of this.myPets) {
       if (pet.name.toLowerCase().indexOf(key.toLowerCase()) !== -1 || pet.breed.toLowerCase().indexOf(key.toLowerCase()) !== -1 ) { results.push(pet); }
     }
-    console.log(results.length);
-    
     this.filtered = results;
-    if (results.length === 0 || key == "") {
+    if (key.length === 0) {
       this.getPets();
     }
 

@@ -25,27 +25,27 @@
     </h1>
     <form (ngSubmit)="onSubmit(task)" #task="ngForm" class="task-form">
       <div class="col mt-4">
-        <label class="row">Title</label>
-        <input class="row input" type="text" name="title" placeholder="Title" [(ngModel)]="title">
+        <label class="row">Titre</label>
+        <input class="row input" type="text" name="title" placeholder="titre" [(ngModel)]="title">
       </div>
       <div class="col mt-4">
-        <label class="row">Content</label>
-        <textarea class="row input" [(ngModel)]="content" name="content" cols="3" placeholder="Content"></textarea>
+        <label class="row">Contenu</label>
+        <textarea class="row input" [(ngModel)]="content" name="content" cols="3" placeholder="contenu"></textarea>
       </div>
       <div class="col mt-4">
-        <label class="row">Time</label>
+        <label class="row">Temps</label>
         <input class="row input" [(ngModel)]="time" name="time" type="time">
       </div>
       <div class="col mt-4">
-        <label class="row">Color</label>
+        <label class="row">Couleur</label>
         <input class="row color-input" name="color" type="color" list="presets" value="#193A6A" [(ngModel)]="color">
       </div>
       <datalist id="presets">
-        <option value="#FF9330">Orange</option>
-        <option value="#193A6A">Blue</option>
+        <option value="#FF9330">Orangé</option>
+        <option value="#193A6A">Bleu</option>
       </datalist>
       <div class="mt-4">
-        <button type="submit" class="submit-button">Submit</button>
+        <button type="submit" class="submit-button">Ajouter</button>
       </div>
     </form>
     <img src="assets/img/Paws.png" class="position-absolute under position-paws">
