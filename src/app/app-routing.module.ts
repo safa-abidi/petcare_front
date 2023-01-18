@@ -10,6 +10,7 @@ import { ServiceProviderGuard } from "./guards/service-provider.guard";
 import { PetOwnerGuard } from "./guards/pet-owner.guard";
 import { NotFoundComponent } from './not-found/not-found.component';
 import { UserSignupComponent } from './user-signup/user-signup.component';
+import { MyPetsComponent } from './pet/my-pets/my-pets.component';
 import { HomePageComponent } from "./home/home-page/home-page.component";
 import {ListServicesComponent} from "./service_provider/list-services/list-services.component";
 import { ModifyPetComponent } from './pet/modify-pet/modify-pet.component';
@@ -23,6 +24,7 @@ import { ShopComponent } from "./views/shop/shop.component";
 const routes: Routes = [
   { path: 'login', component: LoginComponent, canActivate: [NotloggedinGuard] },
   { path: 'pets/add', component: AddPetComponent, canActivate: [LoggedInGuard, PetOwnerGuard], },
+  { path: 'pet/all', component: MyPetsComponent, canActivate: [LoggedInGuard, PetOwnerGuard],},
   { path: 'pet/modify/:id', component: ModifyPetComponent, canActivate: [LoggedInGuard, PetOwnerGuard],},
   { path: 'profile', component: ProfileComponent, canActivate: [LoggedInGuard] },
   { path: 'signup', component: UserSignupComponent, canActivate: [NotloggedinGuard] },
@@ -30,7 +32,6 @@ const routes: Routes = [
   { path: 'service/modify/:id', component: UpdateServiceComponent, canActivate: [LoggedInGuard, ServiceProviderGuard]},
   { path: 'services', component: ListServicesComponent,},
   { path: 'my-services/:id', component: MyServicesComponent, canActivate: [LoggedInGuard, ServiceProviderGuard]},
-  { path: 'home', component: HomePageComponent },
   {
     path: "calendar", children: [
       { path: "", component: CalendarViewComponent },
@@ -38,8 +39,6 @@ const routes: Routes = [
     ]
   },
   { path: "shop", component: ShopComponent },
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: '**', component: NotFoundComponent },
   { path: 'requests/add/:providerId/:serviceId', component: AddRequestComponent},
   { path: 'home', component: HomePageComponent},
   { path: '', redirectTo: '/home', pathMatch: 'full'},
