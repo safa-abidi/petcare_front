@@ -18,7 +18,7 @@ export class CalendarDayComponent implements OnInit {
   constructor(private taskService:TaskService) { }
 
   ngOnInit(): void {
-    this.taskService.getTasks().subscribe(
+    this.taskService.getTasks(this.year+"-"+this.monthNumber+"-"+this.dayNumber).subscribe(
       (res) => { this.dayTasks= res},
       (err)=> {console.log(err)}
     )

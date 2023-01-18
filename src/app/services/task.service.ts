@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Task} from "../models/Task";
 
 @Injectable({
   providedIn: 'root'
@@ -10,11 +9,11 @@ export class TaskService {
 
   constructor(private http: HttpClient) { }
 
-  getTasks() {
-    return this.http.get(this.urlBase+1/*localStorage.getItem('accessToken')*/)
+  getTasks(date: string) {
+    return this.http.get(this.urlBase+localStorage.getItem('userId')!+"/"+date)
   }
 
-  postTask(body: string) {
+  postTask(body: any) {
     this.http.post(this.urlBase,body).subscribe(
       (response) => { console.log(response);},
       (error) => { console.log(error);}

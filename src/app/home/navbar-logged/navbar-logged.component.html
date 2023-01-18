@@ -26,6 +26,15 @@
       class="lg:flex lg:flex-grow items-center"
     >
       <ul class="flex flex-col lg:flex-row list-none ml-auto">
+        <li *ngIf="role.toLowerCase().includes('petowner')" class="nav-item">
+          <a
+            class="px-3 py-2 flex items-center text-md font-bold leading-snug text-black hover:opacity-75"
+            [routerLink]="['/calendar']"
+          >
+            <span class="ml-2" [ngClass]="{'text-white': !textBlack}">Calendrier</span>
+          </a>
+        </li>
+
         <li class="nav-item">
           <a
             class="px-3 py-2 flex items-center text-md font-bold leading-snug text-black hover:opacity-75"
@@ -34,6 +43,7 @@
             <span class="ml-2" [ngClass]="{'text-white': !textBlack}">Services</span>
           </a>
         </li>
+
         <li class="nav-item">
           <a
             class="px-3 py-2 flex items-center text-md font-bold leading-snug text-black hover:opacity-75"

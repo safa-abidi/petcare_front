@@ -24,9 +24,8 @@
  .bg-svg {
    position: absolute;
    z-index: -2;
-   margin-left: -25vw;
    margin-top: 10vw;
-   height: 90%;
+   width: 100%
  }
 
  .under {

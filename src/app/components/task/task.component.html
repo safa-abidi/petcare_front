@@ -1,16 +1,16 @@
 <div class="row task-container m-3" [ngStyle]="{'border-color': task.color}">
-  <div class="row">
-    <div class="col task-element">
+  <div class="grid grid-cols-7">
+    <div class="col-span-2 task-element">
       {{ task.title }}
     </div>
-    <div class="col task-element">
+    <div class="col-span-2 task-element">
       {{ task.content }}
     </div>
-    <div class="col task-element">
+    <div class="col-span-2 task-element">
       {{ task.time | timePipe}}
     </div>
-    <a class="col-lg-1 pointer-cursor" [ngStyle]="{color:task.color}" (click)="deleteTask()">
-      <fa-icon [icon]="faTrash"></fa-icon>
+    <a class="col pointer-cursor" [ngStyle]="{color:task.color}" (click)="deleteTask()">
+      <fa-icon class="float-right mr-1" [icon]="faTrash"></fa-icon>
     </a>
   </div>
 </div>

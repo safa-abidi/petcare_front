@@ -29,21 +29,22 @@ export class CalendarDayDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.month = this.calendarService.monthToString(this.monthNumber-1);
-    this.taskService.getTasks().subscribe(
+    this.taskService.getTasks(this.year+"-"+this.monthNumber+"-"+this.dayNumber).subscribe(
       (response) => { this.tasks = response;console.log(this.tasks);},
       (error) => { console.log(error);}
     );
   }
 
-  onSubmit(form: NgForm) {
-    this.taskService.postTask(JSON.stringify({
-      "date": this.monthNumber+"/"+this.dayNumber+"/"+this.year,
-      "content": this.content,
-      "title": this.title,
-      "color" : this.color,
-      "user": 1,
-      "time": this.year+"-"+this.monthNumber+"-"+this.dayNumber+" "+this.time+":00"
-    }));
+  async onSubmit(form: NgForm) {
+    await this.taskService.postTask({
+      date: this.monthNumber+"/"+this.dayNumber+"/"+this.year,
+      content: this.content,
+      title: this.title,
+      color : this.color,
+      user: localStorage.getItem("userId")!,
+      time: this.year+"-"+this.monthNumber+"-"+this.dayNumber+" "+this.time+":00"
+    });
+    window.location.reload();
   }
 
 }

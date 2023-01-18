@@ -19,6 +19,7 @@ export class TaskComponent implements OnInit {
 
   deleteTask() {
     this.taskService.deleteTask(this.task.id);
+    window.location.reload();
   }
 
 }

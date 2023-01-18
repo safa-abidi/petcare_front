@@ -13,9 +13,12 @@ export class NavbarLoggedComponent implements OnInit {
   menuIcon = faBars;
   @Input() bgColor :string = "FFA630"
   @Input() textBlack :boolean = false
+  role: string = ""
+
   constructor(private loginService: LoginService, private router: Router) { }
 
   ngOnInit(): void {
+    this.role = localStorage.getItem("role")!
   }
   toggleNavbar(){
     this.showMenu = !this.showMenu;
